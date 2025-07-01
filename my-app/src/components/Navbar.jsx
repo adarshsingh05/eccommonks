@@ -40,13 +40,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 lg:px-12 w-full">
         <div className="flex items-center w-full">
           {/* Logo and Hamburger */}
-          <div className="flex items-center w-full">
+          <div className="flex items-center w-full sm:w-auto">
             <div className="flex items-center min-w-0">
               <a href="/" className="flex items-center min-w-0 group" aria-label="Go to home page">
                 <img
                   src="/logo.png"
                   alt="The Ecom Monks"
-                  className="h-18 w-18 ml-[-8px] sm:ml-0 max-w-[80px] sm:h-16 sm:max-w-[100px] md:h-20 md:max-w-[120px] lg:h-24 lg:max-w-[140px] object-contain transition-transform duration-200 group-hover:scale-105"
+                  className="h-18 w-18 ml-[-14px] sm:ml-[-160px] max-w-[80px] sm:h-16 sm:max-w-[100px] md:h-20 md:max-w-[120px] lg:h-24 lg:max-w-[140px] object-contain transition-transform duration-200 group-hover:scale-105"
                   style={{ display: 'block' }}
                 />
                 {/* Hide all text next to logo on mobile */}
@@ -86,18 +86,18 @@ export default function Navbar() {
             </button>
           </div>
           {/* Nav Links */}
-          <div className="hidden lg:flex items-center space-x-10 justify-end flex-shrink-0">
+          <div className="hidden lg:flex items-center space-x-8 sm:ml-[100px]  flex-shrink-0">
             {[
               { label: "Home", href: "#" },
               { label: "Our Services", href: "#services" },
               { label: "Our Frameworks", href: "#frameworks" },
-              { label: "Why Us", href: "#whyus" },
+              // { label: "Why Us", href: "#whyus" },
               { label: "Contact Us", href: "#contact" },
-              { label: "How it Works", href: "#howitworks" },
+              // { label: "How it Works", href: "#howitworks" },
               { label: "About Us", href: "#about" },
-              { label: "Legal", href: "#legal" },
-              { label: "Privacy and Policy", href: "#privacy" },
-              { label: "Terms and conditions", href: "#terms" },
+              // { label: "Legal", href: "#legal" },
+              // { label: "Privacy and Policy", href: "#privacy" },
+              // { label: "Terms and conditions", href: "#terms" },
             ].map((item) => (
               <a
                 key={item.label}
@@ -108,9 +108,7 @@ export default function Navbar() {
                 <span className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-green-400 to-green-500 transition-all duration-500 w-0 group-hover:w-full"></span>
               </a>
             ))}
-            <button className="bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-6 py-3 md:px-10 md:py-5 rounded-xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/30 transition-all duration-500 transform hover:rotate-1 text-base md:text-xl">
-              GET FREE AUDIT
-            </button>
+           
           </div>
         </div>
 

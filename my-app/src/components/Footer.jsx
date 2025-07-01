@@ -63,10 +63,10 @@ export default function Footer() {
             <div className="space-y-5 sm:space-y-8">
               <a
                 href="mailto:hello@thecommonks.com"
-                className="block text-green-700 hover:text-green-400 transition-colors duration-500 text-base sm:text-xl font-medium cursor-pointer"
+                className="flex flex-col sm:flex-row items-center text-green-700 hover:text-green-400 transition-colors duration-500 text-base sm:text-lg md:text-base font-medium cursor-pointer"
               >
-                <Mail className="inline w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 align-text-bottom" />
-                hello@thecommonks.com
+                <Mail className="w-5 h-5 sm:w-5 sm:h-5 mr-0 sm:mr-2 mb-1 sm:mb-0 align-text-bottom" />
+                <span className="leading-tight">hello@thecommonks.com</span>
               </a>
             </div>
           </div>

@@ -44,6 +44,7 @@ function LandingPage() {
           </ScrollParallax>
         </div>
         <Navbar />
+
         <main className="bg-white text-[#222] overflow-x-hidden">
           <h1 className="sr-only">We're Not Just an Agency. We're Your Ecommerce Growth Partner.</h1>
           {/* Hero Section with Parallax */}
@@ -51,7 +52,7 @@ function LandingPage() {
             <section className="py-4 sm:py-16 md:py-32 flex flex-col items-center justify-center text-center relative bg-gradient-to-b from-green-50/60 to-white">
               <div className="max-w-5xl w-full mx-auto px-4 md:px-8 flex flex-col items-center">
                 {/* Main Headline */}
-                <div className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-8">
+                <div className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-3 sm:mb-6 md:mb-8Scale Commerce the Conscious Way">
                   <span className="text-[#222]">THE </span>
                   <span className="text-green-500">ECOM</span>
                   <span className="text-green-400"> MONKS</span>
@@ -71,10 +72,30 @@ function LandingPage() {
                   We build brands, scale visibility, and drive conversions across all channels.
                 </div>
                 {/* CTA */}
-                <button className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-6 py-3 text-base sm:px-10 sm:py-5 sm:text-xl md:px-16 md:py-8 md:text-3xl rounded-2xl text-2xl md:text-3xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center mt-2 animate-bounce mb-4">
-                  <span className="group-hover:animate-bounce inline-block mr-4 text-3xl">👉</span>
-                  Get My Free Ecom Audit
+                <button
+                  className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-8 py-3 sm:px-12 sm:py-4 md:px-16 md:py-5 text-base sm:text-xl md:text-2xl rounded-2xl flex flex-row items-center justify-center shadow-xl hover:scale-105 hover:shadow-green-400/50 transition-all duration-500 relative overflow-hidden animate-ctaPulse min-w-[220px]"
+                  style={{ minHeight: '48px', boxShadow: '0 8px 32px 0 rgba(34,197,94,0.18)' }}
+                >
+                  <span className="inline-block mr-3 text-2xl md:text-3xl animate-bounce">💡</span>
+                  <span className="text-center leading-tight">Get My Free Growth Audit Now →</span>
+                  <span className="absolute inset-0 rounded-2xl pointer-events-none group-hover:animate-glowPulse"></span>
                 </button>
+                <style>{`
+                  @keyframes ctaPulse {
+                    0%, 100% { box-shadow: 0 8px 32px 0 rgba(34,197,94,0.18); }
+                    50% { box-shadow: 0 0 48px 8px rgba(34,197,94,0.25); }
+                  }
+                  .animate-ctaPulse {
+                    animation: ctaPulse 2.5s infinite;
+                  }
+                  @keyframes glowPulse {
+                    0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.18); }
+                    50% { box-shadow: 0 0 32px 8px rgba(34,197,94,0.25); }
+                  }
+                  .group:hover .animate-glowPulse {
+                    animation: glowPulse 1.2s infinite;
+                  }
+                `}</style>
                 <span className="text-green-400 text-sm sm:text-base max-w-2xl leading-relaxed mt-2">
                   <span className="font-bold text-green-500">Full listing, ad & social review</span> + a 3-month growth blueprint. No fluff.
                 </span>
@@ -83,7 +104,7 @@ function LandingPage() {
           </ParallaxSection>
 
           {/* Sliding Banner: Marketplace Management */}
-          <div className="mt-8 sm:mt-10">
+          <div className="mt-8 sm:mt-[-60px]">
             <RunningText text="End to End Marketplace management • Paid Ads • Social Media Marketing • Creative Support • Influencer Marketing" speed={15} />
           </div>
 
@@ -110,7 +131,8 @@ function LandingPage() {
                 {/* Text Content */}
                 <div className="md:w-6/12 w-full flex flex-col items-center md:items-start">
                   <h3 className="text-3xl md:text-4xl font-bold text-green-500 mb-4 text-center md:text-left">
-                    The Brutal Truth About Most SPN Agencies?
+                    <span className="hidden md:inline">The Brutal Truth About<br/>Most SPN Agencies?</span>
+                    <span className="md:hidden">The Brutal Truth About Most SPN Agencies?</span>
                   </h3>
                   <p className="text-xl md:text-2xl text-green-500 mb-10 text-center md:text-left">
                     They're either overloaded, unaccountable, or both.
@@ -131,7 +153,7 @@ function LandingPage() {
                     ))}
                   </div>
                   {/* Checklist */}
-                  <div className="w-full bg-green-50/60 rounded-2xl p-8 shadow flex flex-col">
+                  <div className="w-full sm:w-[800px] bg-green-50/60 rounded-2xl p-8 sm:p-4 sm:ml-[-100px] shadow flex flex-col">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
                       {["SPNs are slow, overloaded, and full of templated work", "Ads are outsourced with no ROI clarity", "You get sold big promises — and delivered zero strategy.", "You're stuck between poor creatives, weak campaigns, and zero clarity.", "Social media? Untouched", "Influencers? Unused"].map((point, idx) => (
                         <div key={idx} className="flex items-start gap-3">
@@ -162,8 +184,9 @@ function LandingPage() {
               <div className="w-full h-full bg-gradient-to-l from-green-500/10 to-green-400/10"></div>
             </div>
             <div className="max-w-7xl mx-auto px-8 lg:px-12 text-center">
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-2 sm:mb-6 md:mb-10 text-[#222]">
-                THE SOLUTION — WHAT MAKES US DIFFERENT
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-2 sm:mt-[-120px] md:mb-10 text-[#222]">
+                <span className="hidden md:inline">THE SOLUTION —<br/>WHAT MAKES US DIFFERENT</span>
+                <span className="md:hidden">THE SOLUTION — WHAT MAKES US DIFFERENT</span>
               </h2>
               <p className="text-2xl sm:text-3xl text-green-500 mb-16 font-bold">
                 We're The Ecom Monks – India's most proactive, full-stack growth agency for digital sellers.
@@ -204,7 +227,7 @@ function LandingPage() {
           </section>
 
           {/* Frameworks Section */}
-          <section className="py-6 sm:py-16 md:py-32 relative z-10">
+          <section className="py-6 sm:py-4 relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-500/10 to-green-400/10"></div>
             </div>
@@ -219,7 +242,7 @@ function LandingPage() {
                 science-based frameworks that actually grow
               </p>
               <div className="flex justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-24 w-full">
                   {[
                     {
                       icon: '🔁',
@@ -278,18 +301,31 @@ function LandingPage() {
                   ].map((item, idx) => (
                     <ThreeDCard
                       key={item.title}
-                      className="bg-white border border-green-200 rounded-3xl shadow-xl p-10 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard"
+                      className="bg-white border border-green-200 rounded-3xl shadow-xl p-10 md:p-2 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard md:w-[400px] lg:w-[410px]"
                     >
                       <div className="text-5xl mb-4">{item.icon}</div>
-                      <h3 className="text-base sm:text-lg md:text-2xl font-black text-green-700 mb-4 text-center leading-tight break-words max-w-xs mx-auto sm:max-w-none" style={{display: 'block', overflowWrap: 'break-word'}}>
+                      <h3 className="text-base sm:text-lg  font-black text-green-700 mb-4 text-center leading-tight break-words max-w-xs mx-auto md:max-w-[220px] lg:max-w-[260px] xl:max-w-[320px] sm:max-w-none" style={{display: 'block', overflowWrap: 'break-word'}}>
                         {item.title}
                       </h3>
                       {item.intro && <div className="text-green-700 font-semibold mb-2">{item.intro}</div>}
                       <ul className="w-full pl-0 text-left text-green-700 space-y-2">
                         {item.bullets.map((point, i) => (
-                          <li key={i} className="flex items-start text-sm sm:text-base">
-                            <span className="text-green-500 mr-2 mt-0.5">✓</span>
-                            <span className="break-words">{point}</span>
+                          <li
+                            key={i}
+                            className={
+                              `sm:list-disc sm:list-inside flex items-start sm:block pl-0 sm:pl-0 border-l-4 border-green-400 sm:border-0 bg-transparent px-4 py-1 sm:px-0 sm:py-0 text-xs sm:text-base mb-1 -ml-3 sm:ml-0 rounded-r-xl leading-snug max-w-full break-words ` +
+                              (i === 0 ? 'md:border-0 md:pl-0 md:flex md:items-center md:gap-2 md:text-xs md:whitespace-nowrap md:leading-tight' : '')
+                            }
+                            style={i === 0 ? {fontSize: '0.80rem', lineHeight: '1.1', wordBreak: 'break-word'} : {}}
+                          >
+                            {i === 0 ? (
+                              <>
+                                <span className="hidden md:inline text-green-500 text-lg mr-1">✓</span>
+                                <span className="ml-2 sm:ml-0">{point}</span>
+                              </>
+                            ) : (
+                              <span className="ml-2 sm:ml-0">{point}</span>
+                            )}
                           </li>
                         ))}
                       </ul>
@@ -306,11 +342,11 @@ function LandingPage() {
               <div className="w-full h-full bg-gradient-to-br from-green-400/10 to-green-500/10"></div>
             </div>
             <div className="max-w-7xl mx-auto px-8 lg:px-12 text-center">
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-2 sm:mb-6 md:mb-10 text-[#222]">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-6 md:mb-10 text-[#222]">
                 Our Services – Ecommerce<br/>
                 Q-COMMERCE BRAND BUILDING
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-24 w-full">
                 {[
                   {
                     icon: '🛒',
@@ -364,7 +400,7 @@ function LandingPage() {
                 ].map((item, idx) => (
                   <ThreeDCard
                     key={item.title}
-                    className="bg-white border border-green-200 rounded-3xl shadow-xl p-10 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard"
+                    className="bg-white border border-green-200 rounded-3xl shadow-xl p-10 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard md:w-[370px] lg:w-[410px]"
                   >
                     <div className="text-5xl mb-4">{item.icon}</div>
                     <h3 className="text-2xl font-black text-green-700 mb-4">{item.title}</h3>
@@ -372,26 +408,20 @@ function LandingPage() {
                       {item.bullets.map((point, i) => (
                         <li
                           key={i}
-                          className="
-                            sm:list-disc sm:list-inside
-                            flex items-start
-                            sm:block
-                            pl-0
-                            sm:pl-0
-                            border-l-4 border-green-400 sm:border-0
-                            bg-transparent
-                            px-4 py-1 sm:px-0 sm:py-0
-                            text-xs sm:text-base
-                            mb-1
-                            -ml-3 sm:ml-0
-                            rounded-r-xl
-                            leading-snug
-                            max-w-full
-                            break-words
-                          "
-                          style={i === 0 ? {whiteSpace: 'normal', fontSize: '0.85rem', lineHeight: '1.2', wordBreak: 'break-word'} : {}}
+                          className={
+                            `sm:list-disc sm:list-inside flex items-start sm:block pl-0 sm:pl-0 border-l-4 border-green-400 sm:border-0 bg-transparent px-4 py-1 sm:px-0 sm:py-0 text-xs sm:text-base mb-1 -ml-3 sm:ml-0 rounded-r-xl leading-snug max-w-full break-words ` +
+                            (i === 0 ? 'md:border-0 md:pl-0 md:flex md:items-center md:gap-2 md:text-xs md:whitespace-nowrap md:leading-tight' : '')
+                          }
+                          style={i === 0 ? {fontSize: '0.80rem', lineHeight: '1.1', wordBreak: 'break-word'} : {}}
                         >
-                          <span className="ml-2 sm:ml-0">{point}</span>
+                          {i === 0 ? (
+                            <>
+                              <span className="hidden md:inline text-green-500 text-lg mr-1">✓</span>
+                              <span className="ml-2 sm:ml-0">{point}</span>
+                            </>
+                          ) : (
+                            <span className="ml-2 sm:ml-0">{point}</span>
+                          )}
                         </li>
                       ))}
                     </ul>
@@ -467,9 +497,27 @@ function LandingPage() {
 
           {/* What Our Clients Say Section */}
           <section className="py-6 relative z-10">
-            <div className="max-w-2xl mx-auto px-4 sm:px-8 text-center">
+            <div className="max-w-2xl md:max-w-5xl mx-auto px-4 sm:px-8 text-center">
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-8 text-[#222]">What Our Clients Say</h2>
-              <TestimonialCarousel />
+              {/* Mobile: Carousel, Desktop: Row */}
+              <div className="block md:hidden">
+                <TestimonialCarousel />
+              </div>
+              <div className="hidden md:flex gap-8 justify-center items-stretch">
+                {["They don't just manage our account — they think like owners.",
+                  "They scaled us on Flipkart and Amazon while fixing our returns mess. Legends.",
+                  "They don't just talk numbers — they explain, optimize, and own it."]
+                  .map((text, i) => (
+                    <div
+                      key={i}
+                      className="bg-white border border-green-200 rounded-2xl shadow-2xl px-10 py-12 flex flex-col items-center justify-center min-w-[280px] max-w-[340px] transition-transform duration-300 hover:scale-105 hover:shadow-green-400/30 group"
+                    >
+                      <span className="text-2xl text-green-500 mb-4">"</span>
+                      <span className="text-2xl text-green-900 italic leading-relaxed mb-4">{text}</span>
+                      <span className="block w-10 h-1 bg-green-400 rounded-full mt-4 group-hover:bg-green-500 transition-colors"></span>
+                    </div>
+                  ))}
+              </div>
             </div>
           </section>
 
@@ -497,21 +545,21 @@ function LandingPage() {
           </section>
 
           {/* Pricing Section */}
-          <section className="py-6 sm:py-16 md:py-32 relative z-10" id="pricing">
+          <section className="py-6 sm:py-16 relative z-10" id="pricing">
             <div className="max-w-4xl mx-auto px-4 md:px-8 text-center">
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-6 text-green-700">PRICING</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-[200px] mb-8 sm:ml-[-152px]">
                 {[
                   { name: "Starter? Launch Pad", price: "₹6,999/mo", features: ["For new sellers", "All essentials covered"] },
                   { name: "Scaling? Growth Engine", price: "₹14,999/mo", features: ["For growing brands", "Advanced optimization"] },
                   { name: "Aggressive? Brand Dominator", price: "₹29,999/mo", features: ["For market leaders", "Full-stack growth"] },
                 ].map((plan, idx) => (
-                  <div key={plan.name} className="bg-white border border-green-200 rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400">
+                  <div key={plan.name} className="bg-white border border-green-200 rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center transition-transform duration-300 md:hover:scale-105 md:hover:shadow-green-400/40 hover:shadow-2xl hover:border-green-400 md:w-[350px]">
                     <div className="text-2xl sm:text-3xl font-bold text-green-900 mb-2">{plan.name}</div>
                     <div className="text-3xl sm:text-4xl font-extrabold text-green-500 mb-4">{plan.price}</div>
-                    <ul className="text-green-700 text-base sm:text-lg mb-4 pl-0">
+                    <ul className="text-green-700 text-base sm:text-lg md:text-base mb-4 pl-0">
                       {plan.features.map((f, i) => (
-                        <li key={i} className="flex items-start">
+                        <li key={i} className="flex items-start md:text-base md:whitespace-nowrap">
                           <span className="text-green-500 mr-2 mt-0.5">✓</span>
                           <span>{f}</span>
                         </li>
@@ -531,17 +579,41 @@ function LandingPage() {
           </section>
 
           {/* Final CTA Section */}
-          <section className="py-10 sm:py-20 md:py-28 bg-green-50 border-t-2 border-green-400 text-center" id="final-cta">
-            <div className="max-w-2xl mx-auto px-4 sm:px-8 md:px-12">
-              <h2 className="text-lg sm:text-xl font-bold text-green-500 uppercase tracking-widest mb-2">CONVERT THEM NOW</h2>
-              <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-green-700 mb-4">Don't Let Another Month Burn Your Budget.</h1>
-              <p className="text-green-900 mb-6 text-base sm:text-lg md:text-xl leading-relaxed">You've already spent money on platforms.<br/>Now, spend intelligently with people who care — and who convert.</p>
-              <button className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-6 py-3 sm:px-10 sm:py-5 sm:text-xl md:px-16 md:py-8 md:text-3xl rounded-2xl text-lg sm:text-2xl md:text-3xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center mt-2 mb-4 mx-auto">
-                <span className="inline-block mr-3 text-2xl sm:mr-4 sm:text-3xl">💡</span>
-                Get My Free Growth Audit Now →
-              </button>
-              <div className="text-green-400 text-sm sm:text-base max-w-2xl leading-relaxed mt-2 mx-auto">
-                🔍 Listings. 📊 Ads. 📦 Products. 🎯 Strategy.
+          <section className="py-10 sm:py-20 md:py-28 bg-green-50 border-t-2 border-green-400" id="final-cta">
+            <div className="max-w-5xl mx-auto px-4 sm:px-8 md:px-12 flex flex-col md:flex-row items-center md:items-center md:justify-between gap-8 md:gap-12">
+              <div className="flex-1 text-center md:text-left">
+                <h2 className="text-lg sm:text-xl font-bold text-green-500 uppercase tracking-widest mb-2">CONVERT THEM NOW</h2>
+                <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-green-700 mb-4">Don't Let Another Month Burn Your Budget.</h1>
+                <p className="text-green-900 mb-6 text-base sm:text-lg md:text-xl leading-relaxed">You've already spent money on platforms.<br/>Now, spend intelligently with people who care — and who convert.</p>
+              </div>
+              <div className="flex-1 flex flex-col items-center md:items-end w-full md:w-auto">
+                <button
+                  className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-8 py-3 sm:px-12 sm:py-4 md:px-16 md:py-5 text-base sm:text-xl md:text-2xl rounded-2xl flex flex-row items-center justify-center shadow-xl hover:scale-105 hover:shadow-green-400/50 transition-all duration-500 relative overflow-hidden animate-ctaPulse min-w-[220px]"
+                  style={{ minHeight: '48px', boxShadow: '0 8px 32px 0 rgba(34,197,94,0.18)' }}
+                >
+                  <span className="inline-block mr-3 text-2xl md:text-3xl animate-bounce">💡</span>
+                  <span className="text-center leading-tight">Get My Free Growth Audit Now →</span>
+                  <span className="absolute inset-0 rounded-2xl pointer-events-none group-hover:animate-glowPulse"></span>
+                </button>
+                <style>{`
+                  @keyframes ctaPulse {
+                    0%, 100% { box-shadow: 0 8px 32px 0 rgba(34,197,94,0.18); }
+                    50% { box-shadow: 0 0 48px 8px rgba(34,197,94,0.25); }
+                  }
+                  .animate-ctaPulse {
+                    animation: ctaPulse 2.5s infinite;
+                  }
+                  @keyframes glowPulse {
+                    0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.18); }
+                    50% { box-shadow: 0 0 32px 8px rgba(34,197,94,0.25); }
+                  }
+                  .group:hover .animate-glowPulse {
+                    animation: glowPulse 1.2s infinite;
+                  }
+                `}</style>
+                <div className="text-green-400 text-sm sm:text-base max-w-2xl leading-relaxed mt-2 md:text-right">
+                  🔍 Listings. 📊 Ads. 📦 Products. 🎯 Strategy.
+                </div>
               </div>
             </div>
           </section>
