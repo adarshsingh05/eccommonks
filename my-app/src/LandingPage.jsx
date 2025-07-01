@@ -43,9 +43,7 @@ function LandingPage() {
             <div className="w-40 h-40 bg-green-400/10 rounded-full blur-xl"></div>
           </ScrollParallax>
         </div>
-
         <Navbar />
-
         <main className="bg-white text-[#222] overflow-x-hidden">
           <h1 className="sr-only">We're Not Just an Agency. We're Your Ecommerce Growth Partner.</h1>
           {/* Hero Section with Parallax */}
