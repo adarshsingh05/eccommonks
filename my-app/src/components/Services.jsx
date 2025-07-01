@@ -171,7 +171,7 @@ function ServicesPage() {
                 {
                   icon: "🛒",
                   title: "Marketplace Management",
-                  subtitle: "Amazon | Flipkart | Myntra | Meesho | Nykaa | Jiomart",
+                  subtitle: "Amazon | Flipkart | Myntra | Meesho | Nykaa | Jiomart | Shopify",
                   bullets: [
                     "Listing creation + SEO copywriting",
                     "A+ content, infographics, and videos",

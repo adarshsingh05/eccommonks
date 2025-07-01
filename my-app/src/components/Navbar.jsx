@@ -46,7 +46,7 @@ export default function Navbar() {
                 <img
                   src="/logo.png"
                   alt="The Ecom Monks"
-                  className="h-18 w-20 max-w-[80px] sm:h-16 sm:max-w-[100px] md:h-20 md:max-w-[120px] lg:h-24 lg:max-w-[140px] object-contain transition-transform duration-200 group-hover:scale-105"
+                  className="h-18 w-18 ml-[-8px] sm:ml-0 max-w-[80px] sm:h-16 sm:max-w-[100px] md:h-20 md:max-w-[120px] lg:h-24 lg:max-w-[140px] object-contain transition-transform duration-200 group-hover:scale-105"
                   style={{ display: 'block' }}
                 />
                 {/* Hide all text next to logo on mobile */}
@@ -62,7 +62,7 @@ export default function Navbar() {
               className="lg:hidden text-green-500 p-3 flex-shrink-0 ml-auto"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              <div className="w-8 h-8 flex flex-col justify-center items-center">
+              <div className="w-3 h-3 mb-2 flex flex-col justify-center items-center">
                 <span
                   className={`bg-green-500 block transition-all duration-500 ease-out h-1 w-8 rounded-sm ${
                     isMobileMenuOpen

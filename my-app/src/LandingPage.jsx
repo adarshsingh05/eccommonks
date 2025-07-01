@@ -85,7 +85,7 @@ function LandingPage() {
           </ParallaxSection>
 
           {/* Sliding Banner: Marketplace Management */}
-          <div className="mt-[-1.5rem] sm:mt-[-2.5rem]">
+          <div className="mt-8 sm:mt-10">
             <RunningText text="End to End Marketplace management • Paid Ads • Social Media Marketing • Creative Support • Influencer Marketing" speed={15} />
           </div>
 
@@ -118,7 +118,7 @@ function LandingPage() {
                     They're either overloaded, unaccountable, or both.
                   </p>
                   {/* Pain Cards */}
-                  <div className="flex flex-col sm:flex-row gap-6 w-full mb-10 justify-center md:justify-start">
+                  <div className="flex flex-row md:flex-col gap-2 sm:gap-6 w-full mb-10 justify-center md:justify-start">
                     {[
                       "My ads are running, but no one's watching them.",
                       "My listings are live, but no one's clicking.",
@@ -126,9 +126,9 @@ function LandingPage() {
                     ].map((pain, idx) => (
                       <div
                         key={idx}
-                        className="flex-1 min-w-[140px] bg-gradient-to-br from-green-200/80 to-green-400/40 rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center text-center hover:animate-shake"
+                        className="w-[100px] sm:w-[140px] md:w-auto bg-gradient-to-br from-green-200/80 to-green-400/40 rounded-2xl shadow-lg p-2 sm:p-4 flex flex-col items-center justify-center text-center hover:animate-shake mx-0"
                       >
-                        <span className="text-sm sm:text-base font-bold text-green-900 leading-snug">{pain}</span>
+                        <span className="text-xs sm:text-sm font-bold text-green-900 leading-snug">{pain}</span>
                       </div>
                     ))}
                   </div>
@@ -318,7 +318,7 @@ function LandingPage() {
                     icon: '🛒',
                     title: 'Platform Management',
                     bullets: [
-                      'Amazon | Flipkart | Myntra | Meesho | Nykaa | Jiomart',
+                      'Amazon | Flipkart | Myntra | Meesho | Nykaa | Jiomart | Shopify',
                       'Listings, A+ Content, Videos, Reviews, Safe-T Claims, Category Approvals',
                     ],
                   },
@@ -404,7 +404,7 @@ function LandingPage() {
           </section>
 
           {/* Sliding Banner: Services */}
-          <RunningText text="Platform Management  •  Performance Marketing  •  Creative Studio  •  Quick Commerce Blitz  •  Social Media  •  Influencer Marketing" speed={15} />
+          <RunningText text="Platform Management (Amazon | Flipkart | Myntra | Meesho | Nykaa | Jiomart | Shopify)  •  Performance Marketing  •  Creative Studio  •  Quick Commerce Blitz  •  Social Media  •  Influencer Marketing" speed={15} />
 
           {/* Proof/Case Studies Section */}
           <section className="py-6 sm:py-16 md:py-32 relative z-10 mt-6">
