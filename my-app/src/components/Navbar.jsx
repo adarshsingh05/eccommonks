@@ -42,18 +42,20 @@ export default function Navbar() {
           {/* Logo and Hamburger */}
           <div className="flex items-center w-full">
             <div className="flex items-center min-w-0">
-              <img
-                src="/logo.png"
-                alt="The Ecom Monks"
-                className="h-18 w-20 max-w-[80px] sm:h-16 sm:max-w-[100px] md:h-20 md:max-w-[120px] lg:h-24 lg:max-w-[140px] object-contain"
-                style={{ display: 'block' }}
-              />
-              {/* Hide all text next to logo on mobile */}
-              <div className="hidden sm:flex whitespace-nowrap text-2xl md:text-3xl lg:text-4xl font-extrabold bg-white px-2 py-1 rounded flex-shrink min-w-0 items-center truncate max-w-[180px] md:max-w-xs lg:max-w-md z-50" style={{color: '#111', boxShadow: '0 0 0 2px #fff'}}>
-                <span className="text-green-900">THE</span>
-                <span className="text-green-900 ml-2 md:ml-3">ECOM</span>
-                <span className="text-green-900 ml-2 md:ml-3">MONKS</span>
-              </div>
+              <a href="/" className="flex items-center min-w-0 group" aria-label="Go to home page">
+                <img
+                  src="/logo.png"
+                  alt="The Ecom Monks"
+                  className="h-18 w-20 max-w-[80px] sm:h-16 sm:max-w-[100px] md:h-20 md:max-w-[120px] lg:h-24 lg:max-w-[140px] object-contain transition-transform duration-200 group-hover:scale-105"
+                  style={{ display: 'block' }}
+                />
+                {/* Hide all text next to logo on mobile */}
+                <div className="hidden sm:flex whitespace-nowrap text-base sm:text-2xl md:text-3xl lg:text-4xl font-extrabold bg-white px-2 py-1 rounded flex-shrink min-w-0 items-center truncate max-w-[120px] sm:max-w-[180px] md:max-w-xs lg:max-w-md z-50" style={{color: '#111', boxShadow: '0 0 0 2px #fff'}}>
+                  <span className="text-green-900 ml-1 sm:ml-0">THE</span>
+                  <span className="text-green-900 ml-2 md:ml-3">ECOM</span>
+                  <span className="text-green-900 ml-2 md:ml-3">MONKS</span>
+                </div>
+              </a>
             </div>
             {/* Hamburger Button (right) */}
             <button

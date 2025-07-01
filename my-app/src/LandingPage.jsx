@@ -5,6 +5,7 @@ import ParallaxSection from "./components/ParallaxSection";
 import ScrollParallax from "./components/ScrollParallax";
 import ThreeDCard from "./components/ThreeDCard";
 import { Helmet } from "react-helmet";
+import React, { useState, useEffect } from "react";
 
 function LandingPage() {
   return (
@@ -84,7 +85,9 @@ function LandingPage() {
           </ParallaxSection>
 
           {/* Sliding Banner: Marketplace Management */}
-          <RunningText text="Marketplace Management • Ads • Creatives • Social • Influencers" speed={15} />
+          <div className="mt-[-1.5rem] sm:mt-[-2.5rem]">
+            <RunningText text="End to End Marketplace management • Paid Ads • Social Media Marketing • Creative Support • Influencer Marketing" speed={15} />
+          </div>
 
           {/* Pain Points Section */}
           <section className="py-6 sm:py-16 md:py-32 relative z-10 mt-6" id="services">
@@ -116,12 +119,15 @@ function LandingPage() {
                   </p>
                   {/* Pain Cards */}
                   <div className="flex flex-col sm:flex-row gap-6 w-full mb-10 justify-center md:justify-start">
-                    {["My ads are running, but no one's watching them.", "My listings are live, but no one's clicking.", "My brand is good, but no one knows it exists."].map((pain, idx) => (
+                    {[
+                      "My ads are running, but no one's watching them.",
+                      "My listings are live, but no one's clicking.",
+                      "My brand is good, but no one knows it exists."
+                    ].map((pain, idx) => (
                       <div
                         key={idx}
-                        className="flex-1 min-w-[220px] bg-gradient-to-br from-green-200/80 to-green-400/40 rounded-2xl shadow-lg p-8 flex flex-col items-center justify-center text-center hover:animate-shake"
+                        className="flex-1 min-w-[140px] bg-gradient-to-br from-green-200/80 to-green-400/40 rounded-2xl shadow-lg p-4 flex flex-col items-center justify-center text-center hover:animate-shake"
                       >
-                        <span className="text-4xl mb-4">😩</span>
                         <span className="text-sm sm:text-base font-bold text-green-900 leading-snug">{pain}</span>
                       </div>
                     ))}
@@ -143,7 +149,10 @@ function LandingPage() {
               <div className="mt-14 p-10 mx-auto bg-green-400/20 rounded-3xl border-2 border-green-400/30 max-w-5xl text-center">
                 <p className="text-xl md:text-2xl font-bold">
                   <span className="text-green-500">And let's not forget:</span><br/>
-                  <span className="text-[#222]">Most agencies don't care about your ROI. They just want retainers, not responsibility.</span>
+                  <span className="text-[#222]">
+                    Most agencies don't care about your ROI. <span className='text-red-600'>They just want retainers,</span><br/>
+                    <span className='font-bold'>Not Responsibility.</span>
+                  </span>
                 </p>
               </div>
             </div>
@@ -173,8 +182,17 @@ function LandingPage() {
                 <ThreeDCard className="bg-green-900/40 p-10 rounded-3xl h-full flex flex-col items-center">
                   <h3 className="text-3xl font-black text-green-500 mb-8">We Do This</h3>
                   <ul className="space-y-6 text-left">
-                    {["One team, 10 clients only per cohort", "Behavioral-copywriting + USP hooks", "Real-time dashboards + daily ROAS tuning", "Weekly calls + seller-first mindset", "Creative storytelling + influencer buzz"].map((item, idx) => (
-                      <li key={idx} className="text-xl text-[#222] flex items-center"><span className="mr-3">✅</span>{item}</li>
+                    {[
+                      "One team, 10 clients only per cohort",
+                      "Behavioral-copywriting + USP hooks",
+                      "Real-time dashboards + daily ROAS tuning",
+                      "Weekly calls + seller-first mindset",
+                      "Creative storytelling + influencer buzz"
+                    ].map((item, idx) => (
+                      <li key={idx} className="text-xl text-[#222] flex items-center">
+                        <span className="mr-3">✅</span>
+                        <span className="whitespace-normal break-words max-w-xs sm:max-w-none">{item}</span>
+                      </li>
                     ))}
                   </ul>
                 </ThreeDCard>
@@ -196,8 +214,11 @@ function LandingPage() {
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-6 sm:mb-6 md:mb-10 text-[#222]">
                 OUR UNIQUE FRAMEWORKS
               </h2>
-              <p className="text-2xl sm:text-3xl text-green-500 mb-16 font-bold">
-                We don't "try." We follow science-backed frameworks that actually grow businesses.
+              <p className="text-xl sm:text-3xl text-green-500 mb-2 font-bold">
+                We don't "try", We follow
+              </p>
+              <p className="text-xl sm:text-3xl text-green-500 mb-8 sm:mb-16 font-bold">
+                science-based frameworks that actually grow
               </p>
               <div className="flex justify-center">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full">
@@ -262,11 +283,16 @@ function LandingPage() {
                       className="bg-white border border-green-200 rounded-3xl shadow-xl p-10 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard"
                     >
                       <div className="text-5xl mb-4">{item.icon}</div>
-                      <h3 className="text-2xl font-black text-green-700 mb-4 text-center">{item.title}</h3>
+                      <h3 className="text-base sm:text-lg md:text-2xl font-black text-green-700 mb-4 text-center leading-tight break-words max-w-xs mx-auto sm:max-w-none" style={{display: 'block', overflowWrap: 'break-word'}}>
+                        {item.title}
+                      </h3>
                       {item.intro && <div className="text-green-700 font-semibold mb-2">{item.intro}</div>}
-                      <ul className="w-full pl-6 text-left text-green-700 space-y-2 list-disc">
+                      <ul className="w-full pl-0 text-left text-green-700 space-y-2">
                         {item.bullets.map((point, i) => (
-                          <li key={i}>{point}</li>
+                          <li key={i} className="flex items-start text-sm sm:text-base">
+                            <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                            <span className="break-words">{point}</span>
+                          </li>
                         ))}
                       </ul>
                     </ThreeDCard>
@@ -346,7 +372,29 @@ function LandingPage() {
                     <h3 className="text-2xl font-black text-green-700 mb-4">{item.title}</h3>
                     <ul className="w-full pl-6 text-left text-green-700 space-y-2 list-disc list-inside">
                       {item.bullets.map((point, i) => (
-                        <li key={i}>{point}</li>
+                        <li
+                          key={i}
+                          className="
+                            sm:list-disc sm:list-inside
+                            flex items-start
+                            sm:block
+                            pl-0
+                            sm:pl-0
+                            border-l-4 border-green-400 sm:border-0
+                            bg-transparent
+                            px-4 py-1 sm:px-0 sm:py-0
+                            text-xs sm:text-base
+                            mb-1
+                            -ml-3 sm:ml-0
+                            rounded-r-xl
+                            leading-snug
+                            max-w-full
+                            break-words
+                          "
+                          style={i === 0 ? {whiteSpace: 'normal', fontSize: '0.85rem', lineHeight: '1.2', wordBreak: 'break-word'} : {}}
+                        >
+                          <span className="ml-2 sm:ml-0">{point}</span>
+                        </li>
                       ))}
                     </ul>
                   </ThreeDCard>
@@ -372,7 +420,7 @@ function LandingPage() {
                   {
                     icon: '📊',
                     title: 'Fashion Accessories Brand',
-                    bullets: [
+                    points: [
                       'Increased ROAS from 3.4× → 10.3× in 150 days',
                       'Cut ACOS down to 19.2% while doubling Amazon revenue',
                     ],
@@ -380,36 +428,39 @@ function LandingPage() {
                   {
                     icon: '🧼',
                     title: 'Heritage Skincare Brand',
-                    bullets: [
+                    points: [
                       'Boosted online ROAS to 4.2× while keeping ACOS stable across 3 platforms',
                     ],
                   },
                   {
                     icon: '🧘‍♀️',
                     title: 'Health & Wellness Brand',
-                    bullets: [
+                    points: [
                       'Drove a 30%+ revenue jump in 3 months via telemedicine + q-commerce integrations',
                     ],
                   },
                   {
                     icon: '🛒',
                     title: 'D2C Grocery Startup',
-                    bullets: [
+                    points: [
                       'Reduced CAC by 18% and doubled repeat order retention with funnel fixes',
                     ],
                   },
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="bg-white border border-green-200 rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 group"
+                    className="bg-white border border-green-200 rounded-2xl shadow-xl p-6 sm:p-8 flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 group"
                   >
-                    <span className="text-4xl mb-4">{item.icon}</span>
-                    <div className="font-bold text-green-900 text-xl mb-2">{item.title}</div>
-                    <ul className="text-green-700 text-base list-disc list-inside text-left">
-                      {item.bullets.map((point, i) => (
-                        <li key={i}>{point}</li>
+                    <span className="text-4xl mb-3">{item.icon}</span>
+                    <div className="font-bold text-green-900 text-lg sm:text-xl mb-2 text-center">{item.title}</div>
+                    <div className="flex flex-col gap-2 w-full mt-2">
+                      {item.points.map((point, i) => (
+                        <div key={i} className="flex items-start gap-2 w-full">
+                          <span className="text-green-500 text-lg mt-0.5">✔️</span>
+                          <span className="text-green-700 text-sm sm:text-base text-left leading-snug">{point}</span>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -418,50 +469,31 @@ function LandingPage() {
 
           {/* What Our Clients Say Section */}
           <section className="py-6 relative z-10">
-            <div className="max-w-7xl mx-auto px-8 lg:px-12 text-center">
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 sm:mb-8 md:mb-10 text-[#222] flex items-center justify-center gap-3">
-                <span className="text-green-500 text-3xl"></span> What Our Clients Say
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div className="bg-white border border-green-200 rounded-2xl shadow-xl p-8 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-fade-in-up group">
-                  <span className="text-green-500 text-4xl mb-4 group-hover:scale-110 transition-transform">“</span>
-                  <span className="text-xl sm:text-2xl text-green-900 italic leading-relaxed">They don't just manage our account — they think like owners.</span>
-                </div>
-                <div className="bg-white border border-green-200 rounded-2xl shadow-xl p-8 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-fade-in-up group">
-                  <span className="text-green-500 text-4xl mb-4 group-hover:scale-110 transition-transform">“</span>
-                  <span className="text-xl sm:text-2xl text-green-900 italic leading-relaxed">Finally found an agency that listens, acts, and shows up every week.</span>
-                </div>
-                <div className="bg-white border border-green-200 rounded-2xl shadow-xl p-8 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-fade-in-up group">
-                  <span className="text-green-500 text-4xl mb-4 group-hover:scale-110 transition-transform">“</span>
-                  <span className="text-xl sm:text-2xl text-green-900 italic leading-relaxed">They scaled us on Flipkart and Amazon while fixing our returns mess. Legends.</span>
-                </div>
-                <div className="bg-white border border-green-200 rounded-2xl shadow-xl p-8 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-fade-in-up group">
-                  <span className="text-green-500 text-4xl mb-4 group-hover:scale-110 transition-transform">“</span>
-                  <span className="text-xl sm:text-2xl text-green-900 italic leading-relaxed">They don't just talk numbers — they explain, optimize, and own it.</span>
-                </div>
-                <div className="bg-white border border-green-200 rounded-2xl shadow-xl p-8 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-fade-in-up group">
-                  <span className="text-green-500 text-4xl mb-4 group-hover:scale-110 transition-transform">“</span>
-                  <span className="text-xl sm:text-2xl text-green-900 italic leading-relaxed">Their ad dashboards are magic. So clean, so real.</span>
-                </div>
-              </div>
+            <div className="max-w-2xl mx-auto px-4 sm:px-8 text-center">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-8 text-[#222]">What Our Clients Say</h2>
+              <TestimonialCarousel />
             </div>
           </section>
 
           {/* Founder's Note Section */}
-          <section className="py-16 relative z-10">
+          <section className="py-12 sm:py-16 md:py-20 relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-400/10 to-green-500/10"></div>
             </div>
-            <div className="max-w-4xl mx-auto px-4">
-              <div className="bg-white rounded-3xl border border-green-200 shadow-xl p-10 md:p-16" style={{ fontFamily: 'Inter, Montserrat, Segoe UI, Arial, sans-serif' }}>
-                <h2 className="text-2xl sm:text-3xl font-extrabold mb-6 text-green-900 text-center">FOUNDER'S NOTE – FROM THE DESK OF ARUN R. CHACHAN</h2>
-                <div className="space-y-6 text-sm sm:text-base text-green-900/90 leading-relaxed text-center">
-                  <p>I've been where you are — as a brand founder, a growth head, a seller.<br/>And honestly? Most service providers care more about ticking boxes than moving revenue.</p>
-                  <p>Founders and sellers were stuck with average agencies, lean SPNs, or freelancers who lacked ownership. That's why I created The Ecom Monks — to be the agency I wish existed when I was on the other side.</p>
-                  <p>We care. We respond. We're not perfect. But we're obsessed with performance, transparent with feedback, and driven by our clients' success. We bring 12+ years of data-backed, funnel-obsessed, copy-smart execution to the table. Whether you're doing ₹50,000 or ₹5 crore a month — we bring clarity, firepower, and a no-BS approach that actually gets results.</p>
+            <div className="max-w-3xl lg:max-w-4xl mx-auto px-2 sm:px-4 md:px-0">
+              <div className="bg-white rounded-2xl border-l-8 border-green-400 shadow-xl p-6 sm:p-10 md:p-12 flex flex-col gap-4 sm:gap-6 relative" style={{ fontFamily: 'Inter, Montserrat, Segoe UI, Arial, sans-serif' }}>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-2xl sm:text-3xl">🧑‍💼</span>
+                  <h2 className="text-lg sm:text-2xl font-extrabold text-green-700">FOUNDER'S NOTE – FROM THE DESK OF ARUN R. CHACHAN</h2>
                 </div>
-                <div className="mt-8 text-green-600 font-semibold italic text-xl sm:text-2xl text-center">We won't just manage your account. We'll scale your success.</div>
-                <div className="mt-8 text-right text-green-700 font-bold text-sm sm:text-base italic">— Arun R. Chachan, Founder, The Ecom Monks</div>
+                <div className="text-green-900/90 text-sm sm:text-base leading-relaxed space-y-4">
+                  <p className="mb-2"><span className="font-semibold">I've been where you are — as a brand founder, a growth head, a seller.</span><br/><span className="font-semibold">And honestly? Most service providers care more about ticking boxes than moving revenue.</span></p>
+                  <p className="mb-2">Founders and sellers were stuck with average agencies, lean SPNs, or freelancers who lacked ownership. <span className="font-semibold">That's why I created The Ecom Monks — to be the agency I wish existed when I was on the other side.</span></p>
+                  <p className="mb-2"><span className="font-semibold">We care. We respond. We're not perfect. But we're obsessed with performance, transparent with feedback, and driven by our clients' success.</span></p>
+                  <p className="mb-2">We bring <span className="font-semibold">12+ years of data-backed, funnel-obsessed, copy-smart execution</span> to the table. Whether you're doing ₹50,000 or ₹5 crore a month — we bring clarity, firepower, and a no-BS approach that actually gets results.</p>
+                </div>
+                <div className="mt-4 sm:mt-6 text-green-600 font-semibold italic text-base sm:text-lg text-left pl-2 border-l-4 border-green-300">We won't just manage your account. We'll scale your success.</div>
+                <div className="mt-4 text-green-700 font-bold text-xs sm:text-sm italic text-right pr-2">— Arun R. Chachan, Founder, The Ecom Monks</div>
               </div>
             </div>
           </section>
@@ -479,34 +511,39 @@ function LandingPage() {
                   <div key={plan.name} className="bg-white border border-green-200 rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400">
                     <div className="text-2xl sm:text-3xl font-bold text-green-900 mb-2">{plan.name}</div>
                     <div className="text-3xl sm:text-4xl font-extrabold text-green-500 mb-4">{plan.price}</div>
-                    <ul className="text-green-700 text-base sm:text-lg list-disc list-inside mb-4">
-                      {plan.features.map((f, i) => <li key={i}>{f}</li>)}
+                    <ul className="text-green-700 text-base sm:text-lg mb-4 pl-0">
+                      {plan.features.map((f, i) => (
+                        <li key={i} className="flex items-start">
+                          <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                          <span>{f}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 ))}
               </div>
               <div className="mt-6 text-green-900 font-semibold text-base sm:text-lg">👉 Or plug & play:</div>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-2">
-                {['Only Ads?', 'Only Listing Fixes?', 'Only Influencers?'].map((item, idx) => (
-                  <span key={item} className="bg-green-100 text-green-700 px-4 py-2 rounded-xl font-bold text-sm sm:text-base shadow-md">{item}</span>
-                ))}
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center mt-2 w-full items-center">
+                <span className="bg-green-100 text-green-700 px-4 py-2 rounded-xl font-bold text-sm sm:text-base shadow-md w-full sm:w-auto text-center">• Only Ads?</span>
+                <span className="bg-green-100 text-green-700 px-4 py-2 rounded-xl font-bold text-sm sm:text-base shadow-md w-full sm:w-auto text-center">• Only Listing Fixes?</span>
+                <span className="bg-green-100 text-green-700 px-4 py-2 rounded-xl font-bold text-sm sm:text-base shadow-md w-full sm:w-auto text-center">• Only Influencers?</span>
               </div>
-              <div className="mt-2 text-green-500 text-sm sm:text-base">We've got à-la-carte options too.</div>
+              <div className="mt-2 text-green-500 text-sm sm:text-base text-center">We've got à-la-carte options too.</div>
             </div>
           </section>
 
           {/* Final CTA Section */}
-          <section className="py-8 sm:py-16 md:py-24 bg-green-50 border-t-2 border-green-400 text-center">
-            <div className="max-w-2xl mx-auto px-4 md:px-8">
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-green-700 mb-4">Don't Let Another Month Burn Your Budget.</h2>
-              <p className="text-lg sm:text-xl md:text-2xl text-green-900 mb-6">You've already spent money on platforms. Now, spend intelligently with people who care — and who convert.</p>
-              <button className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-4 py-2 text-base sm:px-10 sm:py-5 sm:text-xl md:px-16 md:py-8 md:text-3xl rounded-2xl text-lg sm:text-2xl md:text-3xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center mt-2 animate-bounce mb-4 mx-auto w-[calc(100%-22px)] sm:w-auto">
-                <span className="group-hover:animate-bounce inline-block mr-3 text-2xl sm:mr-4 sm:text-3xl">💡</span>
-                Get My Free Growth Audit Now
+          <section className="py-10 sm:py-20 md:py-28 bg-green-50 border-t-2 border-green-400 text-center" id="final-cta">
+            <div className="max-w-2xl mx-auto px-4 sm:px-8 md:px-12">
+              <h2 className="text-lg sm:text-xl font-bold text-green-500 uppercase tracking-widest mb-2">CONVERT THEM NOW</h2>
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-green-700 mb-4">Don't Let Another Month Burn Your Budget.</h1>
+              <p className="text-green-900 mb-6 text-base sm:text-lg md:text-xl leading-relaxed">You've already spent money on platforms.<br/>Now, spend intelligently with people who care — and who convert.</p>
+              <button className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-6 py-3 sm:px-10 sm:py-5 sm:text-xl md:px-16 md:py-8 md:text-3xl rounded-2xl text-lg sm:text-2xl md:text-3xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center mt-2 mb-4 mx-auto">
+                <span className="inline-block mr-3 text-2xl sm:mr-4 sm:text-3xl">💡</span>
+                Get My Free Growth Audit Now →
               </button>
               <div className="text-green-400 text-sm sm:text-base max-w-2xl leading-relaxed mt-2 mx-auto">
-                🔍 Listings. 📊 Ads. 📦 Products. 🎯 Strategy.<br/>
-                <span className="font-bold text-green-500">Delivered in 48 hours. No pushy sales. Just value.</span>
+                🔍 Listings. 📊 Ads. 📦 Products. 🎯 Strategy.
               </div>
             </div>
           </section>
@@ -515,6 +552,58 @@ function LandingPage() {
         <Footer />
       </div>
     </>
+  );
+}
+
+// Animation helper for sliding testimonials
+const SLIDE_ANIMATION = {
+  enter: 'opacity-0 translate-x-10',
+  active: 'opacity-100 translate-x-0',
+  exit: 'opacity-0 -translate-x-10',
+};
+
+function TestimonialCarousel() {
+  const testimonials = [
+    "They don't just manage our account — they think like owners.",
+    "They scaled us on Flipkart and Amazon while fixing our returns mess. Legends.",
+    "They don't just talk numbers — they explain, optimize, and own it.",
+  ];
+  const [index, setIndex] = React.useState(0);
+  const [prevIndex, setPrevIndex] = React.useState(0);
+  const [direction, setDirection] = React.useState(1); // 1 for next, -1 for prev (future-proof)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPrevIndex(index);
+      setDirection(1);
+      setIndex((prev) => (prev + 1) % testimonials.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, [index, testimonials.length]);
+  return (
+    <div className="relative h-32 sm:h-36 flex items-center justify-center overflow-hidden">
+      {testimonials.map((text, i) => {
+        let base = 'absolute left-0 right-0 mx-auto min-w-full transition-all duration-700 ease-in-out';
+        let state = '';
+        if (i === index) {
+          state = 'opacity-100 z-10 translate-x-0';
+        } else if (i === prevIndex) {
+          state = `opacity-0 z-0 ${direction === 1 ? '-translate-x-10' : 'translate-x-10'}`;
+        } else {
+          state = 'opacity-0 z-0 translate-x-10';
+        }
+        return (
+          <div
+            key={i}
+            className={`${base} ${state}`}
+            style={{ pointerEvents: i === index ? 'auto' : 'none' }}
+          >
+            <div className="bg-white border border-green-200 rounded-2xl shadow-xl px-6 py-8 sm:px-10 sm:py-10 flex flex-col items-center justify-center min-h-[6rem] sm:min-h-[7rem]">
+              <span className="text-xl sm:text-2xl text-green-900 italic leading-relaxed">{text}</span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
   );
 }
 

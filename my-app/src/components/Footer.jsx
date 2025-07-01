@@ -7,10 +7,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-20">
           {/* Brand */}
           <div className="lg:col-span-2 flex flex-col items-center sm:items-start justify-center h-full mb-8 sm:mb-0">
-            <div className="text-3xl sm:text-5xl font-extrabold mb-4 sm:mb-8 text-green-700 text-center sm:text-left ml-[-60px]">
-              <span className="text-white">THE</span>
-              <span className="text-yellow-400 ml-2 sm:ml-3">ECOM</span>
-              <span className="text-blue-600 ml-2 sm:ml-3">MONKS</span>
+            <div className="flex items-center mb-4 sm:mb-8">
+              <img src="/logo.png" alt="THE ECOM MONKS Logo" className="w-12 h-12 sm:w-16 sm:h-16 mr-3" />
+              <span className="text-3xl sm:text-5xl font-extrabold text-green-700 tracking-tight">THE ECOM MONKS</span>
             </div>
             <p className="text-green-900 text-base sm:text-xl mb-6 sm:mb-10 leading-relaxed font-semibold text-center sm:text-left flex items-center justify-center">
               Plot No. GH02, Sector-4, Greater Noida West- 201309
@@ -32,33 +31,30 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="mb-8 sm:mb-0 flex flex-col items-center sm:items-start">
-            <h3 className="text-xl sm:text-3xl font-extrabold text-green-900 mb-6 sm:mb-10">
-              Quick Links
-            </h3>
-            <ul className="space-y-4 sm:space-y-6">
+          <div className="mb-8 sm:mb-0 flex flex-col items-center sm:items-start w-full">
+            <h3 className="text-xl sm:text-3xl font-extrabold text-green-900 mb-6 sm:mb-10">Quick Links</h3>
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 sm:gap-y-4">
               {[
-                "Home",
-                "Our Services",
-                "Our Frameworks",
-                "Why Us",
-                "Contact Us",
-                "How it Works",
-                "About Us",
-                "Legal",
-                "Privacy and Policy",
-                "Terms and conditions",
-              ].map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
-                    className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-xl font-medium hover:translate-x-2 sm:hover:translate-x-4 transform block cursor-pointer"
-                  >
-                    → {link}
-                  </a>
-                </li>
+                { label: "Home", href: "#" },
+                { label: "Our Services", href: "#services" },
+                { label: "Our Frameworks", href: "#frameworks" },
+                { label: "Why Us", href: "#whyus" },
+                { label: "Contact Us", href: "#contact" },
+                { label: "How it Works", href: "#howitworks" },
+                { label: "About Us", href: "#about" },
+                { label: "FAQs", href: "#faqs" },
+                { label: "Privacy Policy", href: "#privacy" },
+                { label: "Terms and Conditions", href: "#terms" },
+              ].map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-xl font-medium block py-1"
+                >
+                  {item.label}
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Contact */}
@@ -71,13 +67,6 @@ export default function Footer() {
               >
                 <Mail className="inline w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 align-text-bottom" />
                 hello@thecommonks.com
-              </a>
-              <a
-                href="https://www.theecommonks.com"
-                className="block text-green-700 hover:text-green-400 transition-colors duration-500 text-base sm:text-xl font-medium cursor-pointer"
-              >
-                <Globe className="inline w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 align-text-bottom" />
-                www.theecommonks.com
               </a>
             </div>
           </div>

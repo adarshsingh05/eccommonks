@@ -16,6 +16,7 @@ import {
   Sparkles,
 } from "lucide-react"
 
+const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
 const BRAND_MOMENTS = [
   {
     type: "logo-reveal",
@@ -24,7 +25,7 @@ const BRAND_MOMENTS = [
   {
     type: "tagline",
     text: "Scale Commerce the Conscious Way",
-    duration: 2000,
+    duration: isMobile ? 3500 : 2000,
   },
   {
     type: "brand-promise",
@@ -34,7 +35,7 @@ const BRAND_MOMENTS = [
   {
     type: "stats-burst",
     stats: [
-      { value: "₹50L+", label: "Revenue Generated", icon: BarChart3 },
+      { value: "₹15cr+", label: "Revenue Generated", icon: BarChart3 },
       { value: "500+", label: "Brands Scaled", icon: Users },
       { value: "10.3×", label: "Maximum ROAS", icon: TrendingUp },
     ],
@@ -178,19 +179,19 @@ export default function StylishBrandLoader({ onComplete }) {
         return (
           <div className="text-center animate-logo-entrance">
             <div className="relative mb-8">
-              <div className="w-40 h-40 bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto shadow-2xl animate-logo-mega-glow relative overflow-hidden">
+              <div className="w-24 h-24 sm:w-40 sm:h-40 bg-gradient-to-br from-green-400 via-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto shadow-2xl animate-logo-mega-glow relative overflow-hidden">
                 {/* Logo image replacing EM */}
                 <img
                   src="/logo.png"
                   alt="Logo"
-                  className="w-28 h-28 object-contain animate-logo-text relative z-10 mx-auto"
+                  className="w-12 h-12 sm:w-28 sm:h-28 object-contain animate-logo-fade-in relative z-10 mx-auto"
                 />
 
                 {/* Animated background pattern */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer-wave"></div>
 
                 {/* Rotating ring */}
-                <div className="absolute inset-2 border-4 border-white/30 rounded-full animate-spin-slow"></div>
+                <div className="absolute inset-2 border border-white/30 rounded-full animate-pulse-intense"></div>
               </div>
 
               {/* Enhanced sparkle effects */}
@@ -199,12 +200,12 @@ export default function StylishBrandLoader({ onComplete }) {
                   key={i}
                   className="absolute animate-sparkle-enhanced"
                   style={{
-                    top: `${50 + Math.sin((i * 30 * Math.PI) / 180) * 80}px`,
-                    left: `${50 + Math.cos((i * 30 * Math.PI) / 180) * 80}%`,
+                    top: `${20 + Math.sin((i * 30 * Math.PI) / 180) * 30}px`,
+                    left: `${20 + Math.cos((i * 30 * Math.PI) / 180) * 30}%`,
                     animationDelay: `${i * 0.15}s`,
                   }}
                 >
-                  <Star className="w-4 h-4 text-yellow-400" />
+                  <Star className="w-2 h-2 sm:w-4 sm:h-4 text-yellow-400" />
                 </div>
               ))}
 
@@ -212,17 +213,17 @@ export default function StylishBrandLoader({ onComplete }) {
               {[...Array(3)].map((_, i) => (
                 <div
                   key={i}
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 border-green-400/30 rounded-full animate-pulse-ring"
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border border-green-400/30 rounded-full animate-pulse-ring"
                   style={{
-                    width: `${160 + i * 40}px`,
-                    height: `${160 + i * 40}px`,
+                    width: `${50 + i * 10}px`,
+                    height: `${50 + i * 10}px`,
                     animationDelay: `${i * 0.5}s`,
                   }}
                 />
               ))}
             </div>
 
-            <h1 className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 animate-text-reveal-enhanced bg-300% animate-gradient-shift">
+            <h1 className="text-2xl sm:text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 animate-text-reveal-enhanced bg-300% animate-gradient-shift">
               THE ECOM MONKS
             </h1>
           </div>
@@ -232,7 +233,7 @@ export default function StylishBrandLoader({ onComplete }) {
         return (
           <div className="text-center animate-slide-up-enhanced">
             <div className="relative">
-              <div className="text-3xl md:text-4xl font-bold text-gray-700 mb-6 animate-typewriter-enhanced overflow-hidden whitespace-nowrap mx-auto">
+              <div className="text-base sm:text-3xl md:text-4xl font-bold text-gray-700 mb-6 animate-typewriter-enhanced overflow-hidden whitespace-nowrap mx-auto">
                 {moment.text}
               </div>
 
@@ -274,23 +275,23 @@ export default function StylishBrandLoader({ onComplete }) {
       case "stats-burst":
         return (
           <div className="text-center animate-stats-burst-enhanced">
-            <h2 className="text-2xl sm:text-3xl font-black text-gray-800 mb-6 sm:mb-10 animate-pulse-text-enhanced">
+            <h2 className="text-base sm:text-2xl md:text-3xl font-black text-gray-800 mb-2 sm:mb-6 md:mb-10 animate-pulse-text-enhanced">
               🚀 PROVEN TRACK RECORD
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-xs sm:max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-6 md:gap-8 max-w-xs sm:max-w-4xl mx-auto">
               {moment.stats.map((stat, index) => {
                 const Icon = stat.icon
                 return (
                   <div key={index} className="animate-stat-pop-enhanced" style={{ animationDelay: `${index * 0.4}s` }}>
-                    <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-6 sm:p-8 shadow-2xl border border-gray-200 transform hover:scale-105 transition-all duration-300 relative overflow-hidden w-full">
+                    <div className="bg-gradient-to-br from-white to-gray-50 rounded-xl sm:rounded-3xl p-2 sm:p-6 md:p-8 shadow-2xl border border-gray-200 transform hover:scale-105 transition-all duration-300 relative overflow-hidden w-full">
                       {/* Background pattern */}
                       <div className="absolute inset-0 bg-gradient-to-br from-green-400/10 to-blue-400/10 animate-bg-shift"></div>
 
                       <div className="relative z-10 flex flex-col items-center justify-center">
-                        <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
-                          <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+                        <div className="w-6 h-6 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-1 sm:mb-3 md:mb-4 shadow-lg">
+                          <Icon className="w-4 h-4 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
                         </div>
-                        <div className="text-2xl sm:text-4xl font-black text-gray-800 mb-1 sm:mb-2">{stat.value}</div>
+                        <div className="text-base sm:text-2xl md:text-4xl font-black text-gray-800 mb-1 sm:mb-2">{stat.value}</div>
                         <div className="text-xs sm:text-sm text-gray-600 font-semibold">{stat.label}</div>
                       </div>
                     </div>
@@ -304,10 +305,10 @@ export default function StylishBrandLoader({ onComplete }) {
       case "services-carousel":
         return (
           <div className="text-center animate-services-carousel">
-            <h2 className="text-4xl font-bold text-gray-800 mb-10 animate-glow-text-enhanced">
+            <h2 className="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 sm:mb-10 animate-glow-text-enhanced">
               ⚡ FULL-SPECTRUM DOMINANCE
             </h2>
-            <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-6 max-w-xs sm:max-w-5xl mx-auto">
               {moment.services.map((service, index) => {
                 const Icon = service.icon
                 return (
@@ -317,12 +318,12 @@ export default function StylishBrandLoader({ onComplete }) {
                     style={{ animationDelay: `${index * 0.3}s` }}
                   >
                     <div
-                      className={`p-6 bg-gradient-to-br ${service.color} rounded-2xl shadow-xl text-white transform hover:scale-110 transition-all duration-300 min-w-[200px]`}
+                      className={`p-2 sm:p-6 bg-gradient-to-br ${service.color} rounded-2xl shadow-xl text-white transform hover:scale-110 transition-all duration-300 min-w-[120px] sm:min-w-[200px]`}
                     >
-                      <div className="flex items-center justify-center mb-3">
-                        <Icon className="w-8 h-8" />
+                      <div className="flex items-center justify-center mb-1 sm:mb-3">
+                        <Icon className="w-5 h-5 sm:w-8 sm:h-8" />
                       </div>
-                      <h3 className="font-bold text-lg">{service.name}</h3>
+                      <h3 className="font-bold text-xs sm:text-lg">{service.name}</h3>
                     </div>
                   </div>
                 )
@@ -334,34 +335,31 @@ export default function StylishBrandLoader({ onComplete }) {
       case "transformation":
         return (
           <div className="text-center animate-transformation">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-gray-800 mb-12">THE TRANSFORMATION</h2>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div className="max-w-xs sm:max-w-4xl mx-auto">
+              <h2 className="text-xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-12">THE TRANSFORMATION</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8 items-center">
                 {/* Before */}
                 <div className="animate-slide-left">
-                  <div className="p-8 bg-gradient-to-br from-red-50 to-red-100 rounded-2xl border-2 border-red-200">
-                    <div className="text-6xl mb-4">😰</div>
-                    <h3 className="text-xl font-bold text-red-700 mb-2">{moment.before}</h3>
-                    <p className="text-red-600 text-sm">Low ROAS • Poor visibility • Wasted ad spend</p>
+                  <div className="p-3 sm:p-8 bg-gradient-to-br from-red-50 to-red-100 rounded-2xl border-2 border-red-200">
+                    <div className="text-3xl sm:text-6xl mb-2 sm:mb-4">😰</div>
+                    <h3 className="text-base sm:text-xl font-bold text-red-700 mb-1 sm:mb-2">{moment.before}</h3>
+                    <p className="text-xs sm:text-sm text-red-600">Low ROAS • Poor visibility • Wasted ad spend</p>
                   </div>
                 </div>
-
                 {/* Arrow */}
                 <div className="animate-arrow-morph">
                   <div className="flex justify-center">
-                    <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center shadow-xl">
-                      <Rocket className="w-8 h-8 text-white animate-bounce" />
+                    <div className="w-8 h-8 sm:w-16 sm:h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center shadow-xl">
+                      <Rocket className="w-4 h-4 sm:w-8 sm:h-8 text-white animate-bounce" />
                     </div>
                   </div>
                 </div>
-
                 {/* After */}
                 <div className="animate-slide-right">
-                  <div className="p-8 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl border-2 border-green-200">
-                    <div className="text-6xl mb-4">🏆</div>
-                    <h3 className="text-xl font-bold text-green-700 mb-2">{moment.after}</h3>
-                    <p className="text-green-600 text-sm">10.3× ROAS • Top rankings • Profitable growth</p>
+                  <div className="p-3 sm:p-8 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl border-2 border-green-200">
+                    <div className="text-3xl sm:text-6xl mb-2 sm:mb-4">🏆</div>
+                    <h3 className="text-base sm:text-xl font-bold text-green-700 mb-1 sm:mb-2">{moment.after}</h3>
+                    <p className="text-xs sm:text-sm text-green-600">10.3× ROAS • Top rankings • Profitable growth</p>
                   </div>
                 </div>
               </div>
@@ -542,9 +540,9 @@ export default function StylishBrandLoader({ onComplete }) {
       {/* Custom Enhanced Styles */}
       <style jsx>{`
         @keyframes logo-entrance {
-          0% { transform: scale(0) rotate(-360deg); opacity: 0; }
-          50% { transform: scale(1.3) rotate(-180deg); opacity: 0.8; }
-          100% { transform: scale(1) rotate(0deg); opacity: 1; }
+          0% { transform: scale(0); opacity: 0; }
+          50% { transform: scale(1.3); opacity: 0.8; }
+          100% { transform: scale(1); opacity: 1; }
         }
         
         @keyframes logo-mega-glow {
@@ -561,6 +559,12 @@ export default function StylishBrandLoader({ onComplete }) {
         @keyframes shimmer-wave {
           0% { transform: translateX(-100%) skewX(-15deg); }
           100% { transform: translateX(200%) skewX(-15deg); }
+        }
+        
+        @keyframes pulse-intense {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.2); }
+          100% { transform: scale(1); }
         }
         
         @keyframes spin-slow {
@@ -742,6 +746,11 @@ export default function StylishBrandLoader({ onComplete }) {
           100% { opacity: 1; transform: translateY(0); }
         }
         
+        @keyframes logo-fade-in {
+          0% { opacity: 0; transform: scale(0.7); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+        
         .bg-300% { background-size: 300% 300%; }
         .bg-400% { background-size: 400% 400%; }
         
@@ -783,7 +792,7 @@ export default function StylishBrandLoader({ onComplete }) {
         .animate-fade-in-delayed { animation: fade-in-delayed 1s ease-out 0.5s both; }
         .animate-pulse-text-enhanced { animation: pulse-text 2s ease-in-out infinite; }
         .animate-glow-text-enhanced { animation: text-glow-enhanced 2.5s ease-in-out infinite; }
-        .animate-logo-text { animation: logo-text 1.2s ease-out 0.8s both; }
+        .animate-logo-fade-in { animation: logo-fade-in 1.2s ease-out 0.8s both; }
         .animate-rainbow-text-enhanced { animation: text-glow-enhanced 3s ease-in-out infinite; }
       `}</style>
     </div>
