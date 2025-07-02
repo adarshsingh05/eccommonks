@@ -105,7 +105,7 @@ function LandingPage() {
 
           {/* Sliding Banner: Marketplace Management */}
           <div className="mt-8 sm:mt-[-60px]">
-            <RunningText text="End to End Marketplace management • Paid Ads • Social Media Marketing • Creative Support • Influencer Marketing" speed={15} />
+            <RunningText text="Platform Management (Amazon | Flipkart | Myntra | Meesho | Nykaa | Jiomart | Shopify)  •  Performance Marketing  •  Creative Studio  •  Quick Commerce Blitz  •  Social Media  •  Influencer Marketing" speed={15} />
           </div>
 
           {/* Pain Points Section */}
@@ -140,7 +140,7 @@ function LandingPage() {
                   {/* Pain Cards */}
                   <div className="flex flex-row md:flex-col gap-2 sm:gap-6 w-full mb-10 justify-center md:justify-start">
                     {[
-                      "My ads are running, but no one's watching them.",
+                      "My ads are running, but no one is watching.",
                       "My listings are live, but no one's clicking.",
                       "My brand is good, but no one knows it exists."
                     ].map((pain, idx) => (
@@ -242,7 +242,7 @@ function LandingPage() {
                 science-based frameworks that actually grow
               </p>
               <div className="flex justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-24 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-24 w-full">
                   {[
                     {
                       icon: '🔁',
@@ -301,31 +301,25 @@ function LandingPage() {
                   ].map((item, idx) => (
                     <ThreeDCard
                       key={item.title}
-                      className="bg-white border border-green-200 rounded-3xl shadow-xl p-10 md:p-2 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard md:w-[400px] lg:w-[410px]"
+                      className="bg-white border border-green-200 rounded-3xl shadow-xl p-8 md:p-10 flex flex-col items-center justify-between transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard md:w-[520px] lg:w-[600px] md:min-h-[260px] lg:min-h-[280px]"
                     >
-                      <div className="text-5xl mb-4">{item.icon}</div>
-                      <h3 className="text-base sm:text-lg  font-black text-green-700 mb-4 text-center leading-tight break-words max-w-xs mx-auto md:max-w-[220px] lg:max-w-[260px] xl:max-w-[320px] sm:max-w-none" style={{display: 'block', overflowWrap: 'break-word'}}>
-                        {item.title}
-                      </h3>
-                      {item.intro && <div className="text-green-700 font-semibold mb-2">{item.intro}</div>}
-                      <ul className="w-full pl-0 text-left text-green-700 space-y-2">
+                      <div className="text-5xl md:text-6xl lg:text-7xl mb-4">{item.icon}</div>
+                      <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-green-700 mb-4 text-center leading-tight break-words max-w-xs mx-auto md:max-w-[420px] lg:max-w-[520px] xl:max-w-[600px] sm:max-w-none" style={{display: 'block', overflowWrap: 'break-word'}}>{item.title}</h3>
+                      {item.intro && (
+                        <div className="flex items-center mb-2 md:text-lg lg:text-xl whitespace-nowrap text-green-500" style={{ fontSize: '1.05rem', lineHeight: '1.2', wordBreak: 'break-word' }}>
+                          <span className="text-green-500 text-xl lg:text-2xl mr-2">✓</span>
+                          <span className="ml-2">{item.intro}</span>
+                        </div>
+                      )}
+                      <ul className="w-full pl-0 text-left text-green-500 space-y-2 md:text-lg lg:text-xl flex-1 flex flex-col justify-center">
                         {item.bullets.map((point, i) => (
                           <li
                             key={i}
-                            className={
-                              `sm:list-disc sm:list-inside flex items-start sm:block pl-0 sm:pl-0 border-l-4 border-green-400 sm:border-0 bg-transparent px-4 py-1 sm:px-0 sm:py-0 text-xs sm:text-base mb-1 -ml-3 sm:ml-0 rounded-r-xl leading-snug max-w-full break-words ` +
-                              (i === 0 ? 'md:border-0 md:pl-0 md:flex md:items-center md:gap-2 md:text-xs md:whitespace-nowrap md:leading-tight' : '')
-                            }
-                            style={i === 0 ? {fontSize: '0.80rem', lineHeight: '1.1', wordBreak: 'break-word'} : {}}
+                            className="flex items-center pl-0 bg-transparent px-4 md:px-2 py-2 text-xs sm:text-base md:text-lg lg:text-xl mb-1 rounded-r-xl leading-snug max-w-full break-words text-green-500"
+                            style={{ fontSize: '1.05rem', lineHeight: '1.2', wordBreak: 'break-word' }}
                           >
-                            {i === 0 ? (
-                              <>
-                                <span className="hidden md:inline text-green-500 text-lg mr-1">✓</span>
-                                <span className="ml-2 sm:ml-0">{point}</span>
-                              </>
-                            ) : (
-                              <span className="ml-2 sm:ml-0">{point}</span>
-                            )}
+                            <span className="text-green-500 text-xl lg:text-2xl mr-2 md:mr-1 flex-shrink-0">✓</span>
+                            <span className="ml-2 md:ml-1 break-words whitespace-normal">{point}</span>
                           </li>
                         ))}
                       </ul>
@@ -346,7 +340,7 @@ function LandingPage() {
                 Our Services – Ecommerce<br/>
                 Q-COMMERCE BRAND BUILDING
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-24 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 w-full">
                 {[
                   {
                     icon: '🛒',
@@ -400,28 +394,19 @@ function LandingPage() {
                 ].map((item, idx) => (
                   <ThreeDCard
                     key={item.title}
-                    className="bg-white border border-green-200 rounded-3xl shadow-xl p-10 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard md:w-[370px] lg:w-[410px]"
+                    className="bg-white border border-green-200 rounded-3xl shadow-xl p-8 md:p-10 flex flex-col items-center justify-between transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard md:w-[520px] lg:w-[600px] md:min-h-[260px] lg:min-h-[280px]"
                   >
-                    <div className="text-5xl mb-4">{item.icon}</div>
-                    <h3 className="text-2xl font-black text-green-700 mb-4">{item.title}</h3>
-                    <ul className="w-full pl-6 text-left text-green-700 space-y-2 list-disc list-inside">
+                    <div className="text-5xl md:text-6xl lg:text-7xl mb-4">{item.icon}</div>
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-green-700 mb-4 text-center leading-tight break-words max-w-xs mx-auto md:max-w-[420px] lg:max-w-[520px] xl:max-w-[600px] sm:max-w-none" style={{display: 'block', overflowWrap: 'break-word'}}>{item.title}</h3>
+                    <ul className="w-full pl-0 text-left text-green-500 space-y-2 md:text-lg lg:text-xl flex-1 flex flex-col justify-center">
                       {item.bullets.map((point, i) => (
                         <li
                           key={i}
-                          className={
-                            `sm:list-disc sm:list-inside flex items-start sm:block pl-0 sm:pl-0 border-l-4 border-green-400 sm:border-0 bg-transparent px-4 py-1 sm:px-0 sm:py-0 text-xs sm:text-base mb-1 -ml-3 sm:ml-0 rounded-r-xl leading-snug max-w-full break-words ` +
-                            (i === 0 ? 'md:border-0 md:pl-0 md:flex md:items-center md:gap-2 md:text-xs md:whitespace-nowrap md:leading-tight' : '')
-                          }
-                          style={i === 0 ? {fontSize: '0.80rem', lineHeight: '1.1', wordBreak: 'break-word'} : {}}
+                          className="flex items-center pl-0 bg-transparent px-4 md:px-2 py-2 text-xs sm:text-base md:text-lg lg:text-xl mb-1 rounded-r-xl leading-snug max-w-full break-words text-green-500"
+                          style={{ fontSize: '1.05rem', lineHeight: '1.2', wordBreak: 'break-word' }}
                         >
-                          {i === 0 ? (
-                            <>
-                              <span className="hidden md:inline text-green-500 text-lg mr-1">✓</span>
-                              <span className="ml-2 sm:ml-0">{point}</span>
-                            </>
-                          ) : (
-                            <span className="ml-2 sm:ml-0">{point}</span>
-                          )}
+                          <span className="text-green-500 text-xl lg:text-2xl mr-2 md:mr-1 flex-shrink-0">✓</span>
+                          <span className="ml-2 md:ml-1 break-words whitespace-normal">{point}</span>
                         </li>
                       ))}
                     </ul>
@@ -443,14 +428,14 @@ function LandingPage() {
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-2 sm:mb-6 md:mb-10 text-[#222]">
                 PROOF THAT BUILDS TRUST
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-stretch">
                 {[
                   {
                     icon: '📊',
                     title: 'Fashion Accessories Brand',
                     points: [
                       'Increased ROAS from 3.4× → 10.3× in 150 days',
-                      'Cut ACOS down to 19.2% while doubling Amazon revenue',
+                      'ACOS down to 19.2%',
                     ],
                   },
                   {
@@ -477,14 +462,17 @@ function LandingPage() {
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="bg-white border border-green-200 rounded-2xl shadow-xl p-6 sm:p-8 flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 group"
+                    className="bg-white border border-green-200 rounded-2xl shadow-xl p-6 sm:p-8 flex flex-col items-center justify-start h-full transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 group"
                   >
                     <span className="text-4xl mb-3">{item.icon}</span>
                     <div className="font-bold text-green-900 text-lg sm:text-xl mb-2 text-center">{item.title}</div>
-                    <div className="flex flex-col gap-2 w-full mt-2">
+                    <div className="flex flex-col gap-2 w-full mt-2 items-center">
                       {item.points.map((point, i) => (
-                        <div key={i} className="flex items-start gap-2 w-full">
-                          <span className="text-green-500 text-lg mt-0.5">✔️</span>
+                        <div
+                          key={i}
+                          className={`flex items-center gap-2 w-full${item.title === 'D2C Grocery Startup' && point === 'Reduced CAC by 18% and doubled repeat order retention with funnel fixes' ? ' sm:mt-7' : ''}`}
+                        >
+                          <span className={`text-green-500 text-lg ${item.title === 'D2C Grocery Startup' || item.title==='Health & Wellness Brand' || item.title==='Heritage Skincare Brand' ? 'sm:mb-1' : ''}`}>✔️</span>
                           <span className="text-green-700 text-sm sm:text-base text-left leading-snug">{point}</span>
                         </div>
                       ))}
@@ -503,20 +491,8 @@ function LandingPage() {
               <div className="block md:hidden">
                 <TestimonialCarousel />
               </div>
-              <div className="hidden md:flex gap-8 justify-center items-stretch">
-                {["They don't just manage our account — they think like owners.",
-                  "They scaled us on Flipkart and Amazon while fixing our returns mess. Legends.",
-                  "They don't just talk numbers — they explain, optimize, and own it."]
-                  .map((text, i) => (
-                    <div
-                      key={i}
-                      className="bg-white border border-green-200 rounded-2xl shadow-2xl px-10 py-12 flex flex-col items-center justify-center min-w-[280px] max-w-[340px] transition-transform duration-300 hover:scale-105 hover:shadow-green-400/30 group"
-                    >
-                      <span className="text-2xl text-green-500 mb-4">"</span>
-                      <span className="text-2xl text-green-900 italic leading-relaxed mb-4">{text}</span>
-                      <span className="block w-10 h-1 bg-green-400 rounded-full mt-4 group-hover:bg-green-500 transition-colors"></span>
-                    </div>
-                  ))}
+              <div className="hidden md:block">
+                <TestimonialCarousel large />
               </div>
             </div>
           </section>
@@ -547,26 +523,48 @@ function LandingPage() {
           {/* Pricing Section */}
           <section className="py-6 sm:py-16 relative z-10" id="pricing">
             <div className="max-w-4xl mx-auto px-4 md:px-8 text-center">
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-6 text-green-700">PRICING</h2>
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-6 sm:mb-12 text-green-700">OUR PRICING</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-[200px] mb-8 sm:ml-[-152px]">
                 {[
                   { name: "Starter? Launch Pad", price: "₹6,999/mo", features: ["For new sellers", "All essentials covered"] },
                   { name: "Scaling? Growth Engine", price: "₹14,999/mo", features: ["For growing brands", "Advanced optimization"] },
                   { name: "Aggressive? Brand Dominator", price: "₹29,999/mo", features: ["For market leaders", "Full-stack growth"] },
-                ].map((plan, idx) => (
-                  <div key={plan.name} className="bg-white border border-green-200 rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center transition-transform duration-300 md:hover:scale-105 md:hover:shadow-green-400/40 hover:shadow-2xl hover:border-green-400 md:w-[350px]">
-                    <div className="text-2xl sm:text-3xl font-bold text-green-900 mb-2">{plan.name}</div>
-                    <div className="text-3xl sm:text-4xl font-extrabold text-green-500 mb-4">{plan.price}</div>
-                    <ul className="text-green-700 text-base sm:text-lg md:text-base mb-4 pl-0">
-                      {plan.features.map((f, i) => (
-                        <li key={i} className="flex items-start md:text-base md:whitespace-nowrap">
-                          <span className="text-green-500 mr-2 mt-0.5">✓</span>
-                          <span>{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+                ].map((plan, idx) => {
+                  // Split the name for desktop
+                  const [main, sub] = plan.name.split(/\? | /).length === 2
+                    ? plan.name.split(/\? /)
+                    : plan.name.split(/\? | /);
+                  let first, second;
+                  if (plan.name.startsWith('Starter?')) {
+                    first = 'Starter?';
+                    second = 'Launch Pad';
+                  } else if (plan.name.startsWith('Scaling?')) {
+                    first = 'Scaling?';
+                    second = 'Growth Engine';
+                  } else {
+                    first = 'Aggressive?';
+                    second = 'Brand Dominator';
+                  }
+                  return (
+                    <div key={plan.name} className="bg-white border border-green-200 rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center transition-transform duration-300 md:hover:scale-105 md:hover:shadow-green-400/40 hover:shadow-2xl hover:border-green-400 md:w-[350px]">
+                      <div className="text-2xl sm:text-3xl font-bold text-green-900 mb-2">
+                        <span className="block md:hidden">{plan.name}</span>
+                        <span className="hidden md:block">
+                          {first}<br />{second}
+                        </span>
+                      </div>
+                      <div className="text-3xl sm:text-4xl font-extrabold text-green-500 mb-4">{plan.price}</div>
+                      <ul className="text-green-700 text-base sm:text-lg md:text-base mb-4 pl-0">
+                        {plan.features.map((f, i) => (
+                          <li key={i} className="flex items-start md:text-base md:whitespace-nowrap">
+                            <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                            <span>{f}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
               </div>
               <div className="mt-6 text-green-900 font-semibold text-base sm:text-lg">👉 Or plug & play:</div>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center mt-2 w-full items-center">
@@ -632,7 +630,7 @@ const SLIDE_ANIMATION = {
   exit: 'opacity-0 -translate-x-10',
 };
 
-function TestimonialCarousel() {
+function TestimonialCarousel({ large }) {
   const testimonials = [
     "They don't just manage our account — they think like owners.",
     "They scaled us on Flipkart and Amazon while fixing our returns mess. Legends.",
@@ -650,7 +648,7 @@ function TestimonialCarousel() {
     return () => clearInterval(timer);
   }, [index, testimonials.length]);
   return (
-    <div className="relative h-32 sm:h-36 flex items-center justify-center overflow-hidden">
+    <div className={`relative h-32 sm:h-36 flex items-center justify-center overflow-hidden ${large ? 'md:h-64 sm:ml-[165px] sm:mt-4' : ''}`}>
       {testimonials.map((text, i) => {
         let base = 'absolute left-0 right-0 mx-auto min-w-full transition-all duration-700 ease-in-out';
         let state = '';
@@ -667,7 +665,7 @@ function TestimonialCarousel() {
             className={`${base} ${state}`}
             style={{ pointerEvents: i === index ? 'auto' : 'none' }}
           >
-            <div className="bg-white border border-green-200 rounded-2xl shadow-xl px-6 py-8 sm:px-10 sm:py-10 flex flex-col items-center justify-center min-h-[6rem] sm:min-h-[7rem]">
+            <div className={`bg-white border border-green-200 rounded-2xl shadow-xl flex flex-col items-center justify-center min-h-[6rem] sm:min-h-[7rem] ${large ? 'md:px-24 md:py-16 md:min-h-[16rem] md:max-w-2xl' : 'px-6 py-8 sm:px-10 sm:py-10'}`}>
               <span className="text-xl sm:text-2xl text-green-900 italic leading-relaxed">{text}</span>
             </div>
           </div>
