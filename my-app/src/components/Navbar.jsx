@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,7 +43,7 @@ export default function Navbar() {
           {/* Logo and Hamburger */}
           <div className="flex items-center w-full sm:w-auto">
             <div className="flex items-center min-w-0">
-              <a href="/" className="flex items-center min-w-0 group" aria-label="Go to home page">
+              <Link to="/" className="flex items-center min-w-0 group" aria-label="Go to home page">
                 <img
                   src="/logo.png"
                   alt="The Ecom Monks"
@@ -50,12 +51,12 @@ export default function Navbar() {
                   style={{ display: 'block' }}
                 />
                 {/* Hide all text next to logo on mobile */}
-                <div className="hidden sm:flex whitespace-nowrap text-base sm:text-2xl md:text-3xl lg:text-4xl font-extrabold bg-white px-2 py-1 rounded flex-shrink min-w-0 items-center truncate max-w-[120px] sm:max-w-[180px] md:max-w-xs lg:max-w-md z-50" style={{color: '#111', boxShadow: '0 0 0 2px #fff'}}>
+                <div className="hidden sm:flex whitespace-nowrap text-base sm:text-2xl md:text-3xl lg:text-4xl font-extrabold  px-2 py-1 flex-shrink min-w-0 items-center truncate max-w-[120px] sm:max-w-[180px] md:max-w-xs lg:max-w-md z-50">
                   <span className="text-green-900 ml-1 sm:ml-0">THE</span>
                   <span className="text-green-900 ml-2 md:ml-3">ECOM</span>
                   <span className="text-green-900 ml-2 md:ml-3">MONKS</span>
                 </div>
-              </a>
+              </Link>
             </div>
             {/* Hamburger Button (right) */}
             <button
@@ -88,27 +89,33 @@ export default function Navbar() {
           {/* Nav Links */}
           <div className="hidden lg:flex items-center space-x-8 sm:ml-[100px]  flex-shrink-0">
             {[
-              { label: "Home", href: "#" },
-              { label: "Our Services", href: "#services" },
-              { label: "Our Frameworks", href: "#frameworks" },
-              // { label: "Why Us", href: "#whyus" },
-              { label: "Contact Us", href: "#contact" },
-              // { label: "How it Works", href: "#howitworks" },
-              { label: "About Us", href: "#about" },
-              // { label: "Legal", href: "#legal" },
-              // { label: "Privacy and Policy", href: "#privacy" },
-              // { label: "Terms and conditions", href: "#terms" },
+              { label: "Home", href: "/", isLink: true },
+              { label: "Our Services", href: "/services", isLink: true },
+              { label: "Our Frameworks", href: "/ourframeworks", isLink: true },
+              { label: "Why Us", href: "/whyus", isLink: true, customClass: "text-blue-700 hover:text-blue-500" },
+              { label: "Contact Us", href: "/contactus", isLink: true },
+              { label: "About Us", href: "/aboutus", isLink: true },
             ].map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="relative text-green-900 font-bold text-base sm:text-lg md:text-xl hover:text-green-500 transition-all duration-500 group px-2"
-              >
-                {item.label}
-                <span className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-green-400 to-green-500 transition-all duration-500 w-0 group-hover:w-full"></span>
-              </a>
+              item.isLink ? (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className={`relative font-bold text-base sm:text-lg md:text-xl transition-all duration-500 group px-2 ${item.customClass || "text-green-900 hover:text-green-500"}`}
+                >
+                  {item.label}
+                  <span className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-green-400 to-green-500 transition-all duration-500 w-0 group-hover:w-full"></span>
+                </Link>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className={`relative font-bold text-base sm:text-lg md:text-xl transition-all duration-500 group px-2 ${item.customClass || "text-green-900 hover:text-green-500"}`}
+                >
+                  {item.label}
+                  <span className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-green-400 to-green-500 transition-all duration-500 w-0 group-hover:w-full"></span>
+                </a>
+              )
             ))}
-           
           </div>
         </div>
 
@@ -117,25 +124,39 @@ export default function Navbar() {
           <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-green-400/30">
             <div className="px-8 py-10 space-y-6">
               {[
-                { label: "Home", href: "#" },
-                { label: "Our Services", href: "#services" },
-                { label: "Our Frameworks", href: "#frameworks" },
-                { label: "Why Us", href: "#whyus" },
-                { label: "Contact Us", href: "#contact" },
-                { label: "How it Works", href: "#howitworks" },
-                { label: "About Us", href: "#about" },
-                { label: "Legal", href: "#legal" },
-                { label: "Privacy and Policy", href: "#privacy" },
-                { label: "Terms and conditions", href: "#terms" },
+                { label: "Home", href: "/", isLink: true },
+                { label: "Our Services", href: "/services", isLink: true },
+                { label: "Our Frameworks", href: "/ourframeworks", isLink: true },
+                { label: "Why Us", href: "/whyus", isLink: true, customClass: "text-blue-700 hover:text-blue-500" },
+                { label: "Contact Us", href: "/contactus", isLink: true },
+                { label: "About Us", href: "/aboutus", isLink: true },
+                { label: "Results", href: "/results", isLink: true },
+                { label: "How It Works", href: "/how-it-works", isLink: true },
+                { label: "FAQs", href: "/faqs", isLink: true },
+                { label: "Thank You", href: "/thankyou", isLink: true },
+                { label: "Refund Policy", href: "/refund", isLink: true },
+                { label: "Terms & Conditions", href: "/tandc", isLink: true },
+                { label: "Privacy Policy", href: "/privacy", isLink: true },
               ].map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="block text-green-900 font-bold text-xl sm:text-2xl hover:text-green-500 transition-colors duration-500 py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
+                item.isLink ? (
+                  <Link
+                    key={item.label}
+                    to={item.href}
+                    className={`block text-green-900 font-bold text-xl sm:text-2xl transition-colors duration-500 py-2 ${item.customClass || "hover:text-green-500"}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className={`block text-green-900 font-bold text-xl sm:text-2xl transition-colors duration-500 py-2 ${item.customClass || "hover:text-green-500"}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                )
               ))}
             </div>
           </div>

@@ -6,6 +6,7 @@ import ScrollParallax from "./components/ScrollParallax";
 import ThreeDCard from "./components/ThreeDCard";
 import { Helmet } from "react-helmet";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function LandingPage() {
   return (
@@ -233,7 +234,9 @@ function LandingPage() {
             </div>
             <div className="max-w-7xl mx-auto px-8 lg:px-12 text-center">
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-6 sm:mb-6 md:mb-10 text-[#222]">
-                OUR UNIQUE FRAMEWORKS
+                <Link to="/ourframeworks" className="hover:underline text-green-500 focus:outline-none focus:ring-2 focus:ring-green-400">
+                  OUR UNIQUE FRAMEWORKS
+                </Link>
               </h2>
               <p className="text-xl sm:text-3xl text-green-500 mb-2 font-bold">
                 We don't "try", We follow
@@ -337,7 +340,9 @@ function LandingPage() {
             </div>
             <div className="max-w-7xl mx-auto px-8 lg:px-12 text-center">
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-6 md:mb-10 text-[#222]">
-                Our Services – Ecommerce<br/>
+                <Link to="/services" className="hover:underline text-green-500 focus:outline-none focus:ring-2 focus:ring-green-400">
+                  Our Services
+                </Link> – Ecommerce<br/>
                 Q-COMMERCE BRAND BUILDING
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 w-full">
@@ -417,7 +422,11 @@ function LandingPage() {
           </section>
 
           {/* Sliding Banner: Services */}
-          <RunningText text="Platform Management (Amazon | Flipkart | Myntra | Meesho | Nykaa | Jiomart | Shopify)  •  Performance Marketing  •  Creative Studio  •  Quick Commerce Blitz  •  Social Media  •  Influencer Marketing" speed={15} />
+          <div className="mt-8 sm:mt-[-60px]">
+            <Link to="/services" className="block">
+              <RunningText text="Platform Management (Amazon | Flipkart | Myntra | Meesho | Nykaa | Jiomart | Shopify)  •  Performance Marketing  •  Creative Studio  •  Quick Commerce Blitz  •  Social Media  •  Influencer Marketing" speed={15} />
+            </Link>
+          </div>
 
           {/* Proof/Case Studies Section */}
           <section className="py-6 sm:py-16 md:py-32 relative z-10 mt-6">

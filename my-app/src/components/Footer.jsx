@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Linkedin, MessageCircle, Mail, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -23,15 +24,19 @@ export default function Footer() {
           <div className="flex flex-col items-start w-full col-span-1">
             <h3 className="text-xl sm:text-2xl font-extrabold text-green-900 mb-4">Quick Links</h3>
             <div className="flex flex-col space-y-2">
-              {["Home", "Services", "Frameworks", "Why US", "How We Works",  "FAQs","About Us", "Privacy Policy", "Terms and Conditions", "Refund Policy"].map((label, idx) => (
-                <a
-                  key={label}
-                  href="#"
-                  className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block"
-                >
-                  {label}
-                </a>
-              ))}
+              <Link to="/" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Home</Link>
+              <Link to="/services" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Services</Link>
+              <Link to="/ourframeworks" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Frameworks</Link>
+              <Link to="/contactus" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Contact Us</Link>
+              <Link to="/whyus" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Why Us</Link>
+              <Link to="/results" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Results</Link>
+              <Link to="/how-it-works" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">How It Works</Link>
+              <Link to="/aboutus" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">About Us</Link>
+              <Link to="/faqs" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">FAQs</Link>
+              <Link to="/thankyou" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Thank You</Link>
+              <Link to="/refund" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Refund Policy</Link>
+              <Link to="/tandc" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Terms & Conditions</Link>
+              <Link to="/privacy" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Privacy Policy</Link>
             </div>
           </div>
 
@@ -39,8 +44,9 @@ export default function Footer() {
           <div className="flex flex-col items-start w-full col-span-1">
             <h3 className="text-xl sm:text-2xl font-extrabold text-green-900 mb-4">Legal</h3>
             <div className="flex flex-col space-y-2">
-              <a href="#privacy" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Privacy Policy</a>
-              <a href="#terms" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Terms and Conditions</a>
+              <Link to="/refund" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Refund Policy</Link>
+              <Link to="/tandc" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Terms and Conditions</Link>
+              <Link to="/privacy" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Privacy Policy</Link>
             </div>
           </div>
 
