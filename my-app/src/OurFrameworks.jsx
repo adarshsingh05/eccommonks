@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet"
 import Navbar from "./components/Navbar"
-import Footer from "./components/Footer"
 import RunningText from "./components/RunningText"
 import ParallaxSection from "./components/ParallaxSection"
 import ScrollParallax from "./components/ScrollParallax"
@@ -487,8 +486,6 @@ function FrameworkPage() {
             </div>
           </section>
         </main>
-
-        <Footer />
       </div>
     </>
   )

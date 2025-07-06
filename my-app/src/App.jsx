@@ -16,6 +16,8 @@ import ThankYou from "./ThankYou";
 import Refund from "./Refund";
 import TandC from "./TandC";
 import Privacy from "./Privacy";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,6 +28,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Navbar setIsLoading={setIsLoading} />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="services" element={<ServicesPage/>}/>
@@ -41,6 +44,7 @@ function App() {
         <Route path="/tandc" element={<TandC />} />
         <Route path="/privacy" element={<Privacy />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

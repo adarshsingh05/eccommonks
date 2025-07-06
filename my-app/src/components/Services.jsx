@@ -1,5 +1,4 @@
 import Navbar from "./Navbar"
-import Footer from "./Footer"
 import RunningText from "./RunningText"
 import ParallaxSection from "./ParallaxSection"
 import ScrollParallax from "./ScrollParallax"
@@ -582,8 +581,6 @@ function ServicesPage() {
             </div>
           </section>
         </main>
-
-        <Footer />
       </div>
     </>
   )

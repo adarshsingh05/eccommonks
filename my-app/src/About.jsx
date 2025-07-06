@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import { motion } from "framer-motion";
 import ThreeDCard from "./components/ThreeDCard";
 import AnimatedText from "./components/AnimatedText";
@@ -215,7 +214,6 @@ function About() {
           </ThreeDCard>
         </motion.section>
       </motion.main>
-      <Footer />
       <style>{`
         @keyframes pulse-slow { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
         .animate-pulse-slow { animation: pulse-slow 6s infinite; }

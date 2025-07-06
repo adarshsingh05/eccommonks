@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import { motion } from "framer-motion";
 import AnimatedText from "./components/AnimatedText";
 import ParallaxSection from "./components/ParallaxSection";
@@ -65,7 +64,6 @@ function Refund() {
           🧘‍♂️ We work like true partners, not vendors. Refunds aren't typically needed — because we ensure value is delivered every step of the way.
         </motion.div>
       </motion.main>
-      <Footer />
       <style>{`
         @keyframes pulse-slow { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
         .animate-pulse-slow { animation: pulse-slow 6s infinite; }

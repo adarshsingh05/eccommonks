@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import ParallaxSection from './components/ParallaxSection';
 import ScrollParallax from './components/ScrollParallax';
 import ThreeDCard from './components/ThreeDCard';
@@ -434,8 +433,6 @@ function ContactUs() {
             </div>
           </section>
         </main>
-
-        <Footer />
       </div>
     </>
   );

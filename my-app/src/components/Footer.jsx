@@ -24,19 +24,19 @@ export default function Footer() {
           <div className="flex flex-col items-start w-full col-span-1">
             <h3 className="text-xl sm:text-2xl font-extrabold text-green-900 mb-4">Quick Links</h3>
             <div className="flex flex-col space-y-2">
-              <Link to="/" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Home</Link>
-              <Link to="/services" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Services</Link>
-              <Link to="/ourframeworks" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Frameworks</Link>
-              <Link to="/contactus" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Contact Us</Link>
-              <Link to="/whyus" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Why Us</Link>
-              <Link to="/results" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Results</Link>
-              <Link to="/how-it-works" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">How It Works</Link>
-              <Link to="/aboutus" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">About Us</Link>
-              <Link to="/faqs" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">FAQs</Link>
-              <Link to="/thankyou" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Thank You</Link>
-              <Link to="/refund" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Refund Policy</Link>
-              <Link to="/tandc" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Terms & Conditions</Link>
-              <Link to="/privacy" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Privacy Policy</Link>
+              <Link to="/" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Home</Link>
+              <Link to="/services" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Services</Link>
+              <Link to="/ourframeworks" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Frameworks</Link>
+              <Link to="/contactus" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Contact Us</Link>
+              <Link to="/whyus" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Why Us</Link>
+              <Link to="/results" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Results</Link>
+              <Link to="/how-it-works" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">How It Works</Link>
+              <Link to="/aboutus" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">About Us</Link>
+              <Link to="/faqs" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">FAQs</Link>
+              <Link to="/thankyou" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Thank You</Link>
+              <Link to="/refund" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Refund Policy</Link>
+              <Link to="/tandc" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Terms & Conditions</Link>
+              <Link to="/privacy" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Privacy Policy</Link>
             </div>
           </div>
 
@@ -44,9 +44,9 @@ export default function Footer() {
           <div className="flex flex-col items-start w-full col-span-1">
             <h3 className="text-xl sm:text-2xl font-extrabold text-green-900 mb-4">Legal</h3>
             <div className="flex flex-col space-y-2">
-              <Link to="/refund" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Refund Policy</Link>
-              <Link to="/tandc" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Terms and Conditions</Link>
-              <Link to="/privacy" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block">Privacy Policy</Link>
+              <Link to="/refund" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Refund Policy</Link>
+              <Link to="/tandc" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Terms and Conditions</Link>
+              <Link to="/privacy" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Privacy Policy</Link>
             </div>
           </div>
 
@@ -55,7 +55,6 @@ export default function Footer() {
             <h3 className="text-xl sm:text-2xl font-extrabold text-green-900 mb-4">Contact</h3>
             <div className="flex flex-col space-y-2 mb-4">
               <div className="flex items-center"><Mail className="w-5 h-5 mr-2" />hello@thecommonks.com</div>
-              <div className="flex items-center"><MessageCircle className="w-5 h-5 mr-2" />+91-7988540592</div>
               <div className="flex items-center"><MessageCircle className="w-5 h-5 mr-2" />+91-8505846555</div>
               <div className="flex items-center"><Globe className="w-5 h-5 mr-2" />www.thecommonks.com</div>
             </div>

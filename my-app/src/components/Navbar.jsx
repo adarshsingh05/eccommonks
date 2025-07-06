@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ setIsLoading }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +44,16 @@ export default function Navbar() {
           {/* Logo and Hamburger */}
           <div className="flex items-center w-full sm:w-auto">
             <div className="flex items-center min-w-0">
-              <Link to="/" className="flex items-center min-w-0 group" aria-label="Go to home page">
+              <button
+                onClick={() => {
+                  if (setIsLoading) setIsLoading(false);
+                  navigate("/");
+                }}
+                className="flex items-center min-w-0 group focus:outline-none focus:ring-0 border-none bg-transparent p-0"
+                aria-label="Go to home page"
+                type="button"
+                tabIndex={0}
+              >
                 <img
                   src="/logo.png"
                   alt="The Ecom Monks"
@@ -51,17 +61,19 @@ export default function Navbar() {
                   style={{ display: 'block' }}
                 />
                 {/* Hide all text next to logo on mobile */}
-                <div className="hidden sm:flex whitespace-nowrap text-base sm:text-2xl md:text-3xl lg:text-4xl font-extrabold  px-2 py-1 flex-shrink min-w-0 items-center truncate max-w-[120px] sm:max-w-[180px] md:max-w-xs lg:max-w-md z-50">
+                <div className="hidden sm:flex whitespace-nowrap text-base sm:text-2xl md:text-3xl lg:text-4xl font-extrabold px-2 py-1 flex-shrink min-w-0 items-center truncate max-w-[120px] sm:max-w-[180px] md:max-w-xs lg:max-w-md z-50">
                   <span className="text-green-900 ml-1 sm:ml-0">THE</span>
                   <span className="text-green-900 ml-2 md:ml-3">ECOM</span>
                   <span className="text-green-900 ml-2 md:ml-3">MONKS</span>
                 </div>
-              </Link>
+              </button>
             </div>
             {/* Hamburger Button (right) */}
             <button
-              className="lg:hidden text-green-500 p-3 flex-shrink-0 ml-auto"
+              className="lg:hidden text-green-500 p-3 flex-shrink-0 ml-auto focus:outline-none focus:ring-0 border-none outline-none"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+              type="button"
             >
               <div className="w-3 h-3 mb-2 flex flex-col justify-center items-center">
                 <span
@@ -92,7 +104,7 @@ export default function Navbar() {
               { label: "Home", href: "/", isLink: true },
               { label: "Our Services", href: "/services", isLink: true },
               { label: "Our Frameworks", href: "/ourframeworks", isLink: true },
-              { label: "Why Us", href: "/whyus", isLink: true, customClass: "text-blue-700 hover:text-blue-500" },
+              { label: "Why Us", href: "/whyus", isLink: true },
               { label: "Contact Us", href: "/contactus", isLink: true },
               { label: "About Us", href: "/aboutus", isLink: true },
             ].map((item) => (
@@ -100,7 +112,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   to={item.href}
-                  className={`relative font-bold text-base sm:text-lg md:text-xl transition-all duration-500 group px-2 ${item.customClass || "text-green-900 hover:text-green-500"}`}
+                  className={`relative font-bold text-base sm:text-lg md:text-xl transition-all duration-500 group px-2 ${item.customClass || "text-green-900 hover:text-green-500"} focus:outline-none focus:ring-0 focus:border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:border-none outline-none ring-0 border-none cursor-pointer`}
                 >
                   {item.label}
                   <span className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-green-400 to-green-500 transition-all duration-500 w-0 group-hover:w-full"></span>
@@ -142,7 +154,7 @@ export default function Navbar() {
                   <Link
                     key={item.label}
                     to={item.href}
-                    className={`block text-green-900 font-bold text-xl sm:text-2xl transition-colors duration-500 py-2 ${item.customClass || "hover:text-green-500"}`}
+                    className={`block text-green-900 font-bold text-xl sm:text-2xl transition-colors duration-500 py-2 ${item.customClass || "hover:text-green-500"} focus:outline-none focus:ring-0 focus:border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:border-none outline-none ring-0 border-none cursor-pointer`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}
@@ -151,7 +163,7 @@ export default function Navbar() {
                   <a
                     key={item.label}
                     href={item.href}
-                    className={`block text-green-900 font-bold text-xl sm:text-2xl transition-colors duration-500 py-2 ${item.customClass || "hover:text-green-500"}`}
+                    className={`block text-green-900 font-bold text-xl sm:text-2xl transition-colors duration-500 py-2 ${item.customClass || "hover:text-green-500"} focus:outline-none focus:ring-0 focus:border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:border-none outline-none ring-0 border-none cursor-pointer`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}

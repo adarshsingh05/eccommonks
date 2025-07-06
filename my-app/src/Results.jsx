@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import ThreeDCard from "./components/ThreeDCard";
@@ -37,7 +36,7 @@ function Results() {
         <div className="flex flex-col md:flex-row gap-8 mb-12 items-center justify-center">
           <ThreeDCard className="w-full md:w-1/2 p-6 bg-gradient-to-br from-white to-blue-50/30">
             <motion.blockquote className="italic text-slate-700 text-xl sm:text-2xl leading-relaxed text-center" variants={fadeInUp}>
-              “Before The Ecom Monks, our brand was invisible on Flipkart.<br />After? We became a category bestseller in 40 days. With fewer SKUs.”
+              "Before The Ecom Monks, our brand was invisible on Flipkart.<br />After? We became a category bestseller in 40 days. With fewer SKUs."
             </motion.blockquote>
           </ThreeDCard>
           <ThreeDCard className="w-full md:w-1/2 p-6 bg-gradient-to-br from-white to-purple-50/30">
@@ -80,7 +79,7 @@ function Results() {
         </motion.h2>
         <ThreeDCard className="p-8 mb-8 bg-gradient-to-br from-white to-blue-50/30">
           <motion.blockquote className="italic text-slate-700 text-xl sm:text-2xl leading-relaxed text-center max-w-3xl mx-auto" variants={fadeInUp}>
-            “We spent ₹2L/month on ads for 4 months with no tracking, no strategy.<br />The Monks rebuilt our funnel. ROAS doubled. Clarity returned. Peace of mind too.”
+            "We spent ₹2L/month on ads for 4 months with no tracking, no strategy.<br />The Monks rebuilt our funnel. ROAS doubled. Clarity returned. Peace of mind too."
           </motion.blockquote>
           <motion.p className="text-lg sm:text-xl text-center text-slate-600 mt-6" variants={fadeInUp}>
             We don't start with media plans.<br />We start with cleaning up the mess others left behind.
@@ -241,7 +240,6 @@ function Results() {
           Let's make you the next brand on this page.
         </motion.p>
       </motion.main>
-      <Footer />
     </div>
   );
 }

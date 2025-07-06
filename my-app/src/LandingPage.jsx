@@ -443,8 +443,7 @@ function LandingPage() {
                     icon: '📊',
                     title: 'Fashion Accessories Brand',
                     points: [
-                      'Increased ROAS from 3.4× → 10.3× in 150 days',
-                      'ACOS down to 19.2%',
+                      'Increased ROAS from 3.4x to 10.3x in 150 days and ACOS down from 68.7% to 19.2%',
                     ],
                   },
                   {
@@ -482,7 +481,13 @@ function LandingPage() {
                           className={`flex items-center gap-2 w-full${item.title === 'D2C Grocery Startup' && point === 'Reduced CAC by 18% and doubled repeat order retention with funnel fixes' ? ' sm:mt-7' : ''}`}
                         >
                           <span className={`text-green-500 text-lg ${item.title === 'D2C Grocery Startup' || item.title==='Health & Wellness Brand' || item.title==='Heritage Skincare Brand' ? 'sm:mb-1' : ''}`}>✔️</span>
-                          <span className="text-green-700 text-sm sm:text-base text-left leading-snug">{point}</span>
+                          <span className="text-green-700 text-sm sm:text-base md:text-lg text-left leading-snug font-semibold">
+                            {item.title === 'Fashion Accessories Brand' ? (
+                              <>
+                                Increased ROAS from <span className="font-bold text-green-800">3.4x</span> to <span className="font-bold text-green-800">10.3x</span> in <span className="font-bold text-green-800">150 days</span> and ACOS down from <span className="font-bold text-red-600">68.7%</span> to <span className="font-bold text-green-700">19.2%</span>
+                              </>
+                            ) : point}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -625,8 +630,6 @@ function LandingPage() {
             </div>
           </section>
         </main>
-
-        <Footer />
       </div>
     </>
   );

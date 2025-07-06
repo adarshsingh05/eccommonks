@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import { motion } from "framer-motion";
 import ThreeDCard from "./components/ThreeDCard";
 import AnimatedText from "./components/AnimatedText";
@@ -241,7 +240,6 @@ function HowItWorks() {
           </a>
         </div>
       </motion.main>
-      <Footer />
     </div>
   );
 }
