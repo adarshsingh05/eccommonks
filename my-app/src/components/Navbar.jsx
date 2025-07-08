@@ -57,7 +57,7 @@ export default function Navbar({ setIsLoading }) {
                 <img
                   src="/logo.png"
                   alt="The Ecom Monks"
-                  className="h-18 w-18 ml-[-14px] sm:ml-[-160px] max-w-[80px] sm:h-16 sm:max-w-[100px] md:h-20 md:max-w-[120px] lg:h-24 lg:max-w-[140px] object-contain transition-transform duration-200 group-hover:scale-105"
+                  className="h-14 w-14 ml-[-14px] sm:ml-[-160px] max-w-[80px] sm:h-16 sm:max-w-[100px] md:h-20 md:max-w-[120px] lg:h-24 lg:max-w-[140px] object-contain transition-transform duration-200 group-hover:scale-105"
                   style={{ display: 'block' }}
                 />
                 {/* Hide all text next to logo on mobile */}
@@ -104,7 +104,7 @@ export default function Navbar({ setIsLoading }) {
               { label: "Home", href: "/", isLink: true },
               { label: "Our Services", href: "/services", isLink: true },
               { label: "Our Frameworks", href: "/ourframeworks", isLink: true },
-              { label: "Why Us", href: "/whyus", isLink: true },
+              { label: "Why Us", href: "/whyus", isLink: true, customClass: "text-green-700 hover:text-green-500" },
               { label: "Contact Us", href: "/contactus", isLink: true },
               { label: "About Us", href: "/aboutus", isLink: true },
             ].map((item) => (
@@ -139,7 +139,7 @@ export default function Navbar({ setIsLoading }) {
                 { label: "Home", href: "/", isLink: true },
                 { label: "Our Services", href: "/services", isLink: true },
                 { label: "Our Frameworks", href: "/ourframeworks", isLink: true },
-                { label: "Why Us", href: "/whyus", isLink: true, customClass: "text-blue-700 hover:text-blue-500" },
+                { label: "Why Us", href: "/whyus", isLink: true, customClass: "text-green-700 hover:text-green-500" },
                 { label: "Contact Us", href: "/contactus", isLink: true },
                 { label: "About Us", href: "/aboutus", isLink: true },
                 { label: "Results", href: "/results", isLink: true },

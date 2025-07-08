@@ -15,11 +15,11 @@ const staggerContainer = {
 
 function Refund() {
   return (
-    <div className="bg-gradient-to-br from-white via-blue-50/40 to-purple-50/20 min-h-screen text-slate-800 overflow-x-hidden relative">
+    <div className="bg-gradient-to-br from-white via-green-50/40 to-green-200/20 min-h-screen text-green-900 overflow-x-hidden relative">
       <Navbar />
       <ParallaxSection speed={0.12} direction="up" className="relative z-0">
-        <div className="absolute top-0 left-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl z-0" />
-        <div className="absolute bottom-0 right-0 w-24 h-24 bg-purple-400/10 rounded-full blur-2xl z-0" />
+        <div className="absolute top-0 left-0 w-32 h-32 bg-green-400/10 rounded-full blur-2xl z-0" />
+        <div className="absolute bottom-0 right-0 w-24 h-24 bg-green-400/10 rounded-full blur-2xl z-0" />
       </ParallaxSection>
       <motion.main
         className="max-w-2xl mx-auto px-2 sm:px-4 lg:px-8 py-8 sm:py-16 md:py-24 relative z-10"
@@ -27,40 +27,40 @@ function Refund() {
         animate="animate"
         variants={staggerContainer}
       >
-        <motion.h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-center mb-8 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent leading-tight" variants={fadeInUp}>
+        <motion.h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-center mb-8 bg-gradient-to-r from-green-600 via-green-400 to-green-800 bg-clip-text text-transparent leading-tight" variants={fadeInUp}>
           <AnimatedText texts={["Refund Policy – The Ecom Monks"]} className="inline-block" />
         </motion.h1>
-        <motion.div className="mb-8 text-base sm:text-lg text-slate-700" variants={fadeInUp}>
+        <motion.div className="mb-8 text-base sm:text-lg text-green-700" variants={fadeInUp}>
           At The Ecom Monks, a unit of 93 Communications, we're committed to providing performance-driven, high-impact ecommerce services. Our processes, timelines, and pricing are transparently communicated before onboarding, and every engagement begins with mutual clarity.<br />
           That said, here's our official refund policy:
         </motion.div>
         <motion.div className="mb-8" variants={fadeInUp}>
-          <div className="font-bold text-blue-700 mb-2">1. Refunds on Service Packages (Retainers)</div>
+          <div className="font-bold text-green-700 mb-2">1. Refunds on Service Packages (Retainers)</div>
           <div className="mb-2">We follow a no-refund policy for all monthly, quarterly, or project-based retainers once work has commenced, as resources, time, and strategies are allocated immediately.</div>
           <div className="mb-2">If you have made a payment but:</div>
-          <ul className="list-disc ml-6 text-slate-700 mb-2">
+          <ul className="list-disc ml-6 text-green-700 mb-2">
             <li>No onboarding call has occurred, and</li>
             <li>No work or service has been delivered,</li>
           </ul>
           <div className="mb-2">… You may request a full refund within the first 7 business days of payment.</div>
         </motion.div>
         <motion.div className="mb-8" variants={fadeInUp}>
-          <div className="font-bold text-blue-700 mb-2">2. Performance-Based Agreements</div>
+          <div className="font-bold text-green-700 mb-2">2. Performance-Based Agreements</div>
           <div>If your engagement with us is structured on a performance-linked incentive model (revenue share), the base retainer remains non-refundable, unless otherwise agreed upon in the contract.</div>
         </motion.div>
         <motion.div className="mb-8" variants={fadeInUp}>
-          <div className="font-bold text-blue-700 mb-2">3. Custom or One-Time Projects (e.g., Listing, Design, Onboarding Support)</div>
+          <div className="font-bold text-green-700 mb-2">3. Custom or One-Time Projects (e.g., Listing, Design, Onboarding Support)</div>
           <div>Due to the nature of custom work, no refunds will be processed once the project has entered the execution phase. In case of delays or dissatisfaction, we offer free revisions within scope as per the project agreement.</div>
         </motion.div>
         <motion.div className="mb-8" variants={fadeInUp}>
-          <div className="font-bold text-blue-700 mb-2">4. Cancellation & Pausing Services</div>
+          <div className="font-bold text-green-700 mb-2">4. Cancellation & Pausing Services</div>
           <div>You may cancel any future renewal of services by notifying us 7 days before the next billing cycle. If cancelled mid-cycle, the current month's payment is non-refundable, but no further billing will be done.</div>
         </motion.div>
         <motion.div className="mb-8" variants={fadeInUp}>
-          <div className="font-bold text-blue-700 mb-2">5. Our Fairness Clause</div>
-          <div>Our mission is to grow with our clients. If you believe there's been a genuine miscommunication or gap in delivery, please write to <a href="mailto:hello@theecommonks.com" className="underline hover:text-blue-600">hello@theecommonks.com</a> within first 7 working days of concern — and our senior team will review the case with integrity.</div>
+          <div className="font-bold text-green-700 mb-2">5. Our Fairness Clause</div>
+          <div>Our mission is to grow with our clients. If you believe there's been a genuine miscommunication or gap in delivery, please write to <a href="mailto:hello@theecommonks.com" className="underline hover:text-green-600">hello@theecommonks.com</a> within first 7 working days of concern — and our senior team will review the case with integrity.</div>
         </motion.div>
-        <motion.div className="mb-8 text-base sm:text-lg text-slate-700" variants={fadeInUp}>
+        <motion.div className="mb-8 text-base sm:text-lg text-green-700" variants={fadeInUp}>
           🧘‍♂️ We work like true partners, not vendors. Refunds aren't typically needed — because we ensure value is delivered every step of the way.
         </motion.div>
       </motion.main>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t-2 border-green-400 mt-20 sm:mt-32 text-green-900" style={{ fontFamily: 'Inter, Montserrat, Segoe UI, Arial, sans-serif' }}>
+    <footer className="bg-white border-t-2 border-green-400 mt-20 sm:mt-32 text-green-900 pointer-events-auto" style={{ fontFamily: 'Inter, Montserrat, Segoe UI, Arial, sans-serif' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-10 sm:py-24">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 sm:gap-20">
           {/* Brand */}
@@ -15,7 +15,7 @@ export default function Footer() {
             <p className="text-green-900 text-base sm:text-xl mb-2 leading-relaxed font-semibold text-left">
               Plot No. GH02, Sector-4, Greater Noida West- 201309
             </p>
-            <a href="mailto:hello@thecommonks.com" className="text-green-700 hover:text-green-400 transition-colors duration-500 text-base sm:text-lg font-medium cursor-pointer mt-2 flex items-center">
+            <a href="mailto:hello@thecommonks.com" className="text-green-700 hover:text-green-400 transition-colors duration-500 text-base sm:text-lg font-medium cursor-pointer mt-2 flex items-center break-all">
               <Mail className="w-5 h-5 mr-2" />hello@thecommonks.com
             </a>
           </div>
@@ -34,9 +34,7 @@ export default function Footer() {
               <Link to="/aboutus" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">About Us</Link>
               <Link to="/faqs" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">FAQs</Link>
               <Link to="/thankyou" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Thank You</Link>
-              <Link to="/refund" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Refund Policy</Link>
-              <Link to="/tandc" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Terms & Conditions</Link>
-              <Link to="/privacy" className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0">Privacy Policy</Link>
+
             </div>
           </div>
 
@@ -54,9 +52,9 @@ export default function Footer() {
           <div className="flex flex-col items-start w-full col-span-1">
             <h3 className="text-xl sm:text-2xl font-extrabold text-green-900 mb-4">Contact</h3>
             <div className="flex flex-col space-y-2 mb-4">
-              <div className="flex items-center"><Mail className="w-5 h-5 mr-2" />hello@thecommonks.com</div>
-              <div className="flex items-center"><MessageCircle className="w-5 h-5 mr-2" />+91-8505846555</div>
-              <div className="flex items-center"><Globe className="w-5 h-5 mr-2" />www.thecommonks.com</div>
+              <a href="mailto:hello@thecommonks.com" className="flex items-center text-green-700 hover:text-green-400 transition-colors duration-500 break-all"><Mail className="w-5 h-5 mr-2" />hello@thecommonks.com</a>
+              <a href="tel:+918505846555" className="flex items-center text-green-700 hover:text-green-400 transition-colors duration-500"><MessageCircle className="w-5 h-5 mr-2" />+91-8505846555</a>
+              <a href="https://www.thecommonks.com" target="_blank" rel="noopener noreferrer" className="flex items-center text-green-700 hover:text-green-400 transition-colors duration-500 break-all"><Globe className="w-5 h-5 mr-2" />www.thecommonks.com</a>
             </div>
             <div className="flex space-x-3 mt-2">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-green-700 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-500">

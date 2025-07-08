@@ -43,7 +43,7 @@ export default function AnimatedCounter({ end, duration = 2000, suffix = "" }) {
   }, [isVisible, end, duration]);
 
   return (
-    <span ref={ref} className="font-black text-yellow-400 animate-pulse">
+    <span ref={ref} className="font-black text-green-400 animate-pulse">
       {count}
       {suffix}
     </span>

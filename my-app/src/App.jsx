@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import LoadingScreen from "./components/LoadingScreen";
 import LandingPage from "./LandingPage";
 import ServicesPage from "./components/Services";
@@ -19,6 +19,14 @@ import Privacy from "./Privacy";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+function ScrollToTop() {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  return null;
+}
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -28,6 +36,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar setIsLoading={setIsLoading} />
       <Routes>
         <Route path="/" element={<LandingPage />} />

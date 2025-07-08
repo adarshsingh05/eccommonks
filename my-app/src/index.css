@@ -391,24 +391,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #e0fce6;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #22c55e, #bbf7d0);
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #16a34a, #4ade80);
-}
-
 /* Selection */
 ::selection {
   background: rgba(34, 197, 94, 0.2);

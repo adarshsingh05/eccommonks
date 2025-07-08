@@ -143,9 +143,9 @@ function FrameworkPage() {
 
           {/* Hero Section with Parallax */}
           <ParallaxSection speed={0.3} direction="up" className="w-full">
-            <section className="py-16 md:py-32 flex flex-col items-center justify-center text-center relative bg-gradient-to-b from-green-50/60 to-white">
+            <section className="py-6 md:py-32 flex flex-col items-center justify-center text-center relative bg-gradient-to-b from-green-50/60 to-white">
             <div className="max-w-6xl w-full mx-auto px-4 md:px-8 flex flex-col items-center">
-                <div className="text-3xl md:text-5xl lg:text-7xl font-black tracking-tight mb-6 md:mb-8">
+                <div className="text-2xl md:text-5xl lg:text-7xl font-black tracking-tight mb-3 md:mb-8">
                 <span className="text-[#222]">Where Growth Isn't Random. </span>
                 <span className="text-green-500">It's Engineered.</span>
               </div>
@@ -174,12 +174,12 @@ function FrameworkPage() {
           />
 
           {/* Headline Section */}
-          <section className="py-16 md:py-32 bg-white relative z-10">
+          <section className="py-6 md:py-32 bg-white relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-400/10 to-green-500/10"></div>
             </div>
             <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 md:mb-8 text-[#222]">
+              <h2 className="text-2xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-8 text-[#222]">
                 Growth that feels effortless — because it's backed by{" "}
                 <span className="text-green-500">frameworks that work.</span>
               </h2>
@@ -209,13 +209,13 @@ function FrameworkPage() {
           </section>
 
           {/* Why This Page Matters */}
-          <section className="py-16 md:py-32 bg-green-50 relative z-10">
+          <section className="py-6 md:py-32 bg-green-50 relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-500/10 to-green-400/10"></div>
             </div>
             <div className="max-w-6xl mx-auto px-4 md:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 md:mb-8 text-[#222]">WHY THIS PAGE MATTERS</h2>
+              <div className="text-center mb-6">
+                <h2 className="text-2xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-8 text-[#222]">WHY THIS PAGE MATTERS</h2>
                 <div className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 space-y-4 max-w-4xl mx-auto">
                   <p>Before you trust anyone to run your ads, rewrite your listings, or rebuild your brand store…</p>
                   <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-green-600 font-semibold text-xl md:text-2xl">
@@ -234,12 +234,12 @@ function FrameworkPage() {
           </section>
 
           {/* Built From the Ground */}
-          <section className="py-16 md:py-32 bg-white relative z-10">
+          <section className="py-6 md:py-32 bg-white relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-l from-green-400/10 to-green-500/10"></div>
             </div>
             <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 md:mb-8 text-[#222]">
+              <h2 className="text-2xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-8 text-[#222]">
                 Built From the Ground. <span className="text-green-500">Refined in the Fire.</span>
               </h2>
               <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 md:mb-12">Every framework you'll see below is the result of:</p>
@@ -265,12 +265,12 @@ function FrameworkPage() {
           </section>
 
           {/* Framework Matcher */}
-          <section className="py-16 md:py-32 bg-green-50 relative z-10">
+          <section className="py-6 md:py-32 bg-green-50 relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-500/10 to-green-400/10"></div>
             </div>
             <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 md:mb-8 text-[#222]">WHICH FRAMEWORK FITS YOU?</h2>
+              <h2 className="text-2xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-8 text-[#222]">WHICH FRAMEWORK FITS YOU?</h2>
               <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 md:mb-12 max-w-4xl mx-auto">
                 Not sure where to start? Tell us your biggest pain point, and we'll match you to the perfect framework.
               </p>
@@ -300,13 +300,13 @@ function FrameworkPage() {
           </section>
 
           {/* Frameworks Grid */}
-          <section className="py-16 md:py-32 bg-white relative z-10">
+          <section className="py-6 md:py-32 bg-white relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-l from-green-400/10 to-green-500/10"></div>
             </div>
             <div className="max-w-6xl mx-auto px-4 md:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 md:mb-8 text-[#222]">OUR PROVEN FRAMEWORKS</h2>
+              <div className="text-center mb-6">
+                <h2 className="text-2xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-8 text-[#222]">OUR PROVEN FRAMEWORKS</h2>
                 <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto">
                   Each framework is a complete system — not just a checklist, but a methodology that scales.
                 </p>
@@ -448,12 +448,12 @@ function FrameworkPage() {
           </section>
 
           {/* Final CTA Section */}
-          <section className="py-16 md:py-32 bg-green-50 relative z-10">
+          <section className="py-6 md:py-32 bg-green-50 relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-500/10 to-green-400/10"></div>
             </div>
             <div className="max-w-4xl mx-auto px-4 md:px-8 text-center">
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 md:mb-8 text-[#222]">
+              <h2 className="text-2xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-8 text-[#222]">
                 READY TO <span className="text-green-500">ENGINEER</span> YOUR GROWTH?
               </h2>
               <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 md:mb-12">

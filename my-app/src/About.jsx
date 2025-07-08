@@ -147,7 +147,7 @@ function About() {
           <motion.h2 className="text-2xl sm:text-3xl font-black mb-8 text-center bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent" variants={fadeInUp}>
             <AnimatedText texts={["🧘 The Monk Operating Principles"]} className="inline-block" />
           </motion.h2>
-          <div className="relative flex flex-col gap-8 md:gap-12 before:absolute before:left-4 md:before:left-8 before:top-0 before:bottom-0 before:w-1 before:bg-gradient-to-b before:from-purple-300 before:to-blue-300 before:rounded-full">
+          <div className="relative flex flex-col gap-8 md:gap-12 before:hidden sm:before:absolute sm:before:left-4 md:before:left-8 sm:before:top-0 sm:before:bottom-0 sm:before:w-1 sm:before:bg-gradient-to-b sm:before:from-purple-300 sm:before:to-blue-300 sm:before:rounded-full">
             {principles.map((p, idx) => (
               <div key={idx} className="relative flex items-start gap-4 md:gap-8 group">
                 <div className="z-10 flex-shrink-0 flex items-center justify-center w-10 h-10 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-purple-200 to-blue-200 shadow-lg border-4 border-white -ml-2 md:-ml-4">
@@ -183,7 +183,7 @@ function About() {
           </ThreeDCard>
         </motion.section>
         {/* Why Us & CTA Section */}
-        <motion.section className="mb-12" variants={fadeInUp}>
+        <motion.section className="mb-[-100px] " variants={fadeInUp}>
           <ThreeDCard className="p-8 bg-gradient-to-br from-white to-purple-50/30 flex flex-col gap-4 shadow-xl group hover:scale-[1.03] transition-transform duration-300">
             <motion.h2 className="text-2xl sm:text-3xl font-black mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent" variants={fadeInUp}>
               <AnimatedText texts={["So, Why Us?"]} className="inline-block" />

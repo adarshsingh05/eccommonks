@@ -16,9 +16,9 @@ function LandingPage() {
         <meta name="description" content="Struggling with your e-commerce growth? The Ecom Monks is India's most trusted agency for Amazon, Flipkart, Blinkit, Zepto & more. Scale faster with our expert-led solutions." />
         <link rel="canonical" href="/" />
       </Helmet>
-      <div className="bg-white text-[#222] overflow-x-hidden">
+      <div className="bg-white text-[#222] overflow-x-hidden pointer-events-auto">
         {/* Parallax Background Elements */}
-        <div className="fixed inset-0 z-0">
+        <div className="fixed inset-0 z-0 pointer-events-none">
           <ScrollParallax speed={0.1} className="absolute inset-0 opacity-5">
             <div
               className="absolute inset-0"
@@ -304,25 +304,25 @@ function LandingPage() {
                   ].map((item, idx) => (
                     <ThreeDCard
                       key={item.title}
-                      className="bg-white border border-green-200 rounded-3xl shadow-xl p-8 md:p-10 flex flex-col items-center justify-between transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard md:w-[520px] lg:w-[600px] md:min-h-[260px] lg:min-h-[280px]"
+                      className="bg-white border border-green-200 rounded-2xl sm:rounded-3xl shadow-xl p-2 py-4 sm:p-8 md:p-10 flex flex-col items-center justify-between transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard w-full max-w-[95vw] sm:max-w-none overflow-hidden"
                     >
-                      <div className="text-5xl md:text-6xl lg:text-7xl mb-4">{item.icon}</div>
-                      <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-green-700 mb-4 text-center leading-tight break-words max-w-xs mx-auto md:max-w-[420px] lg:max-w-[520px] xl:max-w-[600px] sm:max-w-none" style={{display: 'block', overflowWrap: 'break-word'}}>{item.title}</h3>
+                      <div className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-2 sm:mb-4">{item.icon}</div>
+                      <h3 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-black text-green-700 mb-2 sm:mb-4 text-center leading-tight break-words mx-auto md:max-w-[420px] lg:max-w-[520px] xl:max-w-[600px] sm:max-w-none" style={{display: 'block', overflowWrap: 'break-word'}}>{item.title}</h3>
                       {item.intro && (
-                        <div className="flex items-center mb-2 md:text-lg lg:text-xl whitespace-nowrap text-green-500" style={{ fontSize: '1.05rem', lineHeight: '1.2', wordBreak: 'break-word' }}>
-                          <span className="text-green-500 text-xl lg:text-2xl mr-2">✓</span>
-                          <span className="ml-2">{item.intro}</span>
+                        <div className="flex items-center mb-1 sm:mb-2 text-green-500 text-xs sm:text-base md:text-lg lg:text-xl whitespace-normal" style={{ lineHeight: '1.2', wordBreak: 'break-word' }}>
+                          <span className="text-green-500 text-base sm:text-xl lg:text-2xl mr-1 sm:mr-2">✓</span>
+                          <span className="ml-1 sm:ml-2">{item.intro}</span>
                         </div>
                       )}
-                      <ul className="w-full pl-0 text-left text-green-500 space-y-2 md:text-lg lg:text-xl flex-1 flex flex-col justify-center">
+                      <ul className="w-full pl-0 text-left text-green-500 space-y-1 sm:space-y-2 text-xs sm:text-base md:text-lg lg:text-xl flex-1 flex flex-col justify-center">
                         {item.bullets.map((point, i) => (
                           <li
                             key={i}
-                            className="flex items-center pl-0 bg-transparent px-4 md:px-2 py-2 text-xs sm:text-base md:text-lg lg:text-xl mb-1 rounded-r-xl leading-snug max-w-full break-words text-green-500"
-                            style={{ fontSize: '1.05rem', lineHeight: '1.2', wordBreak: 'break-word' }}
+                            className="flex items-center pl-0 bg-transparent px-0 sm:px-4 md:px-2 py-1 sm:py-2 text-xs sm:text-base md:text-lg lg:text-xl mb-0 sm:mb-1 rounded-r-xl leading-snug max-w-full break-words text-green-500"
+                            style={{ lineHeight: '1.2', wordBreak: 'break-word' }}
                           >
-                            <span className="text-green-500 text-xl lg:text-2xl mr-2 md:mr-1 flex-shrink-0">✓</span>
-                            <span className="ml-2 md:ml-1 break-words whitespace-normal">{point}</span>
+                            <span className="text-green-500 text-base sm:text-xl lg:text-2xl mr-1 sm:mr-2 md:mr-1 flex-shrink-0">✓</span>
+                            <span className="ml-1 sm:ml-2 md:ml-1 break-words whitespace-normal">{point}</span>
                           </li>
                         ))}
                       </ul>
@@ -341,11 +341,11 @@ function LandingPage() {
             <div className="max-w-7xl mx-auto px-8 lg:px-12 text-center">
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-6 md:mb-10 text-[#222]">
                 <Link to="/services" className="hover:underline text-green-500 focus:outline-none focus:ring-2 focus:ring-green-400">
-                  Our Services
-                </Link> – Ecommerce<br/>
-                Q-COMMERCE BRAND BUILDING
+                  OUR SERVICES
+                </Link>  Ecommerce
+                Q-commerce brand building
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 w-full">
                 {[
                   {
                     icon: '🛒',
@@ -399,7 +399,7 @@ function LandingPage() {
                 ].map((item, idx) => (
                   <ThreeDCard
                     key={item.title}
-                    className="bg-white border border-green-200 rounded-3xl shadow-xl p-8 md:p-10 flex flex-col items-center justify-between transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard md:w-[520px] lg:w-[600px] md:min-h-[260px] lg:min-h-[280px]"
+                    className="bg-white border border-green-200 rounded-3xl shadow-xl p-3 md:p-10 flex flex-col items-center justify-between transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard md:w-[520px] lg:w-[600px] md:min-h-[260px] lg:min-h-[280px]"
                   >
                     <div className="text-5xl md:text-6xl lg:text-7xl mb-4">{item.icon}</div>
                     <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-green-700 mb-4 text-center leading-tight break-words max-w-xs mx-auto md:max-w-[420px] lg:max-w-[520px] xl:max-w-[600px] sm:max-w-none" style={{display: 'block', overflowWrap: 'break-word'}}>{item.title}</h3>

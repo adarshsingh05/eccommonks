@@ -44,11 +44,11 @@ const BRAND_MOMENTS = [
   {
     type: "services-carousel",
     services: [
-      { name: "Amazon Mastery", icon: ShoppingCart, color: "from-orange-400 to-orange-600" },
-      { name: "Flipkart Excellence", icon: Target, color: "from-blue-400 to-blue-600" },
-      { name: "Meta Ads Magic", icon: Zap, color: "from-purple-400 to-purple-600" },
-      { name: "Creative Studio", icon: Sparkles, color: "from-pink-400 to-pink-600" },
-      { name: "Influencer Engine", icon: Crown, color: "from-yellow-400 to-yellow-600" },
+      { name: "Amazon Mastery", icon: ShoppingCart, color: "from-green-400 to-green-600" },
+      { name: "Flipkart Excellence", icon: Target, color: "from-green-400 to-green-600" },
+      { name: "Meta Ads Magic", icon: Zap, color: "from-green-400 to-green-600" },
+      { name: "Creative Studio", icon: Sparkles, color: "from-green-400 to-green-600" },
+      { name: "Influencer Engine", icon: Crown, color: "from-green-400 to-green-600" },
     ],
     duration: 3000,
   },
@@ -66,22 +66,22 @@ const BRAND_MOMENTS = [
 ]
 
 const FLOATING_ELEMENTS = [
-  { icon: ShoppingCart, delay: 0, position: { top: "15%", left: "10%" }, color: "text-orange-500" },
+  { icon: ShoppingCart, delay: 0, position: { top: "15%", left: "10%" }, color: "text-green-500" },
   { icon: TrendingUp, delay: 200, position: { top: "25%", right: "15%" }, color: "text-green-500" },
-  { icon: Target, delay: 400, position: { bottom: "20%", left: "8%" }, color: "text-blue-500" },
-  { icon: Crown, delay: 600, position: { bottom: "15%", right: "12%" }, color: "text-yellow-500" },
-  { icon: Star, delay: 800, position: { top: "10%", right: "8%" }, color: "text-purple-500" },
-  { icon: Rocket, delay: 1000, position: { bottom: "25%", left: "15%" }, color: "text-red-500" },
-  { icon: Award, delay: 1200, position: { top: "20%", left: "20%" }, color: "text-indigo-500" },
-  { icon: Sparkles, delay: 1400, position: { bottom: "30%", right: "20%" }, color: "text-pink-500" },
+  { icon: Target, delay: 400, position: { bottom: "20%", left: "8%" }, color: "text-green-500" },
+  { icon: Crown, delay: 600, position: { bottom: "15%", right: "12%" }, color: "text-green-500" },
+  { icon: Star, delay: 800, position: { top: "10%", right: "8%" }, color: "text-green-500" },
+  { icon: Rocket, delay: 1000, position: { bottom: "25%", left: "15%" }, color: "text-green-500" },
+  { icon: Award, delay: 1200, position: { top: "20%", left: "20%" }, color: "text-green-500" },
+  { icon: Sparkles, delay: 1400, position: { bottom: "30%", right: "20%" }, color: "text-green-500" },
 ]
 
 const PARTICLE_COLORS = [
-  "bg-gradient-to-r from-green-400 to-blue-500",
-  "bg-gradient-to-r from-purple-400 to-pink-500",
-  "bg-gradient-to-r from-yellow-400 to-orange-500",
-  "bg-gradient-to-r from-blue-400 to-indigo-500",
-  "bg-gradient-to-r from-pink-400 to-red-500",
+  "bg-gradient-to-r from-green-400 to-green-500",
+  "bg-gradient-to-r from-green-400 to-green-500",
+  "bg-gradient-to-r from-green-400 to-green-500",
+  "bg-gradient-to-r from-green-400 to-green-500",
+  "bg-gradient-to-r from-green-400 to-green-500",
 ]
 
 export default function StylishBrandLoader({ onComplete }) {
@@ -405,18 +405,18 @@ export default function StylishBrandLoader({ onComplete }) {
       {/* Enhanced Skip Button */}
       <button
         onClick={handleSkip}
-        className="fixed top-6 right-6 z-50 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl hover:bg-white hover:scale-110 transition-all duration-300 group border border-gray-200"
+        className="fixed top-2 mr-2 sm:mr-0 right-2 sm:top-6 sm:right-6 z-50 bg-white/90 backdrop-blur-md rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-xl hover:bg-white hover:scale-110 transition-all duration-300 group border border-gray-200"
       >
-        <X className="w-6 h-6 text-gray-600 group-hover:text-red-500 transition-colors" />
+        <X className="w-5 h-5   sm:w-6 sm:h-6 text-gray-600 group-hover:text-red-500 transition-colors" />
         <span className="absolute -bottom-8 right-0 text-xs text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-semibold">
           Skip Experience
         </span>
       </button>
 
       {/* Enhanced Progress Ring */}
-      <div className="fixed top-6 left-6 z-50">
-        <div className="relative w-20 h-20">
-          <svg className="w-20 h-20 transform -rotate-90" viewBox="0 0 80 80">
+      <div className="fixed top-2 left-2 sm:top-6 sm:left-6 z-50">
+        <div className="relative w-12 h-12 sm:w-20 sm:h-20">
+          <svg className="w-12 h-12 sm:w-20 sm:h-20 transform -rotate-90" viewBox="0 0 80 80">
             <circle cx="40" cy="40" r="35" stroke="rgba(34, 197, 94, 0.1)" strokeWidth="6" fill="none" />
             <circle
               cx="40"

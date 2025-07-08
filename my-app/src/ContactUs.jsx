@@ -94,23 +94,23 @@ function ContactUs() {
           </ParallaxSection>
 
           {/* Sliding Banner */}
-          <div className="mt-8 sm:mt-[-60px]">
+          <div className="mt-[-50px]">
             <RunningText text="Limited Onboardings • Maximum Focus • Ultra-focus = Real Results • Quarterly Lock-ins = No Competition" speed={15} />
           </div>
 
           {/* What Happens Next Section */}
-          <section className="py-16 md:py-32 relative z-10">
+          <section className="py-6 md:py-32 relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-400/10 to-green-500/10"></div>
             </div>
             <div className="max-w-6xl mx-auto px-4 md:px-8">
-              <div className="text-center mb-12">
+              <div className="text-center mb-4">
                 <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-6 md:mb-8 text-[#222]">
                   What Happens Next?
                 </h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 {[
                   {
                     step: "1",
@@ -135,13 +135,13 @@ function ContactUs() {
                 ].map((item, idx) => (
                   <ThreeDCard
                     key={idx}
-                    className="bg-white border border-green-200 rounded-2xl shadow-lg p-6 md:p-8 flex flex-col items-center justify-center text-center transition-transform duration-500 hover:scale-101 hover:shadow-xl hover:border-green-300"
+                    className="bg-white border border-green-200 rounded-2xl shadow-lg p-3 md:p-8 flex flex-col items-center justify-center text-center transition-transform duration-500 hover:scale-101 hover:shadow-xl hover:border-green-300"
                   >
-                    <div className="text-4xl md:text-5xl mb-4">{item.icon}</div>
-                    <div className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mb-4">
+                    <div className="text-2xl md:text-5xl mb-2 md:mb-4"> {item.icon}</div>
+                    {/* <div className="bg-green-500 text-white rounded-full w-6 h-6 md:w-8 md:h-8 flex items-center justify-center font-bold text-xs md:text-sm mb-2 md:mb-4">
                       {item.step}
-                    </div>
-                    <h3 className="text-lg md:text-xl font-bold text-green-700 mb-2">{item.title}</h3>
+                    </div> */}
+                    <h3 className="text-base md:text-xl font-bold text-green-700 mb-1 md:mb-2"> {item.step}.  {item.title}</h3>
                   </ThreeDCard>
                 ))}
               </div>
