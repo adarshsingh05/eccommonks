@@ -22,13 +22,13 @@ function TandC() {
         <div className="absolute bottom-0 right-0 w-24 h-24 bg-green-400/10 rounded-full blur-2xl z-0" />
       </ParallaxSection>
       <motion.main
-        className="max-w-2xl mx-auto px-2 sm:px-4 lg:px-8 py-8 sm:py-16 md:py-24 relative z-10"
+        className="sm:mt-0 mt-6 max-w-2xl mx-auto px-2 sm:px-4 lg:px-8 py-8 sm:py-16 md:py-24 relative z-10"
         initial="initial"
         animate="animate"
         variants={staggerContainer}
       >
         <motion.h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-center mb-8 bg-gradient-to-r from-green-600 via-green-400 to-green-800 bg-clip-text text-transparent leading-tight" variants={fadeInUp}>
-          <AnimatedText texts={["📜 Terms & Conditions"]} className="inline-block" />
+          📜 Terms & Conditions
         </motion.h1>
         <motion.div className="mb-8 text-base sm:text-lg text-green-700" variants={fadeInUp}>
           <div className="mb-2 font-bold">Effective Date: 8th July 2025</div>

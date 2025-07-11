@@ -5,6 +5,7 @@ import ParallaxSection from './components/ParallaxSection';
 import ScrollParallax from './components/ScrollParallax';
 import ThreeDCard from './components/ThreeDCard';
 import RunningText from './components/RunningText';
+import { Check, X } from "lucide-react";
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -94,7 +95,7 @@ function ContactUs() {
           </ParallaxSection>
 
           {/* Sliding Banner */}
-          <div className="mt-[-50px]">
+          <div className="mt-[-100px] sm:mb-0 mb-5">
             <RunningText text="Limited Onboardings • Maximum Focus • Ultra-focus = Real Results • Quarterly Lock-ins = No Competition" speed={15} />
           </div>
 
@@ -137,7 +138,7 @@ function ContactUs() {
                     key={idx}
                     className="bg-white border border-green-200 rounded-2xl shadow-lg p-3 md:p-8 flex flex-col items-center justify-center text-center transition-transform duration-500 hover:scale-101 hover:shadow-xl hover:border-green-300"
                   >
-                    <div className="text-2xl md:text-5xl mb-2 md:mb-4"> {item.icon}</div>
+                  
                     {/* <div className="bg-green-500 text-white rounded-full w-6 h-6 md:w-8 md:h-8 flex items-center justify-center font-bold text-xs md:text-sm mb-2 md:mb-4">
                       {item.step}
                     </div> */}
@@ -190,7 +191,10 @@ function ContactUs() {
                     <div className="space-y-2">
                       <p className="text-sm md:text-base text-yellow-700">🎯 Ultra-focus = Real Results.</p>
                       <p className="text-sm md:text-base text-yellow-700">📅 Quarterly Lock-ins = No Competition Within Our Roster.</p>
-                      <p className="text-sm md:text-base text-yellow-700 font-semibold">✅ This isn't scarcity marketing. This is how we guarantee performance.</p>
+                      <p className="text-sm md:text-base text-yellow-700 font-semibold">
+                        <Check className="w-4 h-4 text-green-500 inline mr-2" />
+                        This isn't scarcity marketing. This is how we guarantee performance.
+                      </p>
                     </div>
                   </div>
 
@@ -314,7 +318,7 @@ function ContactUs() {
                 <div>
                   <ThreeDCard className="bg-white border border-green-200 rounded-2xl shadow-lg p-6 md:p-8 h-fit">
                     <h3 className="text-2xl md:text-3xl font-black text-green-700 mb-6">
-                      The Monk Grant (Pro-Bono)
+                      The Monk Grant <br></br> (Pro-Bono)
                     </h3>
                     
                     <div className="space-y-6">
@@ -325,20 +329,16 @@ function ContactUs() {
                         We only charge a X % of actual sales.
                       </p>
                       
-                      <div className="space-y-2">
-                        <div className="flex items-center space-x-2">
-                          <span className="text-red-500 text-xl">❌</span>
-                          <span className="text-base md:text-lg text-[#222]">No base fee.</span>
+                                              <div className="space-y-2">
+                          <div className="flex items-center gap-2 mb-4">
+                            <X className="w-6 h-6 text-red-500" />
+                            <span className="text-red-700 font-semibold">What We Don't Do</span>
+                          </div>
+                          <div className="flex items-center gap-2 mb-4">
+                            <Check className="w-6 h-6 text-green-500" />
+                            <span className="text-green-700 font-semibold">What We Do</span>
+                          </div>
                         </div>
-                        <div className="flex items-center space-x-2">
-                          <span className="text-green-500 text-xl">✅</span>
-                          <span className="text-base md:text-lg text-[#222]">Real growth.</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <span className="text-green-500 text-xl">🎯</span>
-                          <span className="text-base md:text-lg text-[#222]">Handheld strategy from Day 0.</span>
-                        </div>
-                      </div>
 
                       <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                         <p className="text-sm md:text-base text-yellow-700">
@@ -406,15 +406,13 @@ function ContactUs() {
           {/* Final CTA Section */}
           <section className="py-16 md:py-32 bg-green-50 border-t-2 border-green-400">
             <div className="max-w-5xl mx-auto px-4 md:px-8 text-center">
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-6 md:mb-8 text-[#222]">
-                🔥 Final CTA
-              </h2>
-              <p className="text-xl md:text-2xl text-green-600 mb-8 font-semibold">
-                We're not a growth agency.
-              </p>
-              <p className="text-xl md:text-2xl text-[#222] mb-12 font-bold">
+              
+              <div className="text-2xl md:text-2xl text-green-600 mb-8 font-semibold">
+                We're not a growth agency.<p className="text-2xl md:text-2xl text-[#222] mb-12 font-bold">
                 We're your unfair advantage.
               </p>
+              </div>
+              
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 <button className="bg-gradient-to-r from-green-500 to-green-600 text-white font-bold px-6 py-4 rounded-xl hover:scale-105 transition-all duration-300 text-lg">

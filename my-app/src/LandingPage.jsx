@@ -3,12 +3,45 @@ import Footer from "./components/Footer";
 import RunningText from "./components/RunningText";
 import ParallaxSection from "./components/ParallaxSection";
 import ScrollParallax from "./components/ScrollParallax";
-import ThreeDCard from "./components/ThreeDCard";
 import { Helmet } from "react-helmet";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import ThreeDCard from "./components/ThreeDCard";
+import AnimatedText from "./components/AnimatedText";
+import CursorFollower from "./components/CursorFollower";
+import { 
+  Check, 
+  X, 
+  RefreshCw, 
+  Search, 
+  Brain, 
+  PenTool, 
+  Globe, 
+  ShoppingCart, 
+  TrendingUp, 
+  Palette, 
+  Zap, 
+  Smartphone, 
+  Handshake, 
+  BarChart3, 
+  Droplets, 
+  Activity, 
+  Package, 
+  User, 
+  Lightbulb,
+  Target,
+  Package2,
+  BarChart
+} from "lucide-react";
 
 function LandingPage() {
+  const navigate = useNavigate();
+
+  const handleContactNavigation = () => {
+    navigate('/contactus');
+  };
+
   return (
     <>
       <Helmet>
@@ -66,18 +99,17 @@ function LandingPage() {
                 <div className="text-2xl sm:text-4xl md:text-5xl text-[#222] font-extrabold mb-6">
                   Your All-in-One Growth Engine for <span className="text-green-500">Amazon</span>, <span className="text-green-400">Flipkart</span> &amp; Beyond
                 </div>
-                <div className="text-sm sm:text-base md:text-lg text-green-400 mb-2">
-                  From listings to sales to followers — we don't just manage accounts.
+                <div className="text-sm sm:text-base md:text-lg text-green-400 mb-8">
+                  From listings to sales to followers — we don't just manage accounts. 
+                  <span  className="text-sm sm:text-base md:text-lg font-bold text-[#222] mb-8"> We build brands, scale visibility, and drive conversions across all channels.</span>
                 </div>
-                <div className="text-sm sm:text-base md:text-lg font-bold text-[#222] mb-8">
-                  We build brands, scale visibility, and drive conversions across all channels.
-                </div>
+               
                 {/* CTA */}
                 <button
+                  onClick={handleContactNavigation}
                   className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-8 py-3 sm:px-12 sm:py-4 md:px-16 md:py-5 text-base sm:text-xl md:text-2xl rounded-2xl flex flex-row items-center justify-center shadow-xl hover:scale-105 hover:shadow-green-400/50 transition-all duration-500 relative overflow-hidden animate-ctaPulse min-w-[220px]"
                   style={{ minHeight: '48px', boxShadow: '0 8px 32px 0 rgba(34,197,94,0.18)' }}
                 >
-                  <span className="inline-block mr-3 text-2xl md:text-3xl animate-bounce">💡</span>
                   <span className="text-center leading-tight">Get My Free Growth Audit Now →</span>
                   <span className="absolute inset-0 rounded-2xl pointer-events-none group-hover:animate-glowPulse"></span>
                 </button>
@@ -158,7 +190,7 @@ function LandingPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
                       {["SPNs are slow, overloaded, and full of templated work", "Ads are outsourced with no ROI clarity", "You get sold big promises — and delivered zero strategy.", "You're stuck between poor creatives, weak campaigns, and zero clarity.", "Social media? Untouched", "Influencers? Unused"].map((point, idx) => (
                         <div key={idx} className="flex items-start gap-3">
-                          <span className="text-green-500 text-2xl mt-1">✅</span>
+                          <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                           <span className="text-sm sm:text-base text-green-700 leading-snug">{point}</span>
                         </div>
                       ))}
@@ -197,7 +229,10 @@ function LandingPage() {
                   <h3 className="text-3xl font-black text-green-500 mb-8">Others Do This</h3>
                   <ul className="space-y-6 text-left">
                     {["One team, 100 clients", "Generic listings", "Ad reporting", "No accountability", "Zero brand building"].map((item, idx) => (
-                      <li key={idx} className="text-xl text-[#222] flex items-center"><span className="mr-3">❌</span>{item}</li>
+                      <li key={idx} className="text-xl text-[#222] flex items-center">
+                        <X className="w-5 h-5 text-red-500 mr-3 flex-shrink-0" />
+                        {item}
+                      </li>
                     ))}
                   </ul>
                 </ThreeDCard>
@@ -212,7 +247,7 @@ function LandingPage() {
                       "Creative storytelling + influencer buzz"
                     ].map((item, idx) => (
                       <li key={idx} className="text-xl text-[#222] flex items-center">
-                        <span className="mr-3">✅</span>
+                        <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
                         <span className="whitespace-normal break-words max-w-xs sm:max-w-none">{item}</span>
                       </li>
                     ))}
@@ -248,7 +283,7 @@ function LandingPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-24 w-full">
                   {[
                     {
-                      icon: '🔁',
+                      icon: <RefreshCw className="w-8 h-8 text-green-500" />,
                       title: 'TRIPLE-T: Your Dedicated Growth Squad',
                       bullets: [
                         'Team → Not freelancers, but our in-house ecom soldiers',
@@ -257,7 +292,7 @@ function LandingPage() {
                       ],
                     },
                     {
-                      icon: '🔍',
+                      icon: <Search className="w-8 h-8 text-green-500" />,
                       title: 'A.U.D.I.T SPRINT – The Seller Deep Dive',
                       intro: 'Delivered within 48 hours:',
                       bullets: [
@@ -269,7 +304,7 @@ function LandingPage() {
                       ],
                     },
                     {
-                      icon: '🧠',
+                      icon: <Brain className="w-8 h-8 text-green-500" />,
                       title: 'AD SMARTSET – Our Media Buying Philosophy',
                       intro: "We don't run ads. We create compounding performance:",
                       bullets: [
@@ -281,7 +316,7 @@ function LandingPage() {
                       ],
                     },
                     {
-                      icon: '✍️',
+                      icon: <PenTool className="w-8 h-8 text-green-500" />,
                       title: 'S.O.S Listings – Built to Sell, Not Just Exist',
                       bullets: [
                         'SEO-backed titles, CTA bullets, and lifestyle imagery',
@@ -292,7 +327,7 @@ function LandingPage() {
                       ],
                     },
                     {
-                      icon: '🌐',
+                      icon: <Globe className="w-8 h-8 text-green-500" />,
                       title: 'INFLUENCE TO IMPACT – Influencer Engine',
                       bullets: [
                         'Influencer discovery for your category',
@@ -306,11 +341,12 @@ function LandingPage() {
                       key={item.title}
                       className="bg-white border border-green-200 rounded-2xl sm:rounded-3xl shadow-xl p-2 py-4 sm:p-8 md:p-10 flex flex-col items-center justify-between transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard w-full max-w-[95vw] sm:max-w-none overflow-hidden"
                     >
-                      <div className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-2 sm:mb-4">{item.icon}</div>
-                      <h3 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-black text-green-700 mb-2 sm:mb-4 text-center leading-tight break-words mx-auto md:max-w-[420px] lg:max-w-[520px] xl:max-w-[600px] sm:max-w-none" style={{display: 'block', overflowWrap: 'break-word'}}>{item.title}</h3>
+                      <div className="flex items-center justify-center mb-4 md:mb-6">
+                        <h3 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-black text-green-700 text-center leading-tight break-words mx-auto md:max-w-[420px] lg:max-w-[520px] xl:max-w-[600px] sm:max-w-none" style={{display: 'block', overflowWrap: 'break-word'}}>{item.title}</h3>
+                      </div>
                       {item.intro && (
                         <div className="flex items-center mb-1 sm:mb-2 text-green-500 text-xs sm:text-base md:text-lg lg:text-xl whitespace-normal" style={{ lineHeight: '1.2', wordBreak: 'break-word' }}>
-                          <span className="text-green-500 text-base sm:text-xl lg:text-2xl mr-1 sm:mr-2">✓</span>
+                          <Check className="w-4 h-4 text-green-500 mr-1 sm:mr-2" />
                           <span className="ml-1 sm:ml-2">{item.intro}</span>
                         </div>
                       )}
@@ -321,7 +357,7 @@ function LandingPage() {
                             className="flex items-center pl-0 bg-transparent px-0 sm:px-4 md:px-2 py-1 sm:py-2 text-xs sm:text-base md:text-lg lg:text-xl mb-0 sm:mb-1 rounded-r-xl leading-snug max-w-full break-words text-green-500"
                             style={{ lineHeight: '1.2', wordBreak: 'break-word' }}
                           >
-                            <span className="text-green-500 text-base sm:text-xl lg:text-2xl mr-1 sm:mr-2 md:mr-1 flex-shrink-0">✓</span>
+                            <Check className="w-4 h-4 text-green-500 mr-1 sm:mr-2 md:mr-1 flex-shrink-0" />
                             <span className="ml-1 sm:ml-2 md:ml-1 break-words whitespace-normal">{point}</span>
                           </li>
                         ))}
@@ -348,7 +384,7 @@ function LandingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 w-full">
                 {[
                   {
-                    icon: '🛒',
+                    icon: <ShoppingCart className="w-8 h-8 text-green-500" />,
                     title: 'Platform Management',
                     bullets: [
                       'Amazon | Flipkart | Myntra | Meesho | Nykaa | Jiomart | Shopify',
@@ -356,7 +392,7 @@ function LandingPage() {
                     ],
                   },
                   {
-                    icon: '📈',
+                    icon: <TrendingUp className="w-8 h-8 text-green-500" />,
                     title: 'Performance Marketing',
                     bullets: [
                       'Amazon Ads | Meta Ads | Google Ads | Flipkart PLA | DSP',
@@ -364,7 +400,7 @@ function LandingPage() {
                     ],
                   },
                   {
-                    icon: '🎨',
+                    icon: <Palette className="w-8 h-8 text-green-500" />,
                     title: 'Creative Studio',
                     bullets: [
                       'Infographics, Product Videos, A+ Pages',
@@ -372,7 +408,7 @@ function LandingPage() {
                     ],
                   },
                   {
-                    icon: '⚡',
+                    icon: <Zap className="w-8 h-8 text-green-500" />,
                     title: 'Quick Commerce Blitz',
                     bullets: [
                       'Blinkit | Zepto | Instamart',
@@ -380,7 +416,7 @@ function LandingPage() {
                     ],
                   },
                   {
-                    icon: '📱',
+                    icon: <Smartphone className="w-8 h-8 text-green-500" />,
                     title: 'Social Media Management',
                     bullets: [
                       'Personalized Social Post Packages',
@@ -388,7 +424,7 @@ function LandingPage() {
                     ],
                   },
                   {
-                    icon: '🤝',
+                    icon: <Handshake className="w-8 h-8 text-green-500" />,
                     title: 'Influencer Marketing',
                     bullets: [
                       'Shortlist + Collab + Script + Launch',
@@ -401,8 +437,9 @@ function LandingPage() {
                     key={item.title}
                     className="bg-white border border-green-200 rounded-3xl shadow-xl p-3 md:p-10 flex flex-col items-center justify-between transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 animate-floatCard md:w-[520px] lg:w-[600px] md:min-h-[260px] lg:min-h-[280px]"
                   >
-                    <div className="text-5xl md:text-6xl lg:text-7xl mb-4">{item.icon}</div>
-                    <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-green-700 mb-4 text-center leading-tight break-words max-w-xs mx-auto md:max-w-[420px] lg:max-w-[520px] xl:max-w-[600px] sm:max-w-none" style={{display: 'block', overflowWrap: 'break-word'}}>{item.title}</h3>
+                    <div className="flex items-center justify-center mb-4 md:mb-6">
+                      <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-green-700 text-center leading-tight break-words max-w-xs mx-auto md:max-w-[420px] lg:max-w-[520px] xl:max-w-[600px] sm:max-w-none" style={{display: 'block', overflowWrap: 'break-word'}}>{item.title}</h3>
+                    </div>
                     <ul className="w-full pl-0 text-left text-green-500 space-y-2 md:text-lg lg:text-xl flex-1 flex flex-col justify-center">
                       {item.bullets.map((point, i) => (
                         <li
@@ -410,7 +447,7 @@ function LandingPage() {
                           className="flex items-center pl-0 bg-transparent px-4 md:px-2 py-2 text-xs sm:text-base md:text-lg lg:text-xl mb-1 rounded-r-xl leading-snug max-w-full break-words text-green-500"
                           style={{ fontSize: '1.05rem', lineHeight: '1.2', wordBreak: 'break-word' }}
                         >
-                          <span className="text-green-500 text-xl lg:text-2xl mr-2 md:mr-1 flex-shrink-0">✓</span>
+                          <Check className="w-4 h-4 text-green-500 mr-2 md:mr-1 flex-shrink-0" />
                           <span className="ml-2 md:ml-1 break-words whitespace-normal">{point}</span>
                         </li>
                       ))}
@@ -440,28 +477,28 @@ function LandingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20 items-stretch">
                 {[
                   {
-                    icon: '📊',
+                    icon: <BarChart3 className="w-8 h-8 text-green-500" />,
                     title: 'Fashion Accessories Brand',
                     points: [
                       'Increased ROAS from 3.4x to 10.3x in 150 days and ACOS down from 68.7% to 19.2%',
                     ],
                   },
                   {
-                    icon: '🧼',
+                    icon: <Droplets className="w-8 h-8 text-green-500" />,
                     title: 'Heritage Skincare Brand',
                     points: [
                       'Boosted online ROAS to 4.2× while keeping ACOS stable across 3 platforms',
                     ],
                   },
                   {
-                    icon: '🧘‍♀️',
+                    icon: <Activity className="w-8 h-8 text-green-500" />,
                     title: 'Health & Wellness Brand',
                     points: [
                       'Drove a 30%+ revenue jump in 3 months via telemedicine + q-commerce integrations',
                     ],
                   },
                   {
-                    icon: '🛒',
+                    icon: <Package className="w-8 h-8 text-green-500" />,
                     title: 'D2C Grocery Startup',
                     points: [
                       'Reduced CAC by 18% and doubled repeat order retention with funnel fixes',
@@ -472,15 +509,17 @@ function LandingPage() {
                     key={idx}
                     className="bg-white border border-green-200 rounded-2xl shadow-xl p-6 sm:p-8 flex flex-col items-center justify-start h-full transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 group"
                   >
-                    <span className="text-4xl mb-3">{item.icon}</span>
-                    <div className="font-bold text-green-900 text-lg sm:text-xl mb-2 text-center">{item.title}</div>
+                    <div className="flex items-center justify-center mb-3">
+                      <span className="mr-2 flex items-center" style={{marginTop: '-2px'}}>{item.icon}</span>
+                      <div className="font-bold text-green-900 text-lg sm:text-xl text-center">{item.title}</div>
+                    </div>
                     <div className="flex flex-col gap-2 w-full mt-2 items-center">
                       {item.points.map((point, i) => (
                         <div
                           key={i}
                           className={`flex items-center gap-2 w-full${item.title === 'D2C Grocery Startup' && point === 'Reduced CAC by 18% and doubled repeat order retention with funnel fixes' ? ' sm:mt-7' : ''}`}
                         >
-                          <span className={`text-green-500 text-lg ${item.title === 'D2C Grocery Startup' || item.title==='Health & Wellness Brand' || item.title==='Heritage Skincare Brand' ? 'sm:mb-1' : ''}`}>✔️</span>
+                          <Check className={`w-4 h-4 text-green-500 ${item.title === 'D2C Grocery Startup' || item.title==='Health & Wellness Brand' || item.title==='Heritage Skincare Brand' ? 'sm:mb-1' : ''}`} />
                           <span className="text-green-700 text-sm sm:text-base md:text-lg text-left leading-snug font-semibold">
                             {item.title === 'Fashion Accessories Brand' ? (
                               <>
@@ -519,7 +558,7 @@ function LandingPage() {
             <div className="max-w-3xl lg:max-w-4xl mx-auto px-2 sm:px-4 md:px-0">
               <div className="bg-white rounded-2xl border-l-8 border-green-400 shadow-xl p-6 sm:p-10 md:p-12 flex flex-col gap-4 sm:gap-6 relative" style={{ fontFamily: 'Inter, Montserrat, Segoe UI, Arial, sans-serif' }}>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl sm:text-3xl">🧑‍💼</span>
+                  <User className="w-8 h-8 text-green-500" />
                   <h2 className="text-lg sm:text-2xl font-extrabold text-green-700">FOUNDER'S NOTE – FROM THE DESK OF ARUN R. CHACHAN</h2>
                 </div>
                 <div className="text-green-900/90 text-sm sm:text-base leading-relaxed space-y-4">
@@ -571,7 +610,7 @@ function LandingPage() {
                       <ul className="text-green-700 text-base sm:text-lg md:text-base mb-4 pl-0">
                         {plan.features.map((f, i) => (
                           <li key={i} className="flex items-start md:text-base md:whitespace-nowrap">
-                            <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                            <Check className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                             <span>{f}</span>
                           </li>
                         ))}
@@ -600,10 +639,11 @@ function LandingPage() {
               </div>
               <div className="flex-1 flex flex-col items-center md:items-end w-full md:w-auto">
                 <button
+                  onClick={handleContactNavigation}
                   className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-8 py-3 sm:px-12 sm:py-4 md:px-16 md:py-5 text-base sm:text-xl md:text-2xl rounded-2xl flex flex-row items-center justify-center shadow-xl hover:scale-105 hover:shadow-green-400/50 transition-all duration-500 relative overflow-hidden animate-ctaPulse min-w-[220px]"
                   style={{ minHeight: '48px', boxShadow: '0 8px 32px 0 rgba(34,197,94,0.18)' }}
                 >
-                  <span className="inline-block mr-3 text-2xl md:text-3xl animate-bounce">💡</span>
+                  <Lightbulb className="w-8 h-8 text-yellow-400 animate-bounce mr-3" />
                   <span className="text-center leading-tight">Get My Free Growth Audit Now →</span>
                   <span className="absolute inset-0 rounded-2xl pointer-events-none group-hover:animate-glowPulse"></span>
                 </button>
@@ -623,8 +663,15 @@ function LandingPage() {
                     animation: glowPulse 1.2s infinite;
                   }
                 `}</style>
-                <div className="text-green-400 text-sm sm:text-base max-w-2xl leading-relaxed mt-2 md:text-right">
-                  🔍 Listings. 📊 Ads. 📦 Products. 🎯 Strategy.
+                <div className="text-green-400 text-sm sm:text-base max-w-2xl leading-relaxed mt-2 md:text-right flex items-center justify-center md:justify-end gap-2">
+                  <Search className="w-4 h-4" />
+                  <span>Listings.</span>
+                  <BarChart className="w-4 h-4" />
+                  <span>Ads.</span>
+                  <Package2 className="w-4 h-4" />
+                  <span>Products.</span>
+                  <Target className="w-4 h-4" />
+                  <span>Strategy.</span>
                 </div>
               </div>
             </div>

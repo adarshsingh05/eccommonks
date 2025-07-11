@@ -5,7 +5,35 @@ import ScrollParallax from "./ScrollParallax"
 import ThreeDCard from "./ThreeDCard"
 import { Helmet } from "react-helmet"
 
+import React, { useRef } from "react"
+import { FaVideo, FaChartBar, FaUserFriends, FaSearch, FaEye, FaExpand, FaCalendarAlt, FaBullseye, FaCheck } from 'react-icons/fa';
+import { Check, X } from "lucide-react";
+import TestimonialCarousel from "./TestimonialCarousel";
+import { useNavigate } from "react-router-dom";
+
+// Animation helper for sliding testimonials (copied from LandingPage)
+const SLIDE_ANIMATION = {
+  enter: 'opacity-0 translate-x-10',
+  active: 'opacity-100 translate-x-0',
+  exit: 'opacity-0 -translate-x-10',
+};
+
 function ServicesPage() {
+  const navigate = useNavigate();
+  const ctaRef = useRef(null);
+
+  const handleCardClick = () => {
+    navigate('/contactus');
+  };
+
+  const handleGoToCTA = () => {
+    navigate('/contactus');
+  };
+
+  const handleContactNavigation = () => {
+    navigate('/contactus');
+  };
+
   return (
     <>
       <Helmet>
@@ -61,26 +89,26 @@ function ServicesPage() {
 
                 {/* Supporting Text */}
                 <div className="text-base sm:text-lg md:text-2xl lg:text-4xl text-[#222] font-extrabold mb-2 sm:mb-4 md:mb-6">
-                  Your <span className="text-green-500">Marketplace</span>. Your{" "}
-                  <span className="text-green-400">Momentum</span>. Our Mission.
+                  <div>Your <span className="text-green-500">Marketplace.</span> <br></br> Your <span className="text-green-400">Momentum.</span></div>
+                  <div>Our Mission.</div>
                 </div>
 
-                <div className="text-xs sm:text-sm md:text-lg lg:text-xl text-green-400 mb-1 sm:mb-2">
-                  You don't need 5 freelancers. You just need one team that gets it.
-                </div>
+              
 
                 <div className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-[#222] mb-3 sm:mb-6 md:mb-8">
                   We handle your listings, ads, creatives, campaigns, and brand growth across every major e-commerce and quick-commerce platform — all with proactive support and real ROI ownership.
                 </div>
 
                 {/* CTA */}
-                <button className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-4 sm:px-8 md:px-12 py-2 sm:py-4 md:py-6 rounded-xl sm:rounded-2xl text-base sm:text-lg md:text-2xl lg:text-3xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center mt-2 animate-bounce mb-2 sm:mb-4">
+                <button 
+                  onClick={handleContactNavigation}
+                  className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-4 sm:px-8 md:px-12 py-2 sm:py-4 md:py-6 rounded-xl sm:rounded-2xl text-base sm:text-lg md:text-2xl lg:text-3xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center mt-2 animate-bounce mb-2 sm:mb-4">
                   <span className="group-hover:animate-bounce inline-block mr-2 sm:mr-3 md:mr-4 text-xl sm:text-2xl md:text-3xl">🎯</span>
                   Get Your Free Growth Audit
                 </button>
 
-                <span className="text-xs sm:text-sm md:text-lg text-green-400 max-w-2xl leading-relaxed mt-1 sm:mt-2">
-                  <span className="font-bold text-green-500">Complete marketplace analysis</span> + tailored growth blueprint in 48 hours.
+                <span className="text-xs text-bold sm:text-sm md:text-lg text-green-400 max-w-2xl leading-relaxed mt-1 sm:mt-2">
+                  Complete  analysis, tailored growth blueprint in 48 hours.
                 </span>
               </div>
             </section>
@@ -89,7 +117,7 @@ function ServicesPage() {
           {/* Sliding Banner */}
           <RunningText
             text="Amazon • Flipkart • Myntra • Meesho • Nykaa • Jiomart • Blinkit • Zepto • Instamart"
-            speed={40}
+            speed={22}
           />
 
           {/* Journey Tracks Section */}
@@ -102,7 +130,7 @@ function ServicesPage() {
                 WHERE ARE YOU IN YOUR JOURNEY?
               </h2>
               <p className="text-base sm:text-lg md:text-2xl lg:text-3xl text-green-500 mb-3 sm:mb-8 md:mb-16 font-bold text-center">
-                Choose your track — we'll tailor everything from there:
+                Choose your track — we'll tailor it from there
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6 md:gap-12">
@@ -113,7 +141,7 @@ function ServicesPage() {
                     subtitle: "My listings are weak. Ads aren't converting. I'm just not growing.",
                     description: "For brands getting started or stuck with setup",
                     tagline: "Get your foundations right the first time.",
-                    target: "For sellers doing ₹0–₹5L/month or migrating from a bad agency",
+                    target: "For sellers doing ₹0–₹5L/month or migrating from a bad experience",
                     color: "from-green-200/80 to-green-400/40",
                     icon: "🚀",
                   },
@@ -139,24 +167,27 @@ function ServicesPage() {
                     icon: "👑",
                   },
                 ].map((track, idx) => (
-                  <ThreeDCard
+                  <div
                     key={idx}
-                    className="bg-gradient-to-br w-[332px] from-green-200/80 to-green-400/40 rounded-xl sm:rounded-2xl shadow-lg p-2 sm:p-6 md:p-8 flex flex-col items-center text-center hover:scale-105 transition-all duration-300 min-h-[180px] sm:min-h-[220px]"
+                    onClick={handleCardClick}
+                    className="cursor-pointer bg-gradient-to-br w-full max-w-xs sm:max-w-none from-green-200/80 to-green-400/40 rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 flex flex-col items-center text-center hover:scale-105 transition-all duration-300 min-h-[220px] sm:min-h-[220px] mx-auto mb-4 sm:mb-0"
                   >
-                    <span className="text-2xl sm:text-3xl md:text-4xl mb-2 sm:mb-3 md:mb-4">{track.icon}</span>
-                    <div className="text-xs font-bold text-green-600 mb-1 sm:mb-2">{track.track}</div>
-                    <h3 className="text-base sm:text-lg md:text-2xl font-black text-green-900 mb-1 sm:mb-3 md:mb-4">{track.title}</h3>
-                    <p className="text-xs sm:text-sm md:text-lg text-green-800 mb-1 sm:mb-3 md:mb-4 italic">"{track.subtitle}"</p>
-                    <p className="text-xs text-green-700 mb-1 sm:mb-2">{track.description}</p>
-                    <p className="text-xs font-semibold text-green-800 mb-1 sm:mb-3 md:mb-4">→ "{track.tagline}"</p>
-                    <div className="text-xs text-green-600 font-medium">🎯 {track.target}</div>
-                  </ThreeDCard>
+                    <div className="text-base font-bold text-green-600 mb-2 sm:mb-2 tracking-wide">{track.track}</div>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-black text-green-900 mb-2 sm:mb-3 md:mb-4 leading-tight">{track.title}</h3>
+                    <p className="text-sm sm:text-base md:text-lg text-green-800 mb-2 sm:mb-3 md:mb-4 italic leading-snug">{`"${track.subtitle}"`}</p>
+                    <p className="text-xs sm:text-sm md:text-base text-green-700 font-semibold mb-2 sm:mb-2 leading-normal">{track.description}</p>
+                    <p className="text-sm sm:text-sm md:text-base font-semibold text-green-800 mb-2 sm:mb-3 md:mb-4 leading-normal">→ {`"${track.tagline}"`}</p>
+                    <div className="text-xs sm:text-sm md:text-base text-black font-bold mt-1">{track.target}</div>
+                  </div>
                 ))}
               </div>
 
               <div className="mt-4 sm:mt-8 md:mt-12 text-center">
                 <p className="text-xs sm:text-base md:text-xl text-green-600 mb-2 sm:mb-4">Not sure which suits you?</p>
-                <button className="bg-gradient-to-r from-green-500 to-green-500 text-white font-bold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300">
+                <button 
+                  ref={ctaRef} 
+                  onClick={handleContactNavigation}
+                  className="bg-gradient-to-r from-green-500 to-green-500 text-white font-bold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300">
                   Get Your Free Growth Audit
                 </button>
                 <p className="text-xs sm:text-sm md:text-base text-green-500 mt-1 sm:mt-2">We'll match you to the perfect fit in 48 hours.</p>
@@ -237,13 +268,13 @@ function ServicesPage() {
                     key={idx}
                     className="bg-white w-[320px] border border-green-200 rounded-xl sm:rounded-3xl shadow-xl p-3 sm:p-6 md:p-10 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400"
                   >
-                    <div className="text-2xl sm:text-4xl md:text-5xl mb-2 sm:mb-3 md:mb-4">{service.icon}</div>
+                    {/* Icon removed as per request */}
                     <h3 className="text-base sm:text-lg md:text-2xl font-black text-green-700 mb-1 sm:mb-2">{service.title}</h3>
                     <p className="text-xs sm:text-base md:text-lg text-green-500 mb-2 sm:mb-3 md:mb-4 font-semibold">{service.subtitle}</p>
-                    <ul className="w-full text-left text-green-700 space-y-1 sm:space-y-2 md:space-y-2 list-disc list-inside">
+                    <ul className="w-full text-left text-green-700 space-y-1 sm:space-y-2 md:space-y-2">
                       {service.bullets.map((point, i) => (
                         <li key={i} className="text-xs sm:text-sm md:text-base">
-                          {point}
+                          <FaCheck className="inline text-green-500 text-base md:text-lg mr-1" />{point}
                         </li>
                       ))}
                     </ul>
@@ -266,30 +297,32 @@ function ServicesPage() {
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-8 md:mb-12">
                 {[
-                  "Product Video Creation",
-                  "Infographic Packs",
-                  "Influencer Setup + UGC",
-                  "Advanced Keyword Research",
-                  "Competitor Monitoring",
-                  "Marketplace Expansion",
-                  "Social Media Content Calendar",
-                  "Performance Ad Audits",
+                  { label: "Product Video Creation", icon: <FaVideo className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Infographic Packs", icon: <FaChartBar className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Influencer Setup + UGC", icon: <FaUserFriends className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Advanced Keyword Research", icon: <FaSearch className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Competitor Monitoring", icon: <FaEye className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Marketplace Expansion", icon: <FaExpand className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Social Media Content Calendar", icon: <FaCalendarAlt className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Performance Ad Audits", icon: <FaBullseye className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
                 ].map((module, idx) => (
                   <div
                     key={idx}
                     className="bg-gradient-to-br from-green-100 to-green-100 rounded-xl p-4 md:p-6 text-center hover:scale-105 transition-all duration-300 border border-green-200"
                   >
-                    <div className="text-xl md:text-2xl mb-2">🔧</div>
-                    <div className="text-xs md:text-base font-semibold text-green-800">{module}</div>
+                    {module.icon}
+                    <div className="text-sm md:text-base font-semibold text-green-800">{module.label}</div>
                   </div>
                 ))}
               </div>
 
               <div className="bg-green-50/60 rounded-2xl p-6 md:p-8 max-w-4xl mx-auto">
                 <p className="text-base md:text-xl text-green-700 mb-4">
-                  💬 Just tell us what's keeping you stuck — we'll plug in the exact module you need.
+                  �� Just tell us what's keeping you stuck — we'll plug in the exact module you need.
                 </p>
-                <button className="bg-gradient-to-r from-green-500 to-green-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300">
+                <button 
+                  onClick={handleContactNavigation}
+                  className="bg-gradient-to-r from-green-500 to-green-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300">
                   Talk to Our Team
                 </button>
                 <p className="text-xs md:text-sm text-green-500 mt-2">Get a same-day recommendation.</p>
@@ -300,7 +333,7 @@ function ServicesPage() {
           {/* Sliding Banner */}
           <RunningText
             text="Listings • Ads • Creatives • Social • Influencers • Quick Commerce • Brand Building"
-            speed={40}
+            speed={15}
           />
 
           {/* Why Brands Switch Section */}
@@ -323,7 +356,7 @@ function ServicesPage() {
                       "Assign one person to 50 brands",
                     ].map((item, idx) => (
                       <li key={idx} className="text-sm md:text-xl text-[#222] flex items-center">
-                        <span className="mr-2 md:mr-3">❌</span>
+                        <X className="w-5 h-5 text-red-500 mr-2 md:mr-3 flex-shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -341,7 +374,7 @@ function ServicesPage() {
                       "Limit to 10 clients per cohort",
                     ].map((item, idx) => (
                       <li key={idx} className="text-sm md:text-xl text-[#222] flex items-center">
-                        <span className="mr-2 md:mr-3">✅</span>
+                        <Check className="w-5 h-5 text-green-500 mr-2 md:mr-3 flex-shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -363,7 +396,10 @@ function ServicesPage() {
               <div className="w-full h-full bg-gradient-to-br from-red-400/10 to-orange-500/10"></div>
             </div>
             <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 text-center">
-              <h2 className="text-3xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-8 text-[#222]">❌ WHAT WE DON'T DO</h2>
+              <h2 className="text-3xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-8 text-[#222]">
+                <X className="w-8 h-8 text-red-500 inline mr-4" />
+                WHAT WE DON'T DO
+              </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-8 md:mb-16">
                 <ThreeDCard className="bg-red-400/40 p-6 md:p-10 rounded-3xl h-full flex flex-col items-center">
@@ -376,7 +412,7 @@ function ServicesPage() {
                       "Run ads without explaining why",
                     ].map((item, idx) => (
                       <li key={idx} className="text-sm md:text-xl text-[#222] flex items-center">
-                        <span className="mr-2 md:mr-3">❌</span>
+                        <X className="w-5 h-5 text-red-500 mr-2 md:mr-3 flex-shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -393,7 +429,7 @@ function ServicesPage() {
                       "Take responsibility for results",
                     ].map((item, idx) => (
                       <li key={idx} className="text-sm md:text-xl text-[#222] flex items-center">
-                        <span className="mr-2 md:mr-3">✅</span>
+                        <Check className="w-5 h-5 text-green-500 mr-2 md:mr-3 flex-shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -418,23 +454,25 @@ function ServicesPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
                 <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-green-200">
                   <h3 className="text-lg md:text-2xl font-bold text-green-700 mb-4 md:mb-6">What You Get:</h3>
-                  <ul className="text-left space-y-2 md:space-y-3">
-                    {[
-                      "✅ No base fees",
-                      "✅ 100% full-stack support",
-                      "✅ Small % of sales as success fee",
-                      "✅ 90-day blitz model",
-                    ].map((item, idx) => (
-                      <li key={idx} className="text-sm md:text-lg text-green-600">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                                      <ul className="text-left space-y-2 md:space-y-3">
+                      {[
+                        "No base fees",
+                        "100% full-stack support",
+                        "Small % of sales as success fee",
+                        "90-day blitz model",
+                      ].map((item, idx) => (
+                        <li key={idx} className="text-sm md:text-lg text-green-600 flex items-center">
+                          <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                 </div>
                 <div className="bg-green-50 rounded-2xl p-6 md:p-8 border border-green-200">
                   <h3 className="text-lg md:text-2xl font-bold text-green-700 mb-4 md:mb-6">How to Apply:</h3>
-                  <p className="text-base md:text-lg text-green-600 mb-4">Want to apply?</p>
-                  <button className="bg-gradient-to-r from-green-500 to-green-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300 mb-4">
+                  <button 
+                    onClick={handleContactNavigation}
+                    className="bg-gradient-to-r from-green-500 to-green-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300 mb-4">
                     Request an Invite
                   </button>
                   <p className="text-xs md:text-sm text-green-500">
@@ -457,24 +495,21 @@ function ServicesPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 mb-8 md:mb-12">
                 {[
                   {
-                    plan: "Launch Pad",
-                    monthly: "₹6,999",
-                    quarterly: "₹17,999",
-                    bonus: "Free Brand Audit + more",
+                    name: "Starter? Launch Pad",
+                    monthly: "₹6,999/mo",
+                    features: ["For new sellers", "All essentials covered"],
                     color: "from-green-400 to-green-500",
                   },
                   {
-                    plan: "Growth Engine",
-                    monthly: "₹14,999",
-                    quarterly: "₹39,999",
-                    bonus: "Free Video or Store Setup + More",
+                    name: "Scaling? Growth Engine",
+                    monthly: "₹14,999/mo",
+                    features: ["For growing brands", "Advanced optimization"],
                     color: "from-green-400 to-green-500",
                   },
                   {
-                    plan: "Brand Dominator",
-                    monthly: "₹29,999",
-                    quarterly: "₹79,999",
-                    bonus: "2 Videos + Competitor Audit + More",
+                    name: "Aggressive? Brand Dominator",
+                    monthly: "₹29,999/mo",
+                    features: ["For market leaders", "Full-stack growth"],
                     color: "from-green-400 to-green-500",
                   },
                 ].map((pricing, idx) => (
@@ -482,10 +517,26 @@ function ServicesPage() {
                     key={idx}
                     className="bg-white border border-green-200 rounded-3xl shadow-xl p-6 md:p-10 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400"
                   >
-                    <h3 className="text-xl md:text-3xl font-black text-green-700 mb-3 md:mb-4">{pricing.plan}</h3>
-                    <div className="text-2xl md:text-4xl font-black text-[#222] mb-2">{pricing.monthly}/mo</div>
-                    <div className="text-lg md:text-2xl font-bold text-green-500 mb-3 md:mb-4">{pricing.quarterly} quarterly</div>
-                    <div className="text-xs md:text-base text-green-600 mb-4 md:mb-6 text-center">{pricing.bonus}</div>
+                    {/* Split the name for desktop and mobile: first part big, second part smaller, both stacked */}
+                    {(() => {
+                      const [first, ...rest] = pricing.name.split('? ');
+                      const second = rest.join('? ');
+                      return (
+                        <div className="mb-2 text-center">
+                          <span className="block text-2xl sm:text-3xl font-bold text-green-900 leading-tight">{first}?</span>
+                          <span className="block text-lg sm:text-xl font-semibold text-green-700 leading-tight mt-1">{second}</span>
+                        </div>
+                      );
+                    })()}
+                    <div className="text-3xl sm:text-4xl font-extrabold text-green-500 mb-4">{pricing.monthly}</div>
+                    <ul className="text-green-700 text-base sm:text-lg md:text-base mb-4 pl-0">
+                      {pricing.features.map((f, i) => (
+                        <li key={i} className="flex items-start md:text-base md:whitespace-nowrap">
+                          <FaCheck className="inline text-green-500 mr-2 mt-0.5" />
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
                     <button
                       className={`bg-gradient-to-r ${pricing.color} text-white font-black px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-110 transition-all duration-500`}
                     >
@@ -505,24 +556,9 @@ function ServicesPage() {
           {/* Testimonials Section */}
           <section className="py-6 sm:py-16 md:py-32 relative z-10">
             <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 text-center">
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold mb-8 md:mb-12 text-[#222]">✅ YOU'RE IN GOOD COMPANY</h2>
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold mb-8 md:mb-12 text-[#222]"> YOU'RE IN GOOD COMPANY</h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-                {[
-                  "They fixed our Amazon structure, rewrote our listings, and scaled Flipkart in just 6 weeks.",
-                  "Their ads outperformed even our internal team's. We've never seen ROAS like this.",
-                  "I hired them for listings. I stayed for the strategy, creativity, and sheer ownership.",
-                  "Real people. Real plans. Real accountability.",
-                ].map((testimonial, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-white border border-green-200 rounded-2xl shadow-xl p-6 md:p-8 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400"
-                  >
-                    <span className="text-green-500 text-3xl md:text-4xl mb-3 md:mb-4">"</span>
-                    <span className="text-sm md:text-xl text-green-900 italic leading-relaxed">{testimonial}</span>
-                  </div>
-                ))}
-              </div>
+              <TestimonialCarousel />
             </div>
           </section>
 
@@ -536,22 +572,24 @@ function ServicesPage() {
                 LET'S GROW <span className="text-green-500">SMARTER</span>
               </h2>
 
-              <p className="text-lg md:text-2xl lg:text-3xl text-green-500 mb-6 md:mb-8 font-bold">
-                You're already spending on listings, ads, and operations.
+              <p className="text-md md:text-2xl lg:text-3xl text-green-500 mb-6 md:mb-8 font-bold">
+                You're already spending on listings, ads, and operations. <span className="text-black">Now spend it with people who make every rupee count.</span> 
               </p>
-              <p className="text-base md:text-xl text-green-600 mb-8 md:mb-12">Now spend it with people who make every rupee count.</p>
 
               <div className="flex flex-col md:flex-row gap-4 md:gap-6 mb-6 md:mb-8">
-                <button className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-8 md:px-12 py-4 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center">
-                  <span className="group-hover:animate-bounce inline-block mr-3 md:mr-4 text-2xl md:text-3xl">👉</span>
+                <button 
+                  onClick={handleContactNavigation}
+                  className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-4 md:px-12 py-4 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center">
                   Get Started with The Ecom Monks
                 </button>
 
-                <div className="flex items-center justify-center text-lg md:text-2xl font-bold text-green-600 my-2 md:my-0">
+                <div className="flex items-center justify-center text-lg md:text-2xl font-bold text-green-600 my-1 md:my-0">
                   or
                 </div>
 
-                <button className="group bg-white border-2 border-green-400 text-green-600 font-black px-8 md:px-12 py-4 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:bg-green-50 transition-all duration-500 flex items-center">
+                <button 
+                  onClick={handleContactNavigation}
+                  className="group bg-white border-2 border-green-400 text-green-600 font-black px-8 md:px-12 py-3 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:bg-green-50 transition-all duration-500 flex items-center">
                   <span className="group-hover:animate-bounce inline-block mr-3 md:mr-4 text-2xl md:text-3xl">📞</span>
                   Book a Strategy Call
                 </button>
@@ -562,17 +600,19 @@ function ServicesPage() {
                 <p className="text-sm md:text-lg text-green-600 mb-3 md:mb-4">
                   We built a diagnostic audit to tell you exactly where you're losing sales — and how to fix it.
                 </p>
-                <div className="text-xs md:text-base text-green-500 mb-4 md:mb-6">
-                  🎯 Get a 48-hour personalized growth plan:
-                  <ul className="list-disc list-inside mt-2 space-y-1">
-                    <li>Listing gaps</li>
-                    <li>Ad performance review</li>
-                    <li>Marketplace expansion playbook</li>
-                    <li>Recommended plan (Launchpad, Growth Engine, or Domination)</li>
-                    <li>Custom quote</li>
+                <div className="text-xs md:text-base text-green-500 mb-4 md:mb-6 text-left">
+                  <span className="font-bold">Get a 48-hour personalized growth plan:</span>
+                  <ul className="mt-2 space-y-1 pl-0 mr-[-30px]">
+                    <li className="flex items-start"><FaCheck className="inline text-green-500 mr-2 mt-0.5" /><span>Listing gaps</span></li>
+                    <li className="flex items-start"><FaCheck className="inline text-green-500 mr-2 mt-0.5" /><span>Ad performance review</span></li>
+                    <li className="flex items-start"><FaCheck className="inline text-green-500 mr-2 mt-0.5" /><span>Marketplace expansion playbook</span></li>
+                    <li className="flex items-start"><FaCheck className="inline text-green-500 mr-2 mt-0.5" /><span>Recommended plan (Starter, Scaling or Aggressive)</span></li>
+                    <li className="flex items-start"><FaCheck className="inline text-green-500 mr-2 mt-0.5" /><span>Custom quote</span></li>
                   </ul>
                 </div>
-                <button className="bg-gradient-to-r from-green-500 to-green-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300">
+                <button 
+                  onClick={handleContactNavigation}
+                  className="bg-gradient-to-r from-green-500 to-green-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300">
                   👉 CLAIM MY FREE GROWTH AUDIT
                 </button>
                 <p className="text-xs md:text-sm text-green-500 mt-2">No pushy sales. Just pure value.</p>
@@ -581,6 +621,7 @@ function ServicesPage() {
           </section>
         </main>
       </div>
+ 
     </>
   )
 }

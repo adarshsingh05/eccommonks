@@ -1,8 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { CheckCircle, Users, Settings, TrendingUp, Eye, Shield, Star, ArrowRight } from "lucide-react"
+import { CheckCircle, Users, Settings, TrendingUp, Eye, Shield, Star, ArrowRight, X, Check } from "lucide-react"
 import Navbar from "./components/Navbar"
+import { FaCheck } from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Animation variants
 const fadeInUp = {
@@ -36,9 +39,62 @@ function Button({ className = "", children, ...props }) {
   return <button className={className} {...props}>{children}</button>;
 }
 
-function WhyUs() {
+// TestimonialCarousel for founder testimonials
+const SLIDE_ANIMATION = {
+  enter: 'opacity-0 translate-x-10',
+  active: 'opacity-100 z-10 translate-x-0',
+  exit: 'opacity-0 z-0 -translate-x-10',
+};
+
+function TestimonialCarousel({ testimonials, large }) {
+  const [index, setIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPrevIndex(index);
+      setDirection(1);
+      setIndex((prev) => (prev + 1) % testimonials.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, [index, testimonials.length]);
   return (
-    <div className="bg-gradient-to-br from-green-50 via-green-100/30 to-green-200/20 min-h-screen text-green-900 overflow-x-hidden">
+    <div className={`relative h-32 sm:h-36 flex items-center justify-center overflow-hidden ${large ? 'md:h-64 sm:ml-[165px] sm:mt-4' : ''}`}>
+      {testimonials.map((text, i) => {
+        let base = 'absolute left-0 right-0 mx-auto min-w-full transition-all duration-700 ease-in-out';
+        let state = '';
+        if (i === index) {
+          state = 'opacity-100 z-10 translate-x-0';
+        } else if (i === prevIndex) {
+          state = `opacity-0 z-0 ${direction === 1 ? '-translate-x-10' : 'translate-x-10'}`;
+        } else {
+          state = 'opacity-0 z-0 translate-x-10';
+        }
+        return (
+          <div
+            key={i}
+            className={`${base} ${state}`}
+            style={{ pointerEvents: i === index ? 'auto' : 'none' }}
+          >
+            <div className={`bg-white border border-green-200 rounded-2xl shadow-xl flex flex-col items-center justify-center min-h-[6rem] sm:min-h-[7rem] ${large ? 'md:px-24 md:py-16 md:min-h-[16rem] md:max-w-2xl' : 'px-6 py-8 sm:px-10 sm:py-10'}`}>
+              <span className="text-xl sm:text-2xl text-green-900 italic leading-relaxed">"{text}"</span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function WhyUs() {
+  const navigate = useNavigate();
+
+  const handleContactNavigation = () => {
+    navigate('/contactus');
+  };
+
+  return (
+    <div className="bg-white min-h-screen text-[#222] overflow-x-hidden">
       <Navbar />
       {/* Hero Section */}
       <motion.main
@@ -48,7 +104,7 @@ function WhyUs() {
         variants={staggerContainer}
       >
         <motion.h1
-          className="text-2xl sm:text-6xl md:text-7xl font-black text-center mb-6 bg-gradient-to-r from-green-600 via-green-400 to-green-800 bg-clip-text text-transparent leading-tight"
+          className="text-2xl sm:text-6xl md:text-7xl font-black text-center mb-6 bg-gradient-to-r from-green-700 via-black to-green-400 bg-clip-text text-transparent leading-tight"
           variants={fadeInUp}
         >
           Why Hundreds of Founders Trust The Ecom Monks With Their Brand
@@ -56,13 +112,13 @@ function WhyUs() {
 
         {/* Main Why Section */}
         <motion.section className="mb-8" variants={fadeInUp}>
-          <Card className="bg-gradient-to-br from-white to-green-50/50 border-0 shadow-2xl shadow-green-100/50 overflow-hidden relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-green-400/5" />
+          <Card className="bg-white border border-slate-200 shadow-2xl shadow-green-100/30 overflow-hidden relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-green-100/10 to-green-50/10 pointer-events-none" />
             <CardContent className="relative p-4 sm:p-12 md:p-16">
               <div className="hidden sm:block absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-green-500 to-green-600 rounded-r-full" />
 
               <motion.h2
-                className="text-2xl sm:text-4xl font-black text-center mb-4 bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent"
+                className="text-2xl sm:text-4xl font-black text-center mb-4 bg-gradient-to-r from-green-700 to-green-400 bg-clip-text text-transparent"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
@@ -72,7 +128,7 @@ function WhyUs() {
 
               <motion.div className="space-y-6" variants={staggerContainer}>
                 <motion.p
-                  className="text-xl sm:text-2xl text-green-700 font-semibold leading-relaxed"
+                  className="text-xl sm:text-2xl text-[#222] font-semibold leading-relaxed"
                   variants={fadeInUp}
                 >
                   You've tried the SPNs. You've been ghosted by agencies.
@@ -81,26 +137,26 @@ function WhyUs() {
                   every major platform.
                 </motion.p>
 
-                <motion.p className="text-lg sm:text-xl text-green-600 leading-relaxed" variants={fadeInUp}>
+                <motion.p className="text-lg sm:text-xl text-green-700 leading-relaxed" variants={fadeInUp}>
                   We're not here to "service" your account.
                   <br />
                   We're here to build your brand — with skin in the game, clear roadmaps, and zero fluff.
                 </motion.p>
 
                 <motion.div className="text-center py-3" variants={fadeInUp}>
-                  <div className="inline-block bg-gradient-to-r from-green-600 to-green-400 text-white text-2xl sm:text-3xl font-black px-8 py-4 rounded-2xl shadow-lg">
+                  <div className="inline-block bg-gradient-to-r from-black to-green-700 text-white text-2xl sm:text-3xl font-black px-2 sm:px-8 py-4 rounded-2xl shadow-lg">
                     We're Not Just Another Ecom Agency.
                   </div>
                 </motion.div>
 
                 <motion.div
-                  className="text-lg sm:text-2xl font-bold text-center text-green-700 mb-3"
+                  className="text-lg sm:text-2xl font-bold text-center text-[#222] mb-3"
                   variants={fadeInUp}
                 >
                   We're the ones you call after the others fail.
                 </motion.div>
 
-                <motion.ul className="space-y-2 text-green-700 text-base sm:text-xl" variants={staggerContainer}>
+                <motion.ul className="space-y-2 text-[#222] text-base sm:text-xl" variants={staggerContainer}>
                   {[
                     "We've fought suppressed ASINs that sellers gave up on.",
                     "We've fixed RTO fraud cases that even Flipkart wouldn't explain.",
@@ -121,7 +177,7 @@ function WhyUs() {
         {/* The Monk Way Section */}
         <motion.section className="mb-8" variants={fadeInUp}>
           <motion.h2
-            className="text-2xl sm:text-4xl font-black text-center mb-4 bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent"
+            className="text-2xl sm:text-4xl font-black text-center mb-4 bg-gradient-to-r from-black to-green-700 bg-clip-text text-transparent"
             variants={fadeInUp}
           >
             OUR DIFFERENCE: THE MONK WAY
@@ -130,16 +186,16 @@ function WhyUs() {
           <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-6" variants={staggerContainer}>
             {/* Card 1 */}
             <motion.div variants={fadeInUp} {...scaleOnHover}>
-              <Card className="h-full bg-gradient-to-br from-green-50 to-white border-0 shadow-xl shadow-green-100/50 overflow-hidden">
+              <Card className="h-full bg-white border border-slate-200 shadow-xl shadow-green-100/30 overflow-hidden">
                 <CardContent className="p-8">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-green-500 to-green-600" />
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-12 h-10 sm:h-12  bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
                       <CheckCircle className="w-6 h-4 text-white" />
                     </div>
-                    <span className="font-black text-xl text-green-700">1. BUILT BY SELLERS. FOR SELLERS.</span>
+                    <span className="font-black text-xl text-[#222]">BUILT BY SELLERS. FOR SELLERS.</span>
                   </div>
-                  <p className="text-green-700 mb-3 leading-relaxed">
+                  <p className="text-[#222] mb-3 leading-relaxed">
                     Other agencies hire interns to manage your account.
                     <br />
                     We've lived it ourselves — from getting suspended on Amazon to getting no resolution from Myntra
@@ -164,16 +220,16 @@ function WhyUs() {
 
             {/* Card 2 */}
             <motion.div variants={fadeInUp} {...scaleOnHover}>
-              <Card className="h-full bg-gradient-to-br from-green-50 to-white border-0 shadow-xl shadow-green-100/50 overflow-hidden">
+              <Card className="h-full bg-white border border-slate-200 shadow-xl shadow-green-100/30 overflow-hidden">
                 <CardContent className="p-8">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-green-500 to-green-600" />
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-12 h-10 sm:h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
                       <Settings className="w-6 h-6 text-white" />
                     </div>
-                    <span className="font-black text-xl text-green-700">2. OUR FRAMEWORKS {">"} YOUR GUESSWORK</span>
+                    <span className="font-black text-xl text-[#222]">OUR FRAMEWORKS {">"} YOUR GUESSWORK</span>
                   </div>
-                  <p className="text-green-700 mb-4 leading-relaxed">
+                  <p className="text-[#222] mb-4 leading-relaxed">
                     We don't offer 'custom strategies' that change every week.
                     <br />
                     We offer battle-tested systems:
@@ -187,7 +243,7 @@ function WhyUs() {
                       "CONVERSION LOOP™: Integrates marketplace + q-commerce + social channels",
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <ArrowRight className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
+                        <FaCheck className="inline text-green-500 text-base md:text-lg mr-1 mt-1 flex-shrink-0" />
                         <span className="text-sm">{item}</span>
                       </li>
                     ))}
@@ -201,14 +257,14 @@ function WhyUs() {
 
             {/* Card 3 */}
             <motion.div variants={fadeInUp} {...scaleOnHover}>
-              <Card className="h-full bg-gradient-to-br from-green-50 to-white border-0 shadow-xl shadow-green-100/50 overflow-hidden">
+              <Card className="h-full bg-white border border-slate-200 shadow-xl shadow-green-100/30 overflow-hidden">
                 <CardContent className="p-8">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-green-500 to-green-600" />
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-12 h-10 sm:h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
                       <Users className="w-6 h-6 text-white" />
                     </div>
-                    <span className="font-black text-xl text-green-700">3. YOU GET A REAL TEAM, NOT A HELPLINE</span>
+                    <span className="font-black text-xl text-[#222]">YOU GET A REAL TEAM, NOT A HELPLINE</span>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                     <Card className="bg-red-50 border-red-200">
@@ -249,16 +305,16 @@ function WhyUs() {
 
             {/* Card 4 */}
             <motion.div variants={fadeInUp} {...scaleOnHover}>
-              <Card className="h-full bg-gradient-to-br from-green-50 to-white border-0 shadow-xl shadow-green-100/50 overflow-hidden">
+              <Card className="h-full bg-white border border-slate-200 shadow-xl shadow-green-100/30 overflow-hidden">
                 <CardContent className="p-8">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-green-500 to-green-600" />
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-12 h-10 sm:h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
                       <Settings className="w-6 h-6 text-white" />
                     </div>
-                    <span className="font-black text-xl text-green-700">4. WE FIX WHAT OTHERS DON'T EVEN SEE</span>
+                    <span className="font-black text-xl text-[#222]">WE FIX WHAT OTHERS DON'T EVEN SEE</span>
                   </div>
-                  <p className="text-green-700 mb-4">If you've ever faced:</p>
+                  <p className="text-[#222] mb-4">If you've ever faced:</p>
                   <ul className="space-y-2 text-green-700 mb-4">
                     {[
                       "Stuck listings with no resolution",
@@ -269,7 +325,7 @@ function WhyUs() {
                       "Invisible ad spends with 0 attribution",
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <ArrowRight className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
+                        <FaCheck className="inline text-green-500 text-base md:text-lg mr-1 mt-1 flex-shrink-0" />
                         <span className="text-sm">{item}</span>
                       </li>
                     ))}
@@ -285,16 +341,16 @@ function WhyUs() {
 
             {/* Card 5 */}
             <motion.div variants={fadeInUp} {...scaleOnHover}>
-              <Card className="h-full bg-gradient-to-br from-green-50 to-white border-0 shadow-xl shadow-green-100/50 overflow-hidden">
+              <Card className="h-full bg-white border border-slate-200 shadow-xl shadow-green-100/30 overflow-hidden">
                 <CardContent className="p-8">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-green-500 to-green-600" />
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-12 h-10 sm:h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
                       <TrendingUp className="w-6 h-6 text-white" />
                     </div>
-                    <span className="font-black text-xl text-green-700">5. OUR GROWTH PHILOSOPHY</span>
+                    <span className="font-black text-xl text-[#222]">OUR GROWTH PHILOSOPHY</span>
                   </div>
-                  <p className="text-green-700 mb-4">
+                  <p className="text-[#222] mb-4">
                     We don't just track ROAS.
                     <br />
                     We monitor:
@@ -307,7 +363,7 @@ function WhyUs() {
                       "Review velocity & Buy Box win %",
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <ArrowRight className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
+                        <FaCheck className="inline text-green-500 text-base md:text-lg mr-1 mt-1 flex-shrink-0" />
                         <span className="text-sm">{item}</span>
                       </li>
                     ))}
@@ -321,14 +377,14 @@ function WhyUs() {
 
             {/* Card 6 */}
             <motion.div variants={fadeInUp} {...scaleOnHover}>
-              <Card className="h-full bg-gradient-to-br from-green-50 to-white border-0 shadow-xl shadow-green-100/50 overflow-hidden">
+              <Card className="h-full bg-white border border-slate-200 shadow-xl shadow-green-100/30 overflow-hidden">
                 <CardContent className="p-8">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-green-500 to-green-600" />
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-12 h-10 sm:h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
                       <Eye className="w-6 h-6 text-white" />
                     </div>
-                    <span className="font-black text-xl text-green-700">6. TRANSPARENCY ≠ TEMPLATES</span>
+                    <span className="font-black text-xl text-[#222]">TRANSPARENCY ≠ TEMPLATES</span>
                   </div>
                   <ul className="space-y-2 text-green-700 mb-4">
                     {[
@@ -337,12 +393,12 @@ function WhyUs() {
                       'Selling you on "views" when what you need is sales',
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <ArrowRight className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
+                        <FaCheck className="inline text-green-500 text-base md:text-lg mr-1 mt-1 flex-shrink-0" />
                         <span className="text-sm">{item}</span>
                       </li>
                     ))}
                   </ul>
-                  <p className="text-green-700 mb-6">
+                  <p className="text-[#222] mb-6">
                     If you're an early-stage brand without budget, but with fire — we still want to talk.
                   </p>
 
@@ -375,7 +431,9 @@ function WhyUs() {
                           </li>
                         ))}
                       </ul>
-                      <Button className="w-full bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-500 text-white font-bold py-3 rounded-xl shadow-lg">
+                      <Button
+                        onClick={handleContactNavigation}
+                        className="w-full bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-500 text-white font-bold py-3 rounded-xl shadow-lg">
                        Apply Now <span className="text-xs ml-2"><br></br>(Limited to 1 brand/quarter)</span>
                       </Button>
                     </CardContent>
@@ -389,13 +447,13 @@ function WhyUs() {
         {/* Founder Section */}
         <motion.section className="mb-8" variants={fadeInUp}>
           <motion.h2
-            className="text-2xl sm:text-4xl font-black text-center mb-4 bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent"
+            className="text-2xl sm:text-4xl font-black text-center mb-4 bg-gradient-to-r from-black to-green-700 bg-clip-text text-transparent"
             variants={fadeInUp}
           >
             FROM THE FOUNDER
           </motion.h2>
           <motion.div {...scaleOnHover}>
-            <Card className="bg-gradient-to-br from-white to-green-50/50 border-0 shadow-2xl shadow-green-100/50 overflow-hidden">
+            <Card className="bg-white border border-slate-200 shadow-2xl shadow-green-100/30 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-green-400/5" />
               <CardContent className="relative p-8 sm:p-12 md:p-16">
                 <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-green-500 to-green-600 rounded-r-full" />
@@ -419,7 +477,7 @@ function WhyUs() {
         <motion.section className="mb-8" variants={fadeInUp}>
           <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6" variants={staggerContainer}>
             <motion.div variants={fadeInUp} {...scaleOnHover}>
-              <Card className="h-full bg-gradient-to-br from-green-50 to-white border-0 shadow-xl shadow-green-100/50">
+              <Card className="h-full bg-white border border-slate-200">
                 <CardContent className="p-8">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-green-500 to-green-600" />
                   <div className="font-black text-green-700 mb-6 text-xl flex items-center gap-3">
@@ -444,18 +502,18 @@ function WhyUs() {
             </motion.div>
 
             <motion.div variants={fadeInUp} {...scaleOnHover}>
-              <Card className="h-full bg-gradient-to-br from-red-50 to-white border-0 shadow-xl shadow-red-100/50">
+              <Card className="h-full bg-red-50 border border-red-200">
                 <CardContent className="p-8">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-red-500 to-red-600" />
                   <div className="font-black text-red-700 mb-6 text-xl flex items-center gap-3">
-                    <span className="text-2xl">❌</span>
+                    <X className="w-8 h-8 text-red-600" />
                     WHO THIS IS NOT FOR
                   </div>
                   <ul className="space-y-3 text-slate-700">
                     {["DIY-only founders", "7-day miracle seekers", "Price shoppers with no brand direction"].map(
                       (item, index) => (
                         <li key={index} className="flex items-start gap-3">
-                          <span className="text-red-500 mt-1">✕</span>
+                          <X className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" />
                           <span>{item}</span>
                         </li>
                       ),
@@ -475,35 +533,26 @@ function WhyUs() {
           >
             REAL WORDS FROM FOUNDERS
           </motion.h2>
-          <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6" variants={staggerContainer}>
-            {[
+          <div className="max-w-2xl md:max-w-4xl mx-auto px-4 sm:px-8 text-center">
+            <TestimonialCarousel testimonials={[
               "We switched from a top agency. In 90 days, The Ecom Monks helped us 3× sales on Flipkart and rank for 7 new keywords on Amazon.",
               "It's the first time I've felt supported — not sold to.",
               "I message them like they're my team. Because they are.",
-            ].map((testimonial, index) => (
-              <motion.div key={index} variants={fadeInUp} {...scaleOnHover}>
-                <Card className="h-full bg-gradient-to-br from-white to-green-50/30 border-0 shadow-xl hover:shadow-2xl transition-all duration-300">
-                  <CardContent className="p-8 text-center">
-                    <div className="text-4xl mb-4">💬</div>
-                    <p className="text-green-700 text-lg italic leading-relaxed">"{testimonial}"</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
+            ]} />
+          </div>
         </motion.section>
 
         {/* Monk Vows */}
         <motion.section className="mb-8" variants={fadeInUp}>
           <motion.h2
-            className="text-2xl sm:text-4xl font-black text-center mb-4 bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent"
+            className="text-2xl sm:text-4xl font-black text-center mb-4 bg-gradient-to-r from-black to-green-700 bg-clip-text text-transparent"
             variants={fadeInUp}
           >
-            THE MONK VOWS (We Stand By This)
+            THE MONK VOWS <br></br> (We Stand By This)
           </motion.h2>
           <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6" variants={staggerContainer}>
             <motion.div variants={fadeInUp} {...scaleOnHover}>
-              <Card className="h-full bg-gradient-to-br from-red-50 to-white border-0 shadow-xl shadow-red-100/50">
+              <Card className="h-full bg-red-50 border border-red-200">
                 <CardContent className="p-8">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-red-500 to-red-600" />
                   <div className="font-black text-red-700 mb-6 text-xl flex items-center gap-3">
@@ -519,7 +568,7 @@ function WhyUs() {
                       "Take on your competitor",
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <span className="text-red-500 mt-1">✕</span>
+                        <X className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -529,7 +578,7 @@ function WhyUs() {
             </motion.div>
 
             <motion.div variants={fadeInUp} {...scaleOnHover}>
-              <Card className="h-full bg-gradient-to-br from-green-50 to-white border-0 shadow-xl shadow-green-100/50">
+              <Card className="h-full bg-white border border-slate-200">
                 <CardContent className="p-8">
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-green-500 to-green-600" />
                   <div className="font-black text-green-700 mb-6 text-xl flex items-center gap-3">
@@ -559,17 +608,13 @@ function WhyUs() {
         {/* Final CTA */}
         <motion.section className="text-center" variants={fadeInUp}>
           <motion.h2
-            className="text-2xl sm:text-4xl font-black mb-4 bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent"
+            className="text-2xl sm:text-4xl font-black mb-4 bg-gradient-to-r from-black to-green-700 bg-clip-text text-transparent"
             variants={fadeInUp}
           >
             SO — WHY NOT YOU?
           </motion.h2>
-          <motion.p className="text-xl sm:text-2xl text-green-700 mb-12 leading-relaxed" variants={fadeInUp}>
-            Whether you're stuck or scaling, we'll give you the map.
-            <br />
-            We'll build the machine.
-            <br />
-            And we'll scale with you like we mean it.
+          <motion.p className="text-lg font-bold sm:text-2xl text-green-700 mb-12 leading-relaxed text-left max-w-2xl mx-auto" variants={fadeInUp}>
+            Whether you're stuck or scaling, we'll give you the map. We'll build the machine. And we'll scale with you like we mean it.
           </motion.p>
           <motion.div
             className="flex flex-col gap-4 w-full max-w-xs mx-auto"
@@ -577,6 +622,7 @@ function WhyUs() {
           >
             <motion.div variants={fadeInUp}>
               <Button
+                onClick={handleContactNavigation}
                 size="lg"
                 className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 text-lg"
               >
@@ -585,6 +631,7 @@ function WhyUs() {
             </motion.div>
             <motion.div variants={fadeInUp}>
               <Button
+                onClick={handleContactNavigation}
                 size="lg"
                 className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 text-lg"
               >
@@ -593,6 +640,7 @@ function WhyUs() {
             </motion.div>
             <motion.div variants={fadeInUp}>
               <Button
+                onClick={handleContactNavigation}
                 size="lg"
                 className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 text-lg"
               >

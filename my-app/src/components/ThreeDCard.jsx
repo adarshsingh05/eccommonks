@@ -11,9 +11,19 @@ export default function ThreeDCard({
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Entrance animation
   useEffect(() => {
+    // Detect mobile (tailwind md: 768px)
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Entrance animation (desktop only)
+  useEffect(() => {
+    if (isMobile) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
@@ -22,9 +32,10 @@ export default function ThreeDCard({
     );
     if (cardRef.current) observer.observe(cardRef.current);
     return () => observer.disconnect();
-  }, []);
+  }, [isMobile]);
 
   const handleMouseMove = (e) => {
+    if (isMobile) return;
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -42,28 +53,38 @@ export default function ThreeDCard({
     `);
   };
 
-  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseEnter = () => { if (!isMobile) setIsHovered(true); };
   const handleMouseLeave = () => {
+    if (isMobile) return;
     setIsHovered(false);
     setTransform(
       "perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1) translateZ(0px)"
     );
   };
 
+  // Static style for mobile
+  const staticStyle = {
+    transform: "none",
+    transformStyle: "preserve-3d",
+    fontFamily: 'Inter, Montserrat, Segoe UI, Arial, sans-serif',
+  };
+
   return (
     <div
       ref={cardRef}
       className={`transition-all duration-700 ease-out transform-gpu bg-white border-2 border-green-200 shadow-md ${className} ${
-        isHovered ? "z-20 shadow-2xl border-green-400" : "z-0"
-      } ${isVisible ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-90 translate-y-10"}`}
-      style={{
-        transform,
-        transformStyle: "preserve-3d",
-        fontFamily: 'Inter, Montserrat, Segoe UI, Arial, sans-serif',
-      }}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+        !isMobile && isHovered ? "z-20 shadow-2xl border-green-400" : "z-0"
+      } ${
+        isMobile
+          ? "opacity-100 scale-100 translate-y-0"
+          : isVisible
+          ? "opacity-100 scale-100 translate-y-0"
+          : "opacity-0 scale-90 translate-y-10"
+      }`}
+      style={isMobile ? staticStyle : { ...staticStyle, transform }}
+      onMouseMove={isMobile ? undefined : handleMouseMove}
+      onMouseEnter={isMobile ? undefined : handleMouseEnter}
+      onMouseLeave={isMobile ? undefined : handleMouseLeave}
     >
       <div className="transition-shadow duration-500">
         {children}

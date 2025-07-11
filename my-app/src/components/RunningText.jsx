@@ -1,6 +1,6 @@
 "use client";
 
-export default function RunningText({ text, speed = 60 }) {
+export default function RunningText({ text, speed = 15 }) {
   // Split text by bullet and render each with extra margin for spacing
   const items = text.split('•').map((item, idx) => (
     <span

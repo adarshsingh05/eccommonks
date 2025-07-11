@@ -1,11 +1,22 @@
 import { Helmet } from "react-helmet"
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "./components/Navbar"
 import RunningText from "./components/RunningText"
 import ParallaxSection from "./components/ParallaxSection"
 import ScrollParallax from "./components/ScrollParallax"
 import ThreeDCard from "./components/ThreeDCard"
+import { CheckCircle } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion";
+import AnimatedText from "./components/AnimatedText";
 
 function FrameworkPage() {
+  const navigate = useNavigate();
+
+  const handleContactNavigation = () => {
+    navigate('/contactus');
+  };
+
   const frameworks = [
     {
       id: "audit",
@@ -144,9 +155,10 @@ function FrameworkPage() {
           {/* Hero Section with Parallax */}
           <ParallaxSection speed={0.3} direction="up" className="w-full">
             <section className="py-6 md:py-32 flex flex-col items-center justify-center text-center relative bg-gradient-to-b from-green-50/60 to-white">
-            <div className="max-w-6xl w-full mx-auto px-4 md:px-8 flex flex-col items-center">
+            <div className="max-w-6xl w-full mx-auto px-4 md:px-8 flex flex-col items-center sm:mt-0 mt-7">
                 <div className="text-2xl md:text-5xl lg:text-7xl font-black tracking-tight mb-3 md:mb-8">
                 <span className="text-[#222]">Where Growth Isn't Random. </span>
+                <br></br>
                 <span className="text-green-500">It's Engineered.</span>
               </div>
 
@@ -159,8 +171,9 @@ function FrameworkPage() {
               </div>
 
                 {/* CTA Button */}
-                <button className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-8 md:px-12 py-4 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center mt-4 animate-bounce">
-                  <span className="group-hover:animate-bounce inline-block mr-3 md:mr-4 text-2xl md:text-3xl">🚀</span>
+                <button 
+                  onClick={handleContactNavigation}
+                  className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-6 md:px-12 py-3 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center mt-4 animate-bounce">
                   Discover Our Frameworks
                 </button>
             </div>
@@ -170,7 +183,7 @@ function FrameworkPage() {
           {/* Sliding Banner */}
           <RunningText
             text="A.U.D.I.T. SPRINT • S.O.S. LISTING SYSTEM • AD SMARTSET • TRIPLE-T ENGINE • CONVERSION LOOP"
-            speed={30}
+            speed={15}
           />
 
           {/* Headline Section */}
@@ -218,9 +231,8 @@ function FrameworkPage() {
                 <h2 className="text-2xl md:text-5xl lg:text-6xl font-black mb-3 md:mb-8 text-[#222]">WHY THIS PAGE MATTERS</h2>
                 <div className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 space-y-4 max-w-4xl mx-auto">
                   <p>Before you trust anyone to run your ads, rewrite your listings, or rebuild your brand store…</p>
-                  <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-green-600 font-semibold text-xl md:text-2xl">
-                    <span>→ You should know how they think</span>
-                    <span>→ You should see the method behind the magic</span>
+                  <div className="text-green-600 font-semibold text-xl md:text-2xl pl-1">
+                    <span>You should know how they think You should see the method behind the magic</span>
                   </div>
                   <p className="font-semibold text-[#222] text-xl md:text-2xl">
                     Let us walk you through the 5 pillars that power every account we manage.
@@ -291,7 +303,9 @@ function FrameworkPage() {
                 <p className="text-lg md:text-xl text-green-700 mb-4">
                   💬 Still not sure? Let our framework diagnostic tell you exactly what you need.
                   </p>
-                <button className="bg-gradient-to-r from-green-500 to-green-600 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300">
+                <button 
+                  onClick={handleContactNavigation}
+                  className="bg-gradient-to-r from-green-500 to-green-600 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300">
                   Take the Framework Quiz
                 </button>
                 <p className="text-sm md:text-base text-green-500 mt-2">Get your personalized framework recommendation in 2 minutes.</p>
@@ -349,7 +363,9 @@ function FrameworkPage() {
                             <p className="text-sm md:text-base text-blue-700 italic">"{framework.testimonial}"</p>
                           </div>
 
-                          <button className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold px-4 py-2 rounded-lg hover:scale-105 transition-all duration-300 text-sm md:text-base">
+                          <button 
+                            onClick={handleContactNavigation}
+                            className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold px-4 py-2 rounded-lg hover:scale-105 transition-all duration-300 text-sm md:text-base">
                             {framework.cta}
                           </button>
                         </div>
@@ -462,14 +478,22 @@ function FrameworkPage() {
               </p>
 
               <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
-                <button className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-8 md:px-12 py-4 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center">
-                  <span className="group-hover:animate-bounce inline-block mr-3 md:mr-4 text-2xl md:text-3xl">🚀</span>
-                  Start with Our Frameworks
+                <button 
+                  onClick={handleContactNavigation}
+                  className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-8 md:px-12 py-4 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center justify-center shadow-xl hover:shadow-green-400/50 transition-all duration-500 relative overflow-hidden animate-ctaPulse min-w-[220px]"
+                  style={{ minHeight: '48px', boxShadow: '0 8px 32px 0 rgba(34,197,94,0.18)' }}
+                >
+                  <span className="text-center leading-tight">Get My Free Growth Audit Now →</span>
+                  <span className="absolute inset-0 rounded-2xl pointer-events-none group-hover:animate-glowPulse"></span>
                 </button>
 
-                <button className="group bg-white border-2 border-green-400 text-green-600 font-black px-8 md:px-12 py-4 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:bg-green-50 transition-all duration-500 flex items-center">
-                  <span className="group-hover:animate-bounce inline-block mr-3 md:mr-4 text-2xl md:text-3xl">📞</span>
-                  Book a Framework Call
+                <button 
+                  onClick={handleContactNavigation}
+                  className="group bg-white border-2 border-green-400 text-green-600 font-black px-8 md:px-12 py-4 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:bg-green-50 transition-all duration-500 transform hover:rotate-1 flex items-center justify-center shadow-xl hover:shadow-green-400/50 transition-all duration-500 relative overflow-hidden animate-ctaPulse min-w-[220px]"
+                  style={{ minHeight: '48px', boxShadow: '0 8px 32px 0 rgba(34,197,94,0.18)' }}
+                >
+                  <span className="text-center leading-tight">Learn More About Our Process →</span>
+                  <span className="absolute inset-0 rounded-2xl pointer-events-none group-hover:animate-glowPulse"></span>
                 </button>
               </div>
 
@@ -478,8 +502,10 @@ function FrameworkPage() {
                 <p className="text-base md:text-lg text-gray-600 mb-4">
                   Take our 2-minute framework diagnostic to get matched with the perfect system for your brand.
                 </p>
-                <button className="bg-gradient-to-r from-green-500 to-green-600 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300">
-                  👉 TAKE THE FRAMEWORK QUIZ
+                <button 
+                  onClick={handleContactNavigation}
+                  className="bg-gradient-to-r from-green-500 to-green-600 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300">
+                  Get Your Free Growth Audit
                 </button>
                 <p className="text-sm md:text-base text-green-500 mt-2">Get your personalized framework recommendation instantly.</p>
               </div>
