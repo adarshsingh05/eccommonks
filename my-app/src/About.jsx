@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 import ThreeDCard from "./components/ThreeDCard";
 import AnimatedText from "./components/AnimatedText";
 import ParallaxSection from "./components/ParallaxSection";
-import { User, Target, Layers, MessageCircle, HeartHandshake } from "lucide-react";
-import { CheckCircleIcon, XMarkIcon } from '@heroicons/react/24/solid';
+import { User, Target, Layers, MessageCircle, HeartHandshake, CheckCircle, X } from "lucide-react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -102,10 +101,10 @@ function About() {
               When I first tried selling online, I made every mistake a seller could make:
             </motion.p>
             <ul className="list-none ml-0 text-slate-700 text-sm sm:text-lg mb-2 flex flex-wrap gap-3">
-              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><XMarkIcon className="w-5 h-5 text-red-500" />Wrong listings.</li>
-              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><XMarkIcon className="w-5 h-5 text-red-500" />No traction.</li>
-              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><XMarkIcon className="w-10 h-5 text-red-500" />Paid agencies that overpromised and ghosted me once the contract was signed.</li>
-              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><XMarkIcon className="w-5 h-5 text-red-500" />Zero hand-holding, and even less care.</li>
+              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><X className="w-5 h-5 text-red-500" />Wrong listings.</li>
+              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><X className="w-5 h-5 text-red-500" />No traction.</li>
+              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><X className="w-10 h-5 text-red-500" />Paid agencies that overpromised and ghosted me once the contract was signed.</li>
+              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><X className="w-5 h-5 text-red-500" />Zero hand-holding, and even less care.</li>
             </ul>
             <motion.p className="text-sm sm:text-lg text-slate-700 mb-2" variants={fadeInUp}>
               Back then, I thought the platforms were broken.<br />But I realised — it's not the platforms. It's the people who are supposed to guide you through them.
@@ -119,10 +118,10 @@ function About() {
              The Problem No One Wants to Fix
             </motion.h2>
             <ul className="list-none ml-0 text-slate-700 text-sm sm:text-lg mb-2 flex flex-wrap gap-3">
-              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><XMarkIcon className="w-5 h-5 text-red-500" />SPN partners don't care once they get paid</li>
-              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><XMarkIcon className="w-5 h-5 text-red-500" />Agencies are juggling 200 clients with 7-8 interns</li>
-              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><XMarkIcon className="w-5 h-5 text-red-500" />Listing + Ads + Content are handled by different vendors</li>
-              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><XMarkIcon className="w-5 h-5 text-red-500" />Nobody thinks like a founder — only like a vendor</li>
+              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><X className="w-5 h-5 text-red-500" />SPN partners don't care once they get paid</li>
+              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><X className="w-5 h-5 text-red-500" />Agencies are juggling 200 clients with 7-8 interns</li>
+              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><X className="w-5 h-5 text-red-500" />Listing + Ads + Content are handled by different vendors</li>
+              <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><X className="w-5 h-5 text-red-500" />Nobody thinks like a founder — only like a vendor</li>
             </ul>
             <motion.p className="text-sm sm:text-lg text-slate-700 mb-2" variants={fadeInUp}>
               <span className="font-bold text-red-500">📉 Result?</span> Missed growth. Burnt founders. Suspended accounts.<br />And a lot of great products that never get the chance they deserve.
@@ -136,7 +135,7 @@ function About() {
         <motion.section className="mb-12" variants={fadeInUp}>
           <ThreeDCard className="p-8 bg-gradient-to-br from-white to-green-50/30 flex flex-col gap-4 shadow-xl group hover:scale-[1.03] transition-transform duration-300">
             <motion.h2 className="text-lg sm:text-3xl font-black mb-4 bg-gradient-to-r from-green-600 to-green-600 bg-clip-text text-transparent flex items-center gap-2" variants={fadeInUp}>
-              <CheckCircleIcon className="w-6 h-6 text-green-500 mr-2" /> Our Mission
+              <CheckCircle className="w-6 h-6 text-green-500 mr-2" /> Our Mission
             </motion.h2>
             <motion.p className="text-sm sm:text-lg text-slate-700 mb-2" variants={fadeInUp}>
               To bring clarity, performance, and ownership back to ecommerce growth.<br />We help sellers stop guessing and start scaling — across Amazon, Flipkart, Meesho, Nykaa, Zepto, Blinkit, and beyond.<br />We're not consultants. We're your outsourced founding team, armed with dashboards, expertise, obsession, and heart.
