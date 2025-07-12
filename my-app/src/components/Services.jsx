@@ -267,7 +267,7 @@ function ServicesPage() {
                     subtitle: "Build buzz beyond marketplaces",
                     bullets: [
                       "Content calendar (6–24 monthly posts)",
-                      "Product storytelling, reels, carousels, and captions",
+                      "Product storytelling, reels, carousels, captions",
                       "Influencer shortlisting + outreach + script briefs",
                       "Paid, barter, or hybrid creator activations",
                       "UGC repurposed for Amazon/Meta/Website",
