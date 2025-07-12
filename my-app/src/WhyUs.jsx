@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { CheckCircle, Users, Settings, TrendingUp, Eye, Shield, Star, ArrowRight, X, Check } from "lucide-react"
 import Navbar from "./components/Navbar"
-import { FaCheck } from 'react-icons/fa';
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -243,7 +242,7 @@ function WhyUs() {
                       "CONVERSION LOOP™: Integrates marketplace + q-commerce + social channels",
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <FaCheck className="inline text-green-500 text-base md:text-lg mr-1 mt-1 flex-shrink-0" />
+                        <Check className="inline text-green-500 text-base md:text-lg mr-1 mt-1 flex-shrink-0" />
                         <span className="text-sm">{item}</span>
                       </li>
                     ))}
@@ -325,7 +324,7 @@ function WhyUs() {
                       "Invisible ad spends with 0 attribution",
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <FaCheck className="inline text-green-500 text-base md:text-lg mr-1 mt-1 flex-shrink-0" />
+                        <Check className="inline text-green-500 text-base md:text-lg mr-1 mt-1 flex-shrink-0" />
                         <span className="text-sm">{item}</span>
                       </li>
                     ))}
@@ -363,7 +362,7 @@ function WhyUs() {
                       "Review velocity & Buy Box win %",
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <FaCheck className="inline text-green-500 text-base md:text-lg mr-1 mt-1 flex-shrink-0" />
+                        <Check className="inline text-green-500 text-base md:text-lg mr-1 mt-1 flex-shrink-0" />
                         <span className="text-sm">{item}</span>
                       </li>
                     ))}
@@ -393,7 +392,7 @@ function WhyUs() {
                       'Selling you on "views" when what you need is sales',
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <FaCheck className="inline text-green-500 text-base md:text-lg mr-1 mt-1 flex-shrink-0" />
+                        <Check className="inline text-green-500 text-base md:text-lg mr-1 mt-1 flex-shrink-0" />
                         <span className="text-sm">{item}</span>
                       </li>
                     ))}

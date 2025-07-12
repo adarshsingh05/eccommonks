@@ -6,8 +6,18 @@ import ThreeDCard from "./ThreeDCard"
 import { Helmet } from "react-helmet"
 
 import React, { useRef } from "react"
-import { FaVideo, FaChartBar, FaUserFriends, FaSearch, FaEye, FaExpand, FaCalendarAlt, FaBullseye, FaCheck } from 'react-icons/fa';
-import { Check, X } from "lucide-react";
+import { 
+  Check, 
+  X, 
+  Video, 
+  BarChart3, 
+  Users, 
+  Search, 
+  Eye, 
+  Expand, 
+  Calendar, 
+  Target 
+} from "lucide-react";
 import TestimonialCarousel from "./TestimonialCarousel";
 import { useNavigate } from "react-router-dom";
 
@@ -274,7 +284,7 @@ function ServicesPage() {
                     <ul className="w-full text-left text-green-700 space-y-1 sm:space-y-2 md:space-y-2">
                       {service.bullets.map((point, i) => (
                         <li key={i} className="text-xs sm:text-sm md:text-base">
-                          <FaCheck className="inline text-green-500 text-base md:text-lg mr-1" />{point}
+                          <Check className="inline text-green-500 text-base md:text-lg mr-1" />{point}
                         </li>
                       ))}
                     </ul>
@@ -297,14 +307,14 @@ function ServicesPage() {
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-8 md:mb-12">
                 {[
-                  { label: "Product Video Creation", icon: <FaVideo className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
-                  { label: "Infographic Packs", icon: <FaChartBar className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
-                  { label: "Influencer Setup + UGC", icon: <FaUserFriends className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
-                  { label: "Advanced Keyword Research", icon: <FaSearch className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
-                  { label: "Competitor Monitoring", icon: <FaEye className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
-                  { label: "Marketplace Expansion", icon: <FaExpand className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
-                  { label: "Social Media Content Calendar", icon: <FaCalendarAlt className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
-                  { label: "Performance Ad Audits", icon: <FaBullseye className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Product Video Creation", icon: <Video className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Infographic Packs", icon: <BarChart3 className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Influencer Setup + UGC", icon: <Users className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Advanced Keyword Research", icon: <Search className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Competitor Monitoring", icon: <Eye className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Marketplace Expansion", icon: <Expand className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Social Media Content Calendar", icon: <Calendar className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
+                  { label: "Performance Ad Audits", icon: <Target className="mx-auto text-green-500 text-2xl md:text-3xl mb-2" /> },
                 ].map((module, idx) => (
                   <div
                     key={idx}
@@ -532,7 +542,7 @@ function ServicesPage() {
                     <ul className="text-green-700 text-base sm:text-lg md:text-base mb-4 pl-0">
                       {pricing.features.map((f, i) => (
                         <li key={i} className="flex items-start md:text-base md:whitespace-nowrap">
-                          <FaCheck className="inline text-green-500 mr-2 mt-0.5" />
+                          <Check className="inline text-green-500 mr-2 mt-0.5" />
                           <span>{f}</span>
                         </li>
                       ))}
@@ -603,11 +613,11 @@ function ServicesPage() {
                 <div className="text-xs md:text-base text-green-500 mb-4 md:mb-6 text-left">
                   <span className="font-bold">Get a 48-hour personalized growth plan:</span>
                   <ul className="mt-2 space-y-1 pl-0 mr-[-30px]">
-                    <li className="flex items-start"><FaCheck className="inline text-green-500 mr-2 mt-0.5" /><span>Listing gaps</span></li>
-                    <li className="flex items-start"><FaCheck className="inline text-green-500 mr-2 mt-0.5" /><span>Ad performance review</span></li>
-                    <li className="flex items-start"><FaCheck className="inline text-green-500 mr-2 mt-0.5" /><span>Marketplace expansion playbook</span></li>
-                    <li className="flex items-start"><FaCheck className="inline text-green-500 mr-2 mt-0.5" /><span>Recommended plan (Starter, Scaling or Aggressive)</span></li>
-                    <li className="flex items-start"><FaCheck className="inline text-green-500 mr-2 mt-0.5" /><span>Custom quote</span></li>
+                    <li className="flex items-start"><Check className="inline text-green-500 mr-2 mt-0.5" /><span>Listing gaps</span></li>
+                    <li className="flex items-start"><Check className="inline text-green-500 mr-2 mt-0.5" /><span>Ad performance review</span></li>
+                    <li className="flex items-start"><Check className="inline text-green-500 mr-2 mt-0.5" /><span>Marketplace expansion playbook</span></li>
+                    <li className="flex items-start"><Check className="inline text-green-500 mr-2 mt-0.5" /><span>Recommended plan (Starter, Scaling or Aggressive)</span></li>
+                    <li className="flex items-start"><Check className="inline text-green-500 mr-2 mt-0.5" /><span>Custom quote</span></li>
                   </ul>
                 </div>
                 <button 
