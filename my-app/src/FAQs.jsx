@@ -336,7 +336,7 @@ function FAQs() {
         animate="animate"
         variants={staggerContainer}
       >
-        <motion.h1 className="text-xl sm:text-5xl md:text-6xl font-black text-center mb-8 bg-gradient-to-r from-blue-600 via-purple-600 to-red-600 bg-clip-text text-transparent leading-tight" variants={fadeInUp}>
+        <motion.h1 className="text-xl sm:text-5xl md:text-6xl font-black text-center mb-8 bg-gradient-to-r from-green-700 via-green-900 to-black bg-clip-text text-transparent leading-tight" variants={fadeInUp}>
          Ecommerce FAQs: Everything Sellers Ask Before Partnering with The Ecom Monks
         </motion.h1>
         <motion.p className="text-md sm:text-xl text-center mb-12 text-gray-600 font-semibold" variants={fadeInUp}>

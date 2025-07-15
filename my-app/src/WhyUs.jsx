@@ -89,7 +89,10 @@ function WhyUs() {
   const navigate = useNavigate();
 
   const handleContactNavigation = () => {
-    navigate('/contactus');
+    navigate('/contactus#contact-form');
+  };
+  const handleApplicationNavigation = () => {
+    navigate('/application');
   };
 
   return (
@@ -131,15 +134,13 @@ function WhyUs() {
                   variants={fadeInUp}
                 >
                   You've tried the SPNs. You've been ghosted by agencies.
-                  <br />
+                 
                   Now, it's time to work with people who've built brands, bled through glitches, and cracked growth on
                   every major platform.
                 </motion.p>
 
                 <motion.p className="text-lg sm:text-xl text-green-700 leading-relaxed" variants={fadeInUp}>
-                  We're not here to "service" your account.
-                  <br />
-                  We're here to build your brand — with skin in the game, clear roadmaps, and zero fluff.
+                  We're not here to "service" your account. We're here to build your brand — with skin in the game, clear roadmaps, and zero fluff.
                 </motion.p>
 
                 <motion.div className="text-center py-3" variants={fadeInUp}>
@@ -331,7 +332,7 @@ function WhyUs() {
                   </ul>
                   <p className="text-green-700 font-medium">
                     We don't tell you it's "a platform issue."
-                    <br />
+                    
                     We fix it. Or escalate it. Or escalate until it's fixed.
                   </p>
                 </CardContent>
@@ -431,7 +432,7 @@ function WhyUs() {
                         ))}
                       </ul>
                       <Button
-                        onClick={handleContactNavigation}
+                        onClick={handleApplicationNavigation}
                         className="w-full bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-500 text-white font-bold py-3 rounded-xl shadow-lg">
                        Apply Now <span className="text-xs ml-2"><br></br>(Limited to 1 brand/quarter)</span>
                       </Button>
@@ -607,7 +608,7 @@ function WhyUs() {
         {/* Final CTA */}
         <motion.section className="text-center" variants={fadeInUp}>
           <motion.h2
-            className="text-2xl sm:text-4xl font-black mb-4 bg-gradient-to-r from-black to-green-700 bg-clip-text text-transparent"
+            className="text-2xl sm:text-4xl font-black mb-4 sm:mb-0 bg-gradient-to-r from-black to-green-700 bg-clip-text text-transparent"
             variants={fadeInUp}
           >
             SO — WHY NOT YOU?
@@ -621,7 +622,7 @@ function WhyUs() {
           >
             <motion.div variants={fadeInUp}>
               <Button
-                onClick={handleContactNavigation}
+                onClick={handleApplicationNavigation}
                 size="lg"
                 className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 text-lg"
               >
@@ -630,7 +631,7 @@ function WhyUs() {
             </motion.div>
             <motion.div variants={fadeInUp}>
               <Button
-                onClick={handleContactNavigation}
+                onClick={handleApplicationNavigation}
                 size="lg"
                 className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 text-lg"
               >

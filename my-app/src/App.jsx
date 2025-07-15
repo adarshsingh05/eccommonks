@@ -18,6 +18,7 @@ import TandC from "./TandC";
 import Privacy from "./Privacy";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ApplicationPage from "./ApplicationPage";
 
 function ScrollToTop() {
   const location = useLocation();
@@ -52,6 +53,7 @@ function App() {
         <Route path="/refund" element={<Refund />} />
         <Route path="/tandc" element={<TandC />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/application" element={<ApplicationPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

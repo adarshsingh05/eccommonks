@@ -33,15 +33,19 @@ function ServicesPage() {
   const ctaRef = useRef(null);
 
   const handleCardClick = () => {
-    navigate('/contactus');
+    navigate('/contactus#contact-form');
   };
 
   const handleGoToCTA = () => {
-    navigate('/contactus');
+    navigate('/contactus#contact-form');
   };
 
   const handleContactNavigation = () => {
-    navigate('/contactus');
+    navigate('/contactus#contact-form');
+  };
+
+  const handleApplicationNavigation = () => {
+    navigate('/application');
   };
 
   return (
@@ -79,11 +83,11 @@ function ServicesPage() {
 
         <Navbar />
 
-        <main className="bg-white text-[#222] mt-9 sm:mt-0 overflow-x-hidden">
+        <main className="bg-white text-[#222] mt-9 sm:mt-9 overflow-x-hidden">
           <h1 className="sr-only ">End-to-End Ecommerce Services That Drive Sales Across Every Major Platform</h1>
           {/* Hero Section with Parallax */}
           <ParallaxSection speed={0.3} direction="up" className="w-full">
-            <section className="py-6 sm:py-16 md:py-32 flex flex-col items-center justify-center text-center relative bg-gradient-to-b from-green-50/60 to-white">
+            <section className="py-6 sm:py-16 flex flex-col items-center justify-center text-center relative bg-gradient-to-b from-green-50/60 to-white">
               <div className="max-w-5xl w-full mx-auto px-2 sm:px-4 md:px-8 flex flex-col items-center">
                 {/* Main Headline */}
                 <div className="text-xl sm:text-3xl md:text-5xl lg:text-7xl font-black tracking-tight mb-3 sm:mb-6 md:mb-8">
@@ -111,7 +115,7 @@ function ServicesPage() {
 
                 {/* CTA */}
                 <button 
-                  onClick={handleContactNavigation}
+                  onClick={handleApplicationNavigation}
                   className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-4 sm:px-8 md:px-12 py-2 sm:py-4 md:py-6 rounded-xl sm:rounded-2xl text-base sm:text-lg md:text-2xl lg:text-3xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center mt-2 animate-bounce mb-2 sm:mb-4">
                   <span className="group-hover:animate-bounce inline-block mr-2 sm:mr-3 md:mr-4 text-xl sm:text-2xl md:text-3xl">🎯</span>
                   Get Your Free Growth Audit
@@ -125,13 +129,11 @@ function ServicesPage() {
           </ParallaxSection>
 
           {/* Sliding Banner */}
-          <RunningText
-            text="Amazon • Flipkart • Myntra • Meesho • Nykaa • Jiomart • Blinkit • Zepto • Instamart"
-            speed={22}
-          />
+          <RunningText className='mt-[-10]' text="Platform Management (Amazon | Flipkart | Myntra | Meesho | Nykaa | Jiomart | Shopify)  •  Performance Marketing  •  Creative Studio  •  Quick Commerce Blitz  •  Social Media  •  Influencer Marketing" speed={15} />
+
 
           {/* Journey Tracks Section */}
-          <section className="py-6 sm:py-16 md:py-32 relative z-10">
+          <section className="py-6 sm:py-16  relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-400/10 to-green-500/10"></div>
             </div>
@@ -182,7 +184,7 @@ function ServicesPage() {
                     onClick={handleCardClick}
                     className="cursor-pointer bg-gradient-to-br w-full max-w-xs sm:max-w-none from-green-200/80 to-green-400/40 rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 flex flex-col items-center text-center hover:scale-105 transition-all duration-300 min-h-[220px] sm:min-h-[220px] mx-auto mb-4 sm:mb-0"
                   >
-                    <div className="text-base font-bold text-green-600 mb-2 sm:mb-2 tracking-wide">{track.track}</div>
+                  
                     <h3 className="text-lg sm:text-xl md:text-2xl font-black text-green-900 mb-2 sm:mb-3 md:mb-4 leading-tight">{track.title}</h3>
                     <p className="text-sm sm:text-base md:text-lg text-green-800 mb-2 sm:mb-3 md:mb-4 italic leading-snug">{`"${track.subtitle}"`}</p>
                     <p className="text-xs sm:text-sm md:text-base text-green-700 font-semibold mb-2 sm:mb-2 leading-normal">{track.description}</p>
@@ -196,7 +198,7 @@ function ServicesPage() {
                 <p className="text-xs sm:text-base md:text-xl text-green-600 mb-2 sm:mb-4">Not sure which suits you?</p>
                 <button 
                   ref={ctaRef} 
-                  onClick={handleContactNavigation}
+                  onClick={handleApplicationNavigation}
                   className="bg-gradient-to-r from-green-500 to-green-500 text-white font-bold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300">
                   Get Your Free Growth Audit
                 </button>
@@ -206,12 +208,12 @@ function ServicesPage() {
           </section>
 
           {/* Core Services Section */}
-          <section className="py-6 sm:py-16 md:py-32 relative z-10">
+          <section className="py-6 sm:py-8 relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-l from-green-500/10 to-green-400/10"></div>
             </div>
             <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 text-center">
-              <h2 className="text-2xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-8 text-[#222]">CORE SERVICES — YOUR BRAND, EVERYWHERE</h2>
+              <h2 className="text-2xl md:text-5xl  font-black mb-6 md:mb-8 text-[#222]">CORE SERVICES — YOUR BRAND, EVERYWHERE</h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 mt-8 md:mt-16">
                 {[
@@ -295,12 +297,12 @@ function ServicesPage() {
           </section>
 
           {/* Plug & Play Modules Section */}
-          <section className="py-6 sm:py-16 md:py-32 relative z-10 mt-4 sm:mt-8">
+          <section className="py-6 sm:py-16  relative z-10 mt-4 sm:mt-8">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-500/10 to-green-400/10"></div>
             </div>
             <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 text-center">
-              <h2 className="text-3xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-8 text-[#222]">PLUG & PLAY GROWTH MODULES</h2>
+              <h2 className="text-3xl md:text-5xl font-black mb-6 md:mb-8 text-[#222]">PLUG & PLAY GROWTH MODULES</h2>
               <p className="text-lg md:text-2xl lg:text-3xl text-green-500 mb-8 md:mb-16 font-bold">
                 Want a custom mix? We offer modular services to solve specific challenges — whether it's just A+ content, a video, listing optimization, or a high-ROI ad refresh.
               </p>
@@ -326,9 +328,9 @@ function ServicesPage() {
                 ))}
               </div>
 
-              <div className="bg-green-50/60 rounded-2xl p-6 md:p-8 max-w-4xl mx-auto">
+              <div className="bg-green-50/60 rounded-2xl p-4 max-w-4xl mx-auto">
                 <p className="text-base md:text-xl text-green-700 mb-4">
-                  �� Just tell us what's keeping you stuck — we'll plug in the exact module you need.
+                  Just tell us what's keeping you stuck — we'll plug in the exact module you need.
                 </p>
                 <button 
                   onClick={handleContactNavigation}
@@ -347,12 +349,12 @@ function ServicesPage() {
           />
 
           {/* Why Brands Switch Section */}
-          <section className="py-6 sm:py-16 md:py-32 relative z-10 mt-4 sm:mt-8">
+          <section className="py-6 sm:py-16  relative z-10 mt-4 sm:mt-8">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-500/10 to-green-400/10"></div>
             </div>
             <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 text-center">
-              <h2 className="text-2xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-8 text-[#222]">WHY BRANDS SWITCH TO THE ECOM MONKS</h2>
+              <h2 className="text-2xl md:text-5xl font-black mb-6 md:mb-12 text-[#222]">WHY BRANDS SWITCH TO THE ECOM MONKS</h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-8 md:mb-16">
                 <ThreeDCard className="bg-red-400/40 p-6 md:p-10 rounded-3xl h-full flex flex-col items-center">
@@ -401,13 +403,13 @@ function ServicesPage() {
           </section>
 
           {/* WHAT WE DON'T DO Section */}
-          <section className="py-6 sm:py-16 md:py-32 relative z-10 mt-4 sm:mt-8">
+          <section className="py-3 relative z-10 mt-4 sm:mt-8">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-red-400/10 to-orange-500/10"></div>
             </div>
             <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 text-center">
-              <h2 className="text-3xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-8 text-[#222]">
-                <X className="w-8 h-8 text-red-500 inline mr-4" />
+              <h2 className="text-3xl md:text-5xl font-black mb-6 md:mb-8 text-[#222]">
+                
                 WHAT WE DON'T DO
               </h2>
 
@@ -450,12 +452,12 @@ function ServicesPage() {
           </section>
 
           {/* Growth Grant Section */}
-          <section className="py-6 sm:py-16 md:py-32 relative z-10">
+          <section className="py-6 sm:py-16  relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-400/10 to-green-500/10"></div>
             </div>
             <div className="max-w-5xl mx-auto px-4 md:px-8 lg:px-12 text-center">
-              <h2 className="text-xl md:text-5xl lg:text-6xl font-black mb-6 md:mb-8 text-[#222]"> THE ECOM MONKS GROWTH GRANT</h2>
+              <h2 className="text-lg md:text-5xl font-black mb-6 md:mb-8 text-[#222]"> THE ECOM MONKS GROWTH GRANT</h2>
               <p className="text-base md:text-xl text-green-600 mb-6 md:mb-8">We know not every promising brand has a budget upfront.</p>
               <p className="text-lg md:text-2xl text-green-700 font-bold mb-8 md:mb-12">
                 Every quarter, we choose one high-potential brand to work with on a pure performance basis.
@@ -481,7 +483,7 @@ function ServicesPage() {
                 <div className="bg-green-50 rounded-2xl p-6 md:p-8 border border-green-200">
                   <h3 className="text-lg md:text-2xl font-bold text-green-700 mb-4 md:mb-6">How to Apply:</h3>
                   <button 
-                    onClick={handleContactNavigation}
+                    onClick={handleApplicationNavigation}
                     className="bg-gradient-to-r from-green-500 to-green-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300 mb-4">
                     Request an Invite
                   </button>
@@ -495,7 +497,7 @@ function ServicesPage() {
           </section>
 
           {/* Pricing Section */}
-          <section className="py-6 sm:py-16 md:py-32 relative z-10">
+          <section className="py-6 sm:py-14 relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-500/10 to-green-400/10"></div>
             </div>
@@ -525,7 +527,8 @@ function ServicesPage() {
                 ].map((pricing, idx) => (
                   <ThreeDCard
                     key={idx}
-                    className="bg-white border border-green-200 rounded-3xl shadow-xl p-6 md:p-10 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400"
+                    className="bg-white border border-green-200 rounded-3xl shadow-xl p-6 md:p-10 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-green-400 cursor-pointer"
+                    onClick={handleContactNavigation}
                   >
                     {/* Split the name for desktop and mobile: first part big, second part smaller, both stacked */}
                     {(() => {
@@ -548,6 +551,7 @@ function ServicesPage() {
                       ))}
                     </ul>
                     <button
+                      onClick={handleContactNavigation}
                       className={`bg-gradient-to-r ${pricing.color} text-white font-black px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-110 transition-all duration-500`}
                     >
                       Get Started
@@ -564,7 +568,7 @@ function ServicesPage() {
           </section>
 
           {/* Testimonials Section */}
-          <section className="py-6 sm:py-16 md:py-32 relative z-10">
+          <section className="py-6 sm:py-12 relative z-10">
             <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 text-center">
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-extrabold mb-8 md:mb-12 text-[#222]"> YOU'RE IN GOOD COMPANY</h2>
 
@@ -621,7 +625,7 @@ function ServicesPage() {
                   </ul>
                 </div>
                 <button 
-                  onClick={handleContactNavigation}
+                  onClick={handleApplicationNavigation}
                   className="bg-gradient-to-r from-green-500 to-green-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300">
                   👉 CLAIM MY FREE GROWTH AUDIT
                 </button>

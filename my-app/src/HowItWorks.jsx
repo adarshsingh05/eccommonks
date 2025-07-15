@@ -126,15 +126,15 @@ function HowItWorks() {
         <motion.h1 className="text-xl sm:text-6xl md:text-7xl font-black text-center mb-8 bg-gradient-to-r from-green-600 via-blue-700 to-black bg-clip-text text-transparent leading-tight" variants={fadeInUp}>
          Your Ecom Journey Starts Here. Smooth, Simple & Seller-Friendly.
         </motion.h1>
-        <div className="flex flex-col md:flex-row gap-8 mb-12 items-center justify-center">
+        <div className="flex flex-col md:flex-row gap-5 mb-12 items-center justify-center">
           <ThreeDCard className="w-full md:w-1/2 p-3 sm:p-6 bg-gradient-to-br from-white to-green-50/30">
             <motion.p className="text-sm sm:text-xl text-center text-green-600 font-semibold" variants={fadeInUp}>
               From Chaos to Clarity — Here's What Working With Us Looks Like
             </motion.p>
           </ThreeDCard>
-          <ThreeDCard className="w-full md:w-1/2 p-3 sm:p-6 bg-gradient-to-br from-white to-green-50/30">
+          <ThreeDCard className="w-full md:w-1/2 p-1 sm:p-6 bg-gradient-to-br from-white to-green-50/30">
             <motion.p className="text-sm sm:text-lg text-center text-green-500" variants={fadeInUp}>
-              Scaling online shouldn't feel like solving a Rubik's cube in the dark.<br />
+              Scaling online shouldn't feel like solving a Rubik's cube in the dark.
               We make your journey structured, simple, and revenue-ready from Day 1.
             </motion.p>
           </ThreeDCard>
@@ -149,9 +149,9 @@ function HowItWorks() {
                 <span className="font-black text-md md:text-2xl text-green-700">{step.title}</span>
               </div>
               {step.points && (
-                <ul className="list-none ml-0 text-green-700 text-sm sm:text-lg mb-2">
+                <ul className="list-none p-1 ml-0 text-green-700 text-sm sm:text-lg mb-2">
                   {step.points.map((pt, i) => (
-                    <li key={i} className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />{pt}</li>
+                    <li key={i} className="flex items-start gap-3 mb-4"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />{pt}</li>
                   ))}
                 </ul>
               )}
@@ -160,7 +160,7 @@ function HowItWorks() {
                   <div className="font-bold text-green-700 mb-1">You leave with:</div>
                   <ul className="list-none ml-0 text-green-700 text-sm sm:text-lg">
                     {step.youLeaveWith.map((pt, i) => (
-                      <li key={i} className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />{pt}</li>
+                      <li key={i} className="flex items-start gap-3 mb-4"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />{pt}</li>
                     ))}
                   </ul>
                 </div>
@@ -170,7 +170,7 @@ function HowItWorks() {
                   <div className="font-bold text-green-700 mb-1">You get:</div>
                   <ul className="list-none ml-0 text-green-700 text-sm sm:text-lg">
                     {step.youGet.map((pt, i) => (
-                      <li key={i} className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />{pt}</li>
+                      <li key={i} className="flex items-start gap-3 mb-4"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />{pt}</li>
                     ))}
                   </ul>
                 </div>
@@ -180,7 +180,7 @@ function HowItWorks() {
                   <div className="font-bold text-green-700 mb-1">Your Blueprint Includes:</div>
                   <ul className="list-none ml-0 text-green-700 text-sm sm:text-lg">
                     {step.blueprint.map((pt, i) => (
-                      <li key={i} className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />{pt}</li>
+                      <li key={i} className="flex items-start gap-3 mb-4"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />{pt}</li>
                     ))}
                   </ul>
                 </div>
@@ -190,7 +190,7 @@ function HowItWorks() {
                   <div className="font-bold text-green-700 mb-1">First 30 Days → What We Do:</div>
                   <ul className="list-none ml-0 text-green-700 text-sm sm:text-lg">
                     {step.first30.map((pt, i) => (
-                      <li key={i} className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />{pt}</li>
+                      <li key={i} className="flex items-start gap-3 mb-4"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />{pt}</li>
                     ))}
                   </ul>
                 </div>
@@ -200,7 +200,7 @@ function HowItWorks() {
                   <div className="font-bold text-green-700 mb-1">What We Unlock:</div>
                   <ul className="list-none ml-0 text-green-700 text-sm sm:text-lg">
                     {step.unlock.map((pt, i) => (
-                      <li key={i} className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />{pt}</li>
+                      <li key={i} className="flex items-start gap-3 mb-4"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />{pt}</li>
                     ))}
                   </ul>
                 </div>
@@ -217,12 +217,12 @@ function HowItWorks() {
             You won't be ghosted. You won't be confused. You won't need to chase us.
             We're not freelancers. We're growth monks.
           </motion.p>
-          <ul className="list-disc mx-auto text-green-700 text-sm sm:text-lg max-w-xl">
-            <li>You'll always know: What we're doing</li>
-            <li>Why we're doing it</li>
-            <li>What it's producing</li>
-            <li>When to pivot</li>
-            <li>And if something breaks, we'll fix it — before you even ask.</li>
+          <ul className="mx-auto text-green-700 text-sm sm:text-lg max-w-xl">
+            <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />You'll always know: What we're doing</li>
+            <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />Why we're doing it</li>
+            <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />What it's producing</li>
+            <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />When to pivot</li>
+            <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />And if something breaks, we'll fix it before you even ask.</li>
           </ul>
         </ThreeDCard>
         <motion.h2 className="text-2xl sm:text-3xl font-black text-center mb-8 bg-gradient-to-r from-green-600 via-blue-600 to-black bg-clip-text text-transparent" variants={fadeInUp}>
@@ -245,7 +245,7 @@ function HowItWorks() {
             href="mailto:hello@theecommonks.com"
             className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-500 text-white font-bold py-3 px-4 sm:px-8 rounded-xl shadow-lg text-center text-lg transition-all duration-300"
           >
-            Ask a Question – hello@theecommonks.com
+            Book A Call with Arun
           </a>
         </div>
         <motion.p className="text-md sm:mt-0 mt-[-40px] sm:text-2xl text-center text-green-700  font-semibold" variants={fadeInUp}>

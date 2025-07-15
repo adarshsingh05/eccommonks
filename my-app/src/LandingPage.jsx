@@ -106,8 +106,8 @@ function LandingPage() {
                
                 {/* CTA */}
                 <button
-                  onClick={handleContactNavigation}
-                  className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-8 py-3 sm:px-12 sm:py-4 md:px-16 md:py-5 text-base sm:text-xl md:text-2xl rounded-2xl flex flex-row items-center justify-center shadow-xl hover:scale-105 hover:shadow-green-400/50 transition-all duration-500 relative overflow-hidden animate-ctaPulse min-w-[220px]"
+                  onClick={() => navigate('/application')}
+                  className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-4 py-3 sm:px-12 sm:py-4 md:px-16 md:py-5 text-base sm:text-xl md:text-2xl rounded-2xl flex flex-row items-center justify-center shadow-xl hover:scale-105 hover:shadow-green-400/50 transition-all duration-500 relative overflow-hidden animate-ctaPulse min-w-[220px]"
                   style={{ minHeight: '48px', boxShadow: '0 8px 32px 0 rgba(34,197,94,0.18)' }}
                 >
                   <span className="text-center leading-tight">Get My Free Growth Audit Now →</span>
@@ -142,7 +142,7 @@ function LandingPage() {
           </div>
 
           {/* Pain Points Section */}
-          <section className="py-6 sm:py-16 md:py-32 relative z-10 mt-6" id="services">
+          <section className="py-6 sm:py-10 md:py-16 relative z-10 mt-6" id="services">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-400/10 to-green-500/10"></div>
             </div>
@@ -263,17 +263,17 @@ function LandingPage() {
           </section>
 
           {/* Frameworks Section */}
-          <section className="py-6 sm:py-4 relative z-10">
+          <section className="py-6 sm:py-2 relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-500/10 to-green-400/10"></div>
             </div>
             <div className="max-w-7xl mx-auto px-8 lg:px-12 text-center">
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-6 sm:mb-6 md:mb-10 text-[#222]">
-                <Link to="/ourframeworks" className="hover:underline text-green-500 focus:outline-none focus:ring-2 focus:ring-green-400">
+                <Link to="/ourframeworks" className="hover:underline text-black-500 focus:outline-none focus:ring-2 focus:ring-green-400">
                   OUR UNIQUE FRAMEWORKS
                 </Link>
               </h2>
-              <p className="text-xl sm:text-3xl text-green-500 mb-2 font-bold">
+              <p className="text-xl sm:text-3xl text-green-500 mb-0 font-bold">
                 We don't "try", We follow
               </p>
               <p className="text-xl sm:text-3xl text-green-500 mb-8 sm:mb-16 font-bold">
@@ -466,7 +466,7 @@ function LandingPage() {
           </div>
 
           {/* Proof/Case Studies Section */}
-          <section className="py-6 sm:py-16 md:py-32 relative z-10 mt-6">
+          <section className="py-6 sm:py-12 md:py-20 relative z-10 mt-6">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-500/10 to-green-400/10"></div>
             </div>
@@ -537,7 +537,7 @@ function LandingPage() {
           </section>
 
           {/* What Our Clients Say Section */}
-          <section className="py-6 relative z-10">
+          <section className="py-6 sm:py-1 relative z-10">
             <div className="max-w-2xl md:max-w-5xl mx-auto px-4 sm:px-8 text-center">
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-8 text-[#222]">What Our Clients Say</h2>
               {/* Mobile: Carousel, Desktop: Row */}
@@ -579,45 +579,29 @@ function LandingPage() {
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-6 sm:mb-12 text-green-700">OUR PRICING</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-[200px] mb-8 sm:ml-[-152px]">
                 {[
-                  { name: "Starter? Launch Pad", price: "₹6,999/mo", features: ["For new sellers", "All essentials covered"] },
-                  { name: "Scaling? Growth Engine", price: "₹14,999/mo", features: ["For growing brands", "Advanced optimization"] },
-                  { name: "Aggressive? Brand Dominator", price: "₹29,999/mo", features: ["For market leaders", "Full-stack growth"] },
-                ].map((plan, idx) => {
-                  // Split the name for desktop
-                  const [main, sub] = plan.name.split(/\? | /).length === 2
-                    ? plan.name.split(/\? /)
-                    : plan.name.split(/\? | /);
-                  let first, second;
-                  if (plan.name.startsWith('Starter?')) {
-                    first = 'Starter?';
-                    second = 'Launch Pad';
-                  } else if (plan.name.startsWith('Scaling?')) {
-                    first = 'Scaling?';
-                    second = 'Growth Engine';
-                  } else {
-                    first = 'Aggressive?';
-                    second = 'Brand Dominator';
-                  }
-                  return (
-                    <div key={plan.name} className="bg-white border border-green-200 rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center transition-transform duration-300 md:hover:scale-105 md:hover:shadow-green-400/40 hover:shadow-2xl hover:border-green-400 md:w-[350px]">
-                      <div className="text-2xl sm:text-3xl font-bold text-green-900 mb-2">
-                        <span className="block md:hidden">{plan.name}</span>
-                        <span className="hidden md:block">
-                          {first}<br />{second}
-                        </span>
-                      </div>
-                      <div className="text-3xl sm:text-4xl font-extrabold text-green-500 mb-4">{plan.price}</div>
-                      <ul className="text-green-700 text-base sm:text-lg md:text-base mb-4 pl-0">
-                        {plan.features.map((f, i) => (
-                          <li key={i} className="flex items-start md:text-base md:whitespace-nowrap">
-                            <Check className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                            <span>{f}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  { main: "Starter?", sub: "Launch Pad", price: "₹6,999/mo", features: ["For new sellers", "All essentials covered"] },
+                  { main: "Scaling?", sub: "Growth Engine", price: "₹14,999/mo", features: ["For growing brands", "Advanced optimization"] },
+                  { main: "Aggressive?", sub: "Brand Dominator", price: "₹29,999/mo", features: ["For market leaders", "Full-stack growth"] },
+                ].map((plan, idx) => (
+                  <div
+                    key={plan.main + plan.sub}
+                    className="bg-white border border-green-200 rounded-2xl shadow-xl p-8 flex flex-col items-center justify-center transition-transform duration-300 md:hover:scale-105 md:hover:shadow-green-400/40 hover:shadow-2xl hover:border-green-400 md:w-[350px] cursor-pointer"
+                    onClick={() => navigate('/contactus#contact-form')}
+                  >
+                    <div className="text-2xl sm:text-3xl font-bold text-green-900 mb-2">
+                      <span className="block">{plan.main}<br />{plan.sub}</span>
                     </div>
-                  );
-                })}
+                    <div className="text-3xl sm:text-4xl font-extrabold text-green-500 mb-4">{plan.price}</div>
+                    <ul className="text-green-700 text-base sm:text-lg md:text-base mb-4 pl-0">
+                      {plan.features.map((f, i) => (
+                        <li key={i} className="flex items-start md:text-base md:whitespace-nowrap">
+                          <Check className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
               <div className="mt-6 text-green-900 font-semibold text-base sm:text-lg">👉 Or plug & play:</div>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center mt-2 w-full items-center">
@@ -630,7 +614,7 @@ function LandingPage() {
           </section>
 
           {/* Final CTA Section */}
-          <section className="py-10 sm:py-20 md:py-28 bg-green-50 border-t-2 border-green-400" id="final-cta">
+          <section className="py-10 sm:py-10 md:py-10 bg-green-50 border-t-2 border-green-400" id="final-cta">
             <div className="max-w-5xl mx-auto px-4 sm:px-8 md:px-12 flex flex-col md:flex-row items-center md:items-center md:justify-between gap-8 md:gap-12">
               <div className="flex-1 text-center md:text-left">
                 <h2 className="text-lg sm:text-xl font-bold text-green-500 uppercase tracking-widest mb-2">CONVERT THEM NOW</h2>
@@ -639,12 +623,12 @@ function LandingPage() {
               </div>
               <div className="flex-1 flex flex-col items-center md:items-end w-full md:w-auto">
                 <button
-                  onClick={handleContactNavigation}
+                  onClick={() => navigate('/application')}
                   className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-8 py-3 sm:px-12 sm:py-4 md:px-16 md:py-5 text-base sm:text-xl md:text-2xl rounded-2xl flex flex-row items-center justify-center shadow-xl hover:scale-105 hover:shadow-green-400/50 transition-all duration-500 relative overflow-hidden animate-ctaPulse min-w-[220px]"
                   style={{ minHeight: '48px', boxShadow: '0 8px 32px 0 rgba(34,197,94,0.18)' }}
                 >
                   <Lightbulb className="w-8 h-8 text-yellow-400 animate-bounce mr-3" />
-                  <span className="text-center leading-tight">Get My Free Growth Audit Now →</span>
+                  <span className="text-center leading-tight">Get My Free Growth Audit Now</span>
                   <span className="absolute inset-0 rounded-2xl pointer-events-none group-hover:animate-glowPulse"></span>
                 </button>
                 <style>{`

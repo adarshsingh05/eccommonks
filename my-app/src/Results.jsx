@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import { motion } from "framer-motion";
-import { CheckCircle, Users, Settings, TrendingUp, Eye, Shield, Star, ArrowRight, X } from "lucide-react";
+import { CheckCircle, Users, Settings, TrendingUp, Eye, Shield, Star, ArrowRight, X, AlertTriangle } from "lucide-react";
 import ThreeDCard from "./components/ThreeDCard";
 import AnimatedText from "./components/AnimatedText";
 import AnimatedCounter from "./components/AnimatedCounter";
 import ParallaxSection from "./components/ParallaxSection";
 import TestimonialCarousel from "./components/TestimonialCarousel";
+import { Link } from "react-router-dom";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -46,6 +47,20 @@ function Results() {
             </motion.p>
           </ThreeDCard>
         </div>
+        {/* Built From the Ground Section */}
+        <motion.section
+          className="mb-12"
+          initial="initial"
+          animate="animate"
+          variants={staggerContainer}
+        >
+          <motion.h2 className="text-2xl sm:text-5xl font-black text-center mb-4 bg-gradient-to-r from-green-600 via-blue-600 to-black bg-clip-text text-transparent" variants={fadeInUp}>
+            Built From the Ground. <span className="text-green-500">Refined in the Fire.</span>
+          </motion.h2>
+          <motion.p className="text-lg sm:text-xl text-center text-green-700 mb-2 max-w-3xl mx-auto" variants={fadeInUp}>
+            Every result you see below is the outcome of relentless iteration, real seller struggles, and solutions forged in the chaos of Indian ecommerce.
+          </motion.p>
+        </motion.section>
         <motion.h2 className="text-2xl sm:text-3xl font-black text-center mb-8 bg-gradient-to-r from-green-600 via-blue-600 to-black bg-clip-text text-transparent" variants={fadeInUp}>
           From Stuck to Scaling — Our Clients' Stories
         </motion.h2>
@@ -209,24 +224,24 @@ function Results() {
           We only onboard 6 brands/month to protect focus and avoid platform conflicts.
         </motion.p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-          <a
-            href="#apply"
+          <Link
+            to="/application"
             className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-500 text-white font-bold py-3 px-2 sm:px-8 rounded-xl shadow-lg text-center text-lg transition-all duration-300"
           >
           Apply for Our Results-Only Growth Grant
-          </a>
-          <a
-            href="#strategy"
+          </Link>
+          <Link
+            to="/contactus#contact-form"
             className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-green-400 hover:from-green-600 hover:to-green-500 text-white font-bold py-3 px-8 rounded-xl shadow-lg text-center text-lg transition-all duration-300"
           >
            Book a Strategy Call
-          </a>
-          <a
-            href="#audit"
+          </Link>
+          <Link
+            to="/contactus#contact-form"
             className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-500 text-white font-bold py-3 px-4 sm:px-8 rounded-xl shadow-lg text-center text-lg transition-all duration-300"
           >
             Claim Your Free Marketplace Audit
-          </a>
+          </Link>
         </div>
         <motion.p className="text-md sm:mt-0 mt-[-40px] sm:text-2xl text-center text-green-700  font-semibold" variants={fadeInUp}>
           Let's make you the next brand on this page.

@@ -21,8 +21,8 @@ export default function Footer() {
             <p className="text-green-900 text-base sm:text-xl mb-2 leading-relaxed font-semibold text-left">
               Plot No. GH02, Sector-4, Greater Noida West- 201309
             </p>
-            <a href="mailto:hello@thecommonks.com" className="text-green-700 hover:text-green-400 transition-colors duration-500 text-base sm:text-lg font-medium cursor-pointer mt-2 flex items-center break-all">
-              <Mail className="w-5 h-5 mr-2" />hello@thecommonks.com
+            <a href="mailto:hello@theecommonks.com" className="text-green-700 hover:text-green-400 transition-colors duration-500 text-base sm:text-lg font-medium cursor-pointer mt-2 flex items-center break-all">
+              <Mail className="w-5 h-5 mr-2" />hello@theecommonks.com
             </a>
           </div>
 
@@ -135,8 +135,8 @@ export default function Footer() {
           <div className="flex flex-col items-start w-full col-span-1">
             <h3 className="text-xl sm:text-2xl font-extrabold text-green-900 mb-4">Contact</h3>
             <div className="flex flex-col space-y-2 mb-4">
-              <a href="mailto:hello@thecommonks.com" className="flex items-center text-green-700 hover:text-green-400 transition-colors duration-500 break-all hover:underline">
-                <Mail className="w-5 h-5 mr-2" />hello@thecommonks.com
+              <a href="mailto:hello@theecommonks.com" className="flex items-center text-green-700 hover:text-green-400 transition-colors duration-500 break-all hover:underline">
+                <Mail className="w-5 h-5 mr-2" />hello@theecommonks.com
               </a>
               <a href="tel:+918505846555" className="flex items-center text-green-700 hover:text-green-400 transition-colors duration-500 hover:underline">
                 <MessageCircle className="w-5 h-5 mr-2" />+91-8505846555
@@ -146,17 +146,17 @@ export default function Footer() {
               </a>
             </div>
             <div className="flex space-x-3 mt-2">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-green-700 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-500">
-                <Facebook className="w-5 h-5 text-white" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-green-700 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-500">
-                <Instagram className="w-5 h-5 text-white" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-green-700 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-500">
+              <a href="https://www.linkedin.com/company/theecommonks/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-green-700 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-500">
                 <Linkedin className="w-5 h-5 text-white" />
               </a>
-              <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-green-700 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-500">
+              <a href="https://api.whatsapp.com/send?phone=918586818818&text=Hi%2C%20I%20want%20to%20avail%20TheEcomMonk%20services!%20Can%20you%20help%20me%20scale%20my%20brand%3F" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-green-700 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-500">
                 <MessageCircle className="w-5 h-5 text-white" />
+              </a>
+              <a href="https://www.instagram.com/theecommonks/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-green-700 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-500">
+                <Instagram className="w-5 h-5 text-white" />
+              </a>
+              <a href="mailto:hello@theecommonks.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-green-700 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-500">
+                <Mail className="w-5 h-5 text-white" />
               </a>
             </div>
           </div>

@@ -5,6 +5,7 @@ import ThreeDCard from "./components/ThreeDCard";
 import AnimatedText from "./components/AnimatedText";
 import ParallaxSection from "./components/ParallaxSection";
 import { User, Target, Layers, MessageCircle, HeartHandshake, CheckCircle, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -66,6 +67,7 @@ const principles = [
 ];
 
 function About() {
+  const navigate = useNavigate();
   return (
     <div className="bg-gradient-to-br from-white via-green-50/40 to-green-50/20 min-h-screen text-slate-800 overflow-x-hidden relative">
       {/* Animated background shapes */}
@@ -95,7 +97,7 @@ function About() {
               Why We Started The Ecom Monks
             </motion.h2>
             <motion.blockquote className="italic text-slate-700 text-md sm:text-2xl leading-relaxed mb-4" variants={fadeInUp}>
-              <AnimatedText texts={["This is personal. Because I've lived the chaos too."]} className="inline-block" />
+            "This is personal. Because I've lived the chaos too.""
             </motion.blockquote>
             <motion.p className="text-sm sm:text-lg text-slate-700 mb-2" variants={fadeInUp}>
               When I first tried selling online, I made every mistake a seller could make:
@@ -107,14 +109,14 @@ function About() {
               <li className="bg-red-100/60 px-3 py-1 rounded-xl flex items-center gap-2 animate-fadeInUp"><X className="w-5 h-5 text-red-500" />Zero hand-holding, and even less care.</li>
             </ul>
             <motion.p className="text-sm sm:text-lg text-slate-700 mb-2" variants={fadeInUp}>
-              Back then, I thought the platforms were broken.<br />But I realised — it's not the platforms. It's the people who are supposed to guide you through them.
+              Back then, I thought the platforms were broken. But I realised — it's not the platforms. It's the people who are supposed to guide you through them.
             </motion.p>
           </ThreeDCard>
         </motion.section>
         {/* Problem Section */}
         <motion.section className="mb-12" variants={fadeInUp}>
           <ThreeDCard className="p-8 bg-gradient-to-br from-white to-green-50/30 flex flex-col gap-4 shadow-xl group hover:scale-[1.03] transition-transform duration-300">
-            <motion.h2 className="text-lg sm:text-3xl font-black mb-4 bg-gradient-to-r from-green-600 to-green-600 bg-clip-text text-transparent" variants={fadeInUp}>
+            <motion.h2 className="text-md sm:text-3xl font-black mb-4 bg-gradient-to-r from-green-600 to-green-600 bg-clip-text text-transparent" variants={fadeInUp}>
              The Problem No One Wants to Fix
             </motion.h2>
             <ul className="list-none ml-0 text-slate-700 text-sm sm:text-lg mb-2 flex flex-wrap gap-3">
@@ -127,7 +129,7 @@ function About() {
               <span className="font-bold text-red-500">📉 Result?</span> Missed growth. Burnt founders. Suspended accounts.<br />And a lot of great products that never get the chance they deserve.
             </motion.p>
             <motion.p className="text-sm sm:text-lg text-slate-700 mb-2" variants={fadeInUp}>
-              I saw this happen again and again — not just to me, but to friends, D2C brands, and even ₹10Cr+ players.<br />So we built something radically different.
+              I saw this happen again and again — not just to me, but to friends, D2C brands, and even ₹10Cr+ players.<span className="text-green-600 font-bold"> So we built something radically different.</span>
             </motion.p>
           </ThreeDCard>
         </motion.section>
@@ -138,7 +140,7 @@ function About() {
               <CheckCircle className="w-6 h-6 text-green-500 mr-2" /> Our Mission
             </motion.h2>
             <motion.p className="text-sm sm:text-lg text-slate-700 mb-2" variants={fadeInUp}>
-              To bring clarity, performance, and ownership back to ecommerce growth.<br />We help sellers stop guessing and start scaling — across Amazon, Flipkart, Meesho, Nykaa, Zepto, Blinkit, and beyond.<br />We're not consultants. We're your outsourced founding team, armed with dashboards, expertise, obsession, and heart.
+              To bring clarity, performance, and ownership back to ecommerce growth. We help sellers stop guessing and start scaling — across Amazon, Flipkart, Meesho, Nykaa, Zepto, Blinkit, and beyond. We're not consultants. We're your outsourced founding team, armed with dashboards, expertise, obsession, and heart.
             </motion.p>
           </ThreeDCard>
         </motion.section>
@@ -192,24 +194,18 @@ function About() {
               You won't find us running Google Ads to 100 SKUs. You'll find us helping 10 brands crack platform psychology, ads flywheel, and full-funnel growth that actually converts. We don't speak jargon. We show proof. And we care. Deeply. If that's the kind of partner you're looking for — let's begin.
             </motion.p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-4">
-              <a
-                href="#audit"
+              <button
+                onClick={() => navigate("/application")}
                 className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-700 text-white font-bold py-3 px-3 sm:px-8 rounded-xl shadow-lg text-center text-lg transition-all duration-300 animate-ctaPulse"
               >
-               Apply for the monk growth grant
-              </a>
-              <a
-                href="#call"
+               Apply for the monk grant
+              </button>
+              <button
+                onClick={() => navigate("/contactus#contact-form", { state: { scrollTo: "application" } })}
                 className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg text-center text-lg transition-all duration-300 animate-ctaPulse"
               >
-                📞 Book a Call with Arun
-              </a>
-              <a
-                href="mailto:hello@theecommonks.com"
-                className="w-full sm:w-auto bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg text-center text-lg transition-all duration-300 animate-ctaPulse"
-              >
-                📧 Write to Us: hello@theecommonks.com
-              </a>
+                 Book a Call with Arun
+              </button>
             </div>
           </ThreeDCard>
         </motion.section>

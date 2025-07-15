@@ -14,7 +14,10 @@ function FrameworkPage() {
   const navigate = useNavigate();
 
   const handleContactNavigation = () => {
-    navigate('/contactus');
+    navigate('/contactus#contact-form');
+  };
+  const handleApplicationNavigation = () => {
+    navigate('/application');
   };
 
   const frameworks = [
@@ -149,12 +152,12 @@ function FrameworkPage() {
 
         <Navbar />
 
-        <main className="bg-white text-[#222] overflow-x-hidden">
+        <main className="bg-white text-[#222] ">
           <h1 className="sr-only">Our MonkScale™ Growth Framework — A New Way to Win in Ecommerce</h1>
 
           {/* Hero Section with Parallax */}
           <ParallaxSection speed={0.3} direction="up" className="w-full">
-            <section className="py-6 md:py-32 flex flex-col items-center justify-center text-center relative bg-gradient-to-b from-green-50/60 to-white">
+            <section className="py-6 md:py-10 sm:mt-16 flex flex-col items-center justify-center text-center relative bg-gradient-to-b from-green-50/60 to-white">
             <div className="max-w-6xl w-full mx-auto px-4 md:px-8 flex flex-col items-center sm:mt-0 mt-7">
                 <div className="text-2xl md:text-5xl lg:text-7xl font-black tracking-tight mb-3 md:mb-8">
                 <span className="text-[#222]">Where Growth Isn't Random. </span>
@@ -162,9 +165,9 @@ function FrameworkPage() {
                 <span className="text-green-500">It's Engineered.</span>
               </div>
 
-                <div className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 space-y-2 max-w-4xl">
-                <p>You've tried freelancers, SPNs, and half-baked agencies.</p>
-                <p>You've spent on ads, rewritten listings, even prayed to the algorithm gods.</p>
+                <div className="text-lg md:text-xl lg:text-2xl text-gray- text-left mb-4 space-y-2 max-w-4xl">
+                <p>You've tried freelancers, SPNs, and half-baked agencies. You've spent on ads, rewritten listings, even prayed to the algorithm gods.</p>
+               
                   <p className="font-semibold text-[#222] text-xl md:text-2xl lg:text-3xl">
                   Now it's time for systems — that don't break, don't bluff, and actually build your business.
                 </p>
@@ -222,7 +225,7 @@ function FrameworkPage() {
           </section>
 
           {/* Why This Page Matters */}
-          <section className="py-6 md:py-32 bg-green-50 relative z-10">
+          <section className="py-6 md:py-10 bg-green-50 relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-500/10 to-green-400/10"></div>
             </div>
@@ -246,7 +249,7 @@ function FrameworkPage() {
           </section>
 
           {/* Built From the Ground */}
-          <section className="py-6 md:py-32 bg-white relative z-10">
+          <section className="py-6 md:py-14 bg-white relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-l from-green-400/10 to-green-500/10"></div>
             </div>
@@ -277,7 +280,7 @@ function FrameworkPage() {
           </section>
 
           {/* Framework Matcher */}
-          <section className="py-6 md:py-32 bg-green-50 relative z-10">
+          <section className="py-6 md:py-14 bg-green-50 relative z-10">
             <div className="absolute inset-0 w-full h-full opacity-10 pointer-events-none -z-10">
               <div className="w-full h-full bg-gradient-to-br from-green-500/10 to-green-400/10"></div>
             </div>
@@ -479,7 +482,7 @@ function FrameworkPage() {
 
               <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
                 <button 
-                  onClick={handleContactNavigation}
+                  onClick={handleApplicationNavigation}
                   className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-8 md:px-12 py-4 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center justify-center shadow-xl hover:shadow-green-400/50 transition-all duration-500 relative overflow-hidden animate-ctaPulse min-w-[220px]"
                   style={{ minHeight: '48px', boxShadow: '0 8px 32px 0 rgba(34,197,94,0.18)' }}
                 >
@@ -503,7 +506,7 @@ function FrameworkPage() {
                   Take our 2-minute framework diagnostic to get matched with the perfect system for your brand.
                 </p>
                 <button 
-                  onClick={handleContactNavigation}
+                  onClick={handleApplicationNavigation}
                   className="bg-gradient-to-r from-green-500 to-green-600 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300">
                   Get Your Free Growth Audit
                 </button>
