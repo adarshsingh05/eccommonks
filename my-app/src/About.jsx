@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import { motion } from "framer-motion";
-import ThreeDCard from "./components/ThreeDCard";
 import AnimatedText from "./components/AnimatedText";
 import ParallaxSection from "./components/ParallaxSection";
 import { User, Target, Layers, MessageCircle, HeartHandshake, CheckCircle, X } from "lucide-react";
@@ -92,7 +91,7 @@ function About() {
         </motion.h1>
         {/* Why We Started Section */}
         <motion.section className="mb-12" variants={fadeInUp}>
-          <ThreeDCard className="p-8 bg-gradient-to-br from-white to-green-50/30 flex flex-col gap-4 shadow-xl group hover:scale-[1.03] transition-transform duration-300">
+          <div className="p-8 bg-gradient-to-br from-white to-green-50/30 flex flex-col gap-4 shadow-xl group hover:scale-[1.03] transition-transform duration-300">
             <motion.h2 className="text-lg sm:text-3xl font-black mb-4 bg-gradient-to-r from-green-600 to-green-600 bg-clip-text text-transparent" variants={fadeInUp}>
               Why We Started The Ecom Monks
             </motion.h2>
@@ -111,11 +110,11 @@ function About() {
             <motion.p className="text-sm sm:text-lg text-slate-700 mb-2" variants={fadeInUp}>
               Back then, I thought the platforms were broken. But I realised — it's not the platforms. It's the people who are supposed to guide you through them.
             </motion.p>
-          </ThreeDCard>
+          </div>
         </motion.section>
         {/* Problem Section */}
         <motion.section className="mb-12" variants={fadeInUp}>
-          <ThreeDCard className="p-8 bg-gradient-to-br from-white to-green-50/30 flex flex-col gap-4 shadow-xl group hover:scale-[1.03] transition-transform duration-300">
+          <div className="p-8 bg-gradient-to-br from-white to-green-50/30 flex flex-col gap-4 shadow-xl group hover:scale-[1.03] transition-transform duration-300">
             <motion.h2 className="text-md sm:text-3xl font-black mb-4 bg-gradient-to-r from-green-600 to-green-600 bg-clip-text text-transparent" variants={fadeInUp}>
              The Problem No One Wants to Fix
             </motion.h2>
@@ -131,18 +130,18 @@ function About() {
             <motion.p className="text-sm sm:text-lg text-slate-700 mb-2" variants={fadeInUp}>
               I saw this happen again and again — not just to me, but to friends, D2C brands, and even ₹10Cr+ players.<span className="text-green-600 font-bold"> So we built something radically different.</span>
             </motion.p>
-          </ThreeDCard>
+          </div>
         </motion.section>
         {/* Mission Section */}
         <motion.section className="mb-12" variants={fadeInUp}>
-          <ThreeDCard className="p-8 bg-gradient-to-br from-white to-green-50/30 flex flex-col gap-4 shadow-xl group hover:scale-[1.03] transition-transform duration-300">
+          <div className="p-8 bg-gradient-to-br from-white to-green-50/30 flex flex-col gap-4 shadow-xl group hover:scale-[1.03] transition-transform duration-300">
             <motion.h2 className="text-lg sm:text-3xl font-black mb-4 bg-gradient-to-r from-green-600 to-green-600 bg-clip-text text-transparent flex items-center gap-2" variants={fadeInUp}>
               <CheckCircle className="w-6 h-6 text-green-500 mr-2" /> Our Mission
             </motion.h2>
             <motion.p className="text-sm sm:text-lg text-slate-700 mb-2" variants={fadeInUp}>
               To bring clarity, performance, and ownership back to ecommerce growth. We help sellers stop guessing and start scaling — across Amazon, Flipkart, Meesho, Nykaa, Zepto, Blinkit, and beyond. We're not consultants. We're your outsourced founding team, armed with dashboards, expertise, obsession, and heart.
             </motion.p>
-          </ThreeDCard>
+          </div>
         </motion.section>
         {/* Monk Principles Timeline/Stepper */}
         <motion.section className="mb-12" variants={fadeInUp}>
@@ -155,12 +154,12 @@ function About() {
                 <div className="z-10 flex-shrink-0 flex items-center justify-center w-10 h-10 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-purple-200 to-blue-200 shadow-lg border-4 border-white -ml-2 md:-ml-4">
                   {principleIcons[idx]}
                 </div>
-                <ThreeDCard className="flex-1 p-6 bg-gradient-to-br from-white to-green-50/30 flex flex-col gap-2 shadow-xl group-hover:scale-[1.03] transition-transform duration-300">
+                <div className="flex-1 p-6 bg-gradient-to-br from-white to-green-50/30 flex flex-col gap-2 shadow-xl group-hover:scale-[1.03] transition-transform duration-300">
                   <div className="font-bold text-dm text-green-700 mb-2">{p.title}</div>
                   {p.desc.map((d, i) => (
                     <div key={i} className="text-slate-700 text-sm sm:text-lg mb-1 animate-fadeInUp delay-[.1s]">{d}</div>
                   ))}
-                </ThreeDCard>
+                </div>
               </div>
             ))}
           </div>
@@ -185,30 +184,30 @@ function About() {
           </div>
         </motion.section>
         {/* Why Us & CTA Section */}
-        <motion.section className="mb-[-100px] " variants={fadeInUp}>
-          <ThreeDCard className="p-8 bg-gradient-to-br from-white to-green-50/30 flex flex-col gap-4 shadow-xl group hover:scale-[1.03] transition-transform duration-300">
-            <motion.h2 className="text-2xl sm:text-3xl font-black mb-4 bg-gradient-to-r from-green-600 to-green-600 bg-clip-text text-transparent" variants={fadeInUp}>
+        <section className="mb-[-100px] ">
+          <div className="p-8 bg-gradient-to-br from-white to-green-50/30 flex flex-col gap-4 shadow-xl">
+            <h2 className="text-2xl sm:text-3xl font-black mb-4 bg-gradient-to-r from-green-600 to-green-600 bg-clip-text text-transparent">
             So, Why Us?
-            </motion.h2>
-            <motion.p className="text-sm sm:text-lg text-slate-700 mb-2" variants={fadeInUp}>
+            </h2>
+            <p className="text-sm sm:text-lg text-slate-700 mb-2">
               You won't find us running Google Ads to 100 SKUs. You'll find us helping 10 brands crack platform psychology, ads flywheel, and full-funnel growth that actually converts. We don't speak jargon. We show proof. And we care. Deeply. If that's the kind of partner you're looking for — let's begin.
-            </motion.p>
+            </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-4">
               <button
                 onClick={() => navigate("/application")}
-                className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-700 text-white font-bold py-3 px-3 sm:px-8 rounded-xl shadow-lg text-center text-lg transition-all duration-300 animate-ctaPulse"
+                className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-500 text-white font-bold py-3 px-3 sm:px-8 rounded-xl shadow-lg text-center text-lg"
               >
                Apply for the monk grant
               </button>
               <button
                 onClick={() => navigate("/contactus#contact-form", { state: { scrollTo: "application" } })}
-                className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg text-center text-lg transition-all duration-300 animate-ctaPulse"
+                className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg text-center text-lg"
               >
                  Book a Call with Arun
               </button>
             </div>
-          </ThreeDCard>
-        </motion.section>
+          </div>
+        </section>
       </motion.main>
       <style>{`
         @keyframes pulse-slow { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
@@ -222,4 +221,4 @@ function About() {
   );
 }
 
-export default About; 
+export default About;

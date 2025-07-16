@@ -622,7 +622,7 @@ function WhyUs() {
           >
             <motion.div variants={fadeInUp}>
               <Button
-                onClick={handleApplicationNavigation}
+                onClick={handleContactNavigation}
                 size="lg"
                 className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 text-lg"
               >
@@ -635,7 +635,7 @@ function WhyUs() {
                 size="lg"
                 className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 text-lg"
               >
-                 Apply for Growth Grant
+                 Apply for Monk Grant
               </Button>
             </motion.div>
             <motion.div variants={fadeInUp}>

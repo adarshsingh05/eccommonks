@@ -106,7 +106,7 @@ function LandingPage() {
                
                 {/* CTA */}
                 <button
-                  onClick={() => navigate('/application')}
+                  onClick={() => navigate('/contactus#contact-form')}
                   className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-4 py-3 sm:px-12 sm:py-4 md:px-16 md:py-5 text-base sm:text-xl md:text-2xl rounded-2xl flex flex-row items-center justify-center shadow-xl hover:scale-105 hover:shadow-green-400/50 transition-all duration-500 relative overflow-hidden animate-ctaPulse min-w-[220px]"
                   style={{ minHeight: '48px', boxShadow: '0 8px 32px 0 rgba(34,197,94,0.18)' }}
                 >
@@ -623,7 +623,7 @@ function LandingPage() {
               </div>
               <div className="flex-1 flex flex-col items-center md:items-end w-full md:w-auto">
                 <button
-                  onClick={() => navigate('/application')}
+                  onClick={() => navigate('/contactus#contact-form')}
                   className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-8 py-3 sm:px-12 sm:py-4 md:px-16 md:py-5 text-base sm:text-xl md:text-2xl rounded-2xl flex flex-row items-center justify-center shadow-xl hover:scale-105 hover:shadow-green-400/50 transition-all duration-500 relative overflow-hidden animate-ctaPulse min-w-[220px]"
                   style={{ minHeight: '48px', boxShadow: '0 8px 32px 0 rgba(34,197,94,0.18)' }}
                 >

@@ -90,7 +90,7 @@ function ServicesPage() {
             <section className="py-6 sm:py-16 flex flex-col items-center justify-center text-center relative bg-gradient-to-b from-green-50/60 to-white">
               <div className="max-w-5xl w-full mx-auto px-2 sm:px-4 md:px-8 flex flex-col items-center">
                 {/* Main Headline */}
-                <div className="text-xl sm:text-3xl md:text-5xl lg:text-7xl font-black tracking-tight mb-3 sm:mb-6 md:mb-8">
+                <div className="text-xl sm:text-3xl md:text-5xl font-black tracking-tight mb-3 sm:mb-6 md:mb-8">
                   <span className="text-[#222]">END-TO-END </span>
                   <span className="text-green-500">ECOMMERCE</span>
                   <span className="text-green-400"> SERVICES</span>
@@ -115,7 +115,7 @@ function ServicesPage() {
 
                 {/* CTA */}
                 <button 
-                  onClick={handleApplicationNavigation}
+                  onClick={handleContactNavigation}
                   className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-4 sm:px-8 md:px-12 py-2 sm:py-4 md:py-6 rounded-xl sm:rounded-2xl text-base sm:text-lg md:text-2xl lg:text-3xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center mt-2 animate-bounce mb-2 sm:mb-4">
                   <span className="group-hover:animate-bounce inline-block mr-2 sm:mr-3 md:mr-4 text-xl sm:text-2xl md:text-3xl">🎯</span>
                   Get Your Free Growth Audit
@@ -198,7 +198,7 @@ function ServicesPage() {
                 <p className="text-xs sm:text-base md:text-xl text-green-600 mb-2 sm:mb-4">Not sure which suits you?</p>
                 <button 
                   ref={ctaRef} 
-                  onClick={handleApplicationNavigation}
+                  onClick={handleContactNavigation}
                   className="bg-gradient-to-r from-green-500 to-green-500 text-white font-bold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg sm:rounded-xl hover:scale-105 transition-all duration-300">
                   Get Your Free Growth Audit
                 </button>
@@ -457,7 +457,7 @@ function ServicesPage() {
               <div className="w-full h-full bg-gradient-to-br from-green-400/10 to-green-500/10"></div>
             </div>
             <div className="max-w-5xl mx-auto px-4 md:px-8 lg:px-12 text-center">
-              <h2 className="text-lg md:text-5xl font-black mb-6 md:mb-8 text-[#222]"> THE ECOM MONKS GROWTH GRANT</h2>
+              <h2 className="text-lg md:text-5xl font-black mb-6 md:mb-8 text-[#222]"> THE ECOM MONKS GRANT</h2>
               <p className="text-base md:text-xl text-green-600 mb-6 md:mb-8">We know not every promising brand has a budget upfront.</p>
               <p className="text-lg md:text-2xl text-green-700 font-bold mb-8 md:mb-12">
                 Every quarter, we choose one high-potential brand to work with on a pure performance basis.
@@ -593,8 +593,8 @@ function ServicesPage() {
               <div className="flex flex-col md:flex-row gap-4 md:gap-6 mb-6 md:mb-8">
                 <button 
                   onClick={handleContactNavigation}
-                  className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-4 md:px-12 py-4 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center">
-                  Get Started with The Ecom Monks
+                  className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-4  py-4 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center">
+                  Choose your Track with The Ecom Monks
                 </button>
 
                 <div className="flex items-center justify-center text-lg md:text-2xl font-bold text-green-600 my-1 md:my-0">
@@ -603,8 +603,7 @@ function ServicesPage() {
 
                 <button 
                   onClick={handleContactNavigation}
-                  className="group bg-white border-2 border-green-400 text-green-600 font-black px-8 md:px-12 py-3 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:bg-green-50 transition-all duration-500 flex items-center">
-                  <span className="group-hover:animate-bounce inline-block mr-3 md:mr-4 text-2xl md:text-3xl">📞</span>
+                  className="group bg-white border-2 border-green-400 text-green-600 font-black px-8  py-3 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:bg-green-50 transition-all duration-500 flex items-center">
                   Book a Strategy Call
                 </button>
               </div>
@@ -625,7 +624,7 @@ function ServicesPage() {
                   </ul>
                 </div>
                 <button 
-                  onClick={handleApplicationNavigation}
+                  onClick={handleContactNavigation}
                   className="bg-gradient-to-r from-green-500 to-green-500 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300">
                   👉 CLAIM MY FREE GROWTH AUDIT
                 </button>

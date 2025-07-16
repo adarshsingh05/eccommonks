@@ -21,7 +21,7 @@ export default function Footer() {
             <p className="text-green-900 text-base sm:text-xl mb-2 leading-relaxed font-semibold text-left">
               Plot No. GH02, Sector-4, Greater Noida West- 201309
             </p>
-            <a href="mailto:hello@theecommonks.com" className="text-green-700 hover:text-green-400 transition-colors duration-500 text-base sm:text-lg font-medium cursor-pointer mt-2 flex items-center break-all">
+            <a href="mailto:hello@theecommonks.com" className="text-green-700 hover:text-green-400 transition-colors duration-500 text-base sm:text-lg font-medium cursor-pointer mt-2 flex items-center break-all whitespace-nowrap">
               <Mail className="w-5 h-5 mr-2" />hello@theecommonks.com
             </a>
           </div>
@@ -93,19 +93,13 @@ export default function Footer() {
               >
                 FAQs
               </Link>
-              <Link 
-                to="/thankyou" 
-                onClick={() => handleLinkClick('/thankyou')}
-                className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0 hover:underline"
-              >
-                Thank You
-              </Link>
+           
               <Link 
                 to="/application" 
                 onClick={() => handleLinkClick('/application')}
                 className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0 hover:underline"
               >
-                Apply Now
+                 Monk Grant
               </Link>
             </div>
           </div>
@@ -142,7 +136,7 @@ export default function Footer() {
           <div className="flex flex-col items-start w-full col-span-1">
             <h3 className="text-xl sm:text-2xl font-extrabold text-green-900 mb-4">Contact</h3>
             <div className="flex flex-col space-y-2 mb-4">
-              <a href="mailto:hello@theecommonks.com" className="flex items-center text-green-700 hover:text-green-400 transition-colors duration-500 break-all hover:underline">
+              <a href="mailto:hello@theecommonks.com" className="flex items-center text-green-700 hover:text-green-400 transition-colors duration-500 break-all hover:underline whitespace-nowrap">
                 <Mail className="w-5 h-5 mr-2" />hello@theecommonks.com
               </a>
               <a href="tel:+918505846555" className="flex items-center text-green-700 hover:text-green-400 transition-colors duration-500 hover:underline">

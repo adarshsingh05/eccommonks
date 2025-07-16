@@ -482,7 +482,7 @@ function FrameworkPage() {
 
               <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
                 <button 
-                  onClick={handleApplicationNavigation}
+                  onClick={handleContactNavigation}
                   className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-8 md:px-12 py-4 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center justify-center shadow-xl hover:shadow-green-400/50 transition-all duration-500 relative overflow-hidden animate-ctaPulse min-w-[220px]"
                   style={{ minHeight: '48px', boxShadow: '0 8px 32px 0 rgba(34,197,94,0.18)' }}
                 >
@@ -506,7 +506,7 @@ function FrameworkPage() {
                   Take our 2-minute framework diagnostic to get matched with the perfect system for your brand.
                 </p>
                 <button 
-                  onClick={handleApplicationNavigation}
+                  onClick={handleContactNavigation}
                   className="bg-gradient-to-r from-green-500 to-green-600 text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:scale-105 transition-all duration-300">
                   Get Your Free Growth Audit
                 </button>

@@ -32,8 +32,8 @@ function Results() {
         animate="animate"
         variants={staggerContainer}
       >
-        <motion.h1 className="text-xl sm:text-6xl md:text-7xl font-black text-center mb-8 bg-gradient-to-r from-green-600 via-blue-700 to-black bg-clip-text text-transparent leading-tight" variants={fadeInUp}>
-          Results That Speak Louder Than Words", "Real Growth. Real Fixes. Real Fast.
+        <motion.h1 className="text-xl sm:text-5xl font-black text-center mb-8 bg-gradient-to-r from-green-600 via-blue-700 to-black bg-clip-text text-transparent leading-tight" variants={fadeInUp}>
+          Results That Speak Louder Than Words, Real Growth. Real Fixes. Real Fast.
         </motion.h1>
         <div className="flex flex-col md:flex-row gap-8 mb-12 items-center justify-center">
           <ThreeDCard className="w-full md:w-1/2 p-3 sm:p-6 bg-gradient-to-br from-white to-green-50/30">
@@ -125,6 +125,7 @@ function Results() {
             <div className="text-green-700 mb-2">Others Said: <span className="italic">"Increase budget"</span></div>
             <div className="text-green-700 font-black">Restructured full funnel, ROAS went from 1.9× → 4.8×</div>
           </ThreeDCard>
+          
         </div>
         <motion.h2 className="text-2xl sm:text-3xl font-black text-center mb-8 bg-gradient-to-r from-green-600 via-blue-600 to-black bg-clip-text text-transparent" variants={fadeInUp}>
           Frameworks That Delivered
@@ -149,6 +150,10 @@ function Results() {
           <ThreeDCard className="p-6 bg-gradient-to-br from-green-50 to-white">
             <div className="font-bold text-black  mb-2">CONVERSION LOOP™</div>
             <div className="text-green-700 font-black">Aligned q-commerce + ads + SEO into one flywheel</div>
+          </ThreeDCard>
+          <ThreeDCard className="p-6 bg-gradient-to-br from-green-50 to-white">
+            <div className="font-bold text-black  mb-2">ROAS Optimized            </div>
+            <div className="text-green-700 font-black">Average 4.5x in 120 Days</div>
           </ThreeDCard>
         </div>
         <motion.h2 className="text-2xl sm:text-3xl font-black text-center mb-8 bg-gradient-to-r from-green-600 via-blue-600 to-black bg-clip-text text-transparent" variants={fadeInUp}>
@@ -228,7 +233,7 @@ function Results() {
             to="/application"
             className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-500 text-white font-bold py-3 px-2 sm:px-8 rounded-xl shadow-lg text-center text-lg transition-all duration-300"
           >
-          Apply for Our Results-Only Growth Grant
+          Apply for Our Results-Only Monk Grant
           </Link>
           <Link
             to="/contactus#contact-form"

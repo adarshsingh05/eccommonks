@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import AnimatedText from "./components/AnimatedText";
 import ParallaxSection from "./components/ParallaxSection";
 import { Mail, Users, CheckCircle, BookOpen, Flame, HeartHandshake } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -88,9 +89,9 @@ function ThankYou() {
         <motion.div className="mb-12 text-center" variants={fadeInUp}>
           <div className="text-xl sm:text-2xl font-bold text-green-700 mb-2">In the Meantime…</div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="/results" className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-700 text-white font-bold py-2 sm:py-3 px-5 sm:px-8 rounded-xl shadow-lg text-md sm:text-center  text-lg transition-all duration-300">Get inspired by brands we've scaled → View Results</a>
-            <a href="/ourframeworks" className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-700 text-white font-bold py-2 sm:py-5 sm:px-8 rounded-xl shadow-lg text-md sm:text-center text-lg transition-all duration-300">Understand our playbook → Explore Frameworks</a>
-            <a href="/aboutus" className="w-full sm:w-auto bg-gradient-to-r from-green-400 to-green-400 hover:from-green-500 hover:to-green-500 text-white font-bold py-2 px-5 sm:px-8 rounded-xl shadow-lg text-md sm:text-center text-lg transition-all duration-300">Meet the Monks behind the method → About Us</a>
+            <Link to="/results" className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-700 text-white font-bold py-2 sm:py-3 px-5 sm:px-8 rounded-xl shadow-lg text-md sm:text-center  text-lg transition-all duration-300">Get inspired by brands we've scaled → View Results</Link>
+            <Link to="/ourframeworks" className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-700 text-white font-bold py-2 sm:py-5 sm:px-8 rounded-xl shadow-lg text-md sm:text-center text-lg transition-all duration-300">Understand our playbook → Explore Frameworks</Link>
+            <Link to="/aboutus" className="w-full sm:w-auto bg-gradient-to-r from-green-400 to-green-400 hover:from-green-500 hover:to-green-500 text-white font-bold py-2 px-5 sm:px-8 rounded-xl shadow-lg text-md sm:text-center text-lg transition-all duration-300">Meet the Monks behind the method → About Us</Link>
           </div>
         </motion.div>
         <motion.div className="mb-[-20px] text-center" variants={fadeInUp}>
