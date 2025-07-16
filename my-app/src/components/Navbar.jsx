@@ -31,6 +31,18 @@ export default function Navbar({ setIsLoading }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <nav
       className={`fixed top-0 w-full z-40 transition-all duration-700 ${
@@ -133,8 +145,8 @@ export default function Navbar({ setIsLoading }) {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-green-400/30">
-            <div className="px-8 py-10 space-y-6">
+          <div className="fixed inset-0 z-50 lg:hidden bg-white/90 backdrop-blur-2xl border-t border-green-400/30 overflow-y-auto" style={{ WebkitBackdropFilter: 'blur(24px)', backdropFilter: 'blur(24px)' }}>
+            <div className="px-8 py-10 space-y-6 min-h-screen flex flex-col">
               {[
                 { label: "Home", href: "/", isLink: true },
                 { label: "Our Services", href: "/services", isLink: true },
@@ -149,6 +161,7 @@ export default function Navbar({ setIsLoading }) {
                 { label: "Refund Policy", href: "/refund", isLink: true },
                 { label: "Terms & Conditions", href: "/tandc", isLink: true },
                 { label: "Privacy Policy", href: "/privacy", isLink: true },
+                { label: "Apply Now", href: "/application", isLink: true, customClass: "text-green-700 hover:text-green-500" },
               ].map((item) => (
                 item.isLink ? (
                   <Link

@@ -12,7 +12,9 @@ const ApplicationPage = () => {
     function handleZohoFormMessage(event) {
       // Only handle messages from Zoho forms
       if (typeof event.data === "string" && event.data.indexOf("zf_submit_success") !== -1) {
-        navigate("/thankyou");
+        setTimeout(() => {
+          navigate("/thankyou");
+        }, 4000);
       }
     }
     window.addEventListener("message", handleZohoFormMessage);
@@ -22,10 +24,10 @@ const ApplicationPage = () => {
   return (
     <div className="bg-white min-h-[2000px] flex flex-col text-[#222]">
       <Navbar />
-      <main className="flex-1 w-full max-w-6xl mx-auto px-4 md:px-12 py-12 md:py-20">
+      <main className="flex-1 w-full max-w-6xl mx-auto px-4 md:px-12 py-12 md:py-20 sm:mt-4">
         <section className="">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-green-700 mb-6 text-center">
-            The Monk Grant <span className="text-blue-600">(Pro-Bono)</span>
+            The Monk Grant <span className="text-blue-600 text-4xl">(Pro-Bono)</span>
           </h1>
           <div className="space-y-6">
             <p className="text-base md:text-lg text-[#222] text-center">
@@ -87,6 +89,28 @@ const ApplicationPage = () => {
           </div>
         </section>
         {/* The application form will be added here later */}
+        <section className="py-16  bg-green-50 border-t-2 border-green-400  ">
+            <div className="max-w-5xl mx-auto px-4 md:px-8 text-center">
+              
+              <div className="text-2xl md:text-2xl text-green-600 mb-8 font-semibold">
+                We're not a growth agency.<p className="text-2xl md:text-2xl text-[#222] mb-12 font-bold">
+                We're your unfair advantage.
+              </p>
+              </div>
+              
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 ml-0 sm:ml-[303px] sm:w-[1100px]">
+              
+                <button
+                  className="bg-gradient-to-r  from-blue-500 to-blue-600 text-white font-bold px-6 py-4 rounded-xl hover:scale-105 transition-all duration-300 text-lg"
+                  onClick={() => navigate('/contactus#contact-form')}
+                >
+                  📞 Schedule Your Call
+                </button>
+           
+              </div>
+            </div>
+          </section>
       </main>
       <Footer />
     </div>

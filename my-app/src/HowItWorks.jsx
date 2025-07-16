@@ -5,6 +5,7 @@ import ThreeDCard from "./components/ThreeDCard";
 import AnimatedText from "./components/AnimatedText";
 import ParallaxSection from "./components/ParallaxSection";
 import { CheckCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -110,6 +111,7 @@ const steps = [
 ];
 
 function HowItWorks() {
+  const navigate = useNavigate();
   return (
     <div className="bg-gradient-to-br from-green-50 via-green-100/30 to-green-200/20 min-h-screen text-green-900 overflow-x-hidden">
       <Navbar />
@@ -229,24 +231,24 @@ function HowItWorks() {
           Ready to Begin?
         </motion.h2>
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-          <a
-            href="#apply"
+          <button
+            onClick={() => navigate("/application")}
             className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-500 text-white font-bold py-3 px-2 sm:px-8 rounded-xl shadow-lg text-center text-lg transition-all duration-300"
           >
              Apply Now – Get Your Free Audit
-          </a>
-          <a
-            href="#discovery"
+          </button>
+          <button
+            onClick={() => navigate("/contactus#contact-form")}
             className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-green-400 hover:from-green-600 hover:to-green-500 text-white font-bold py-3 px-8 rounded-xl shadow-lg text-center text-lg transition-all duration-300"
           >
             Book a Discovery Call
-          </a>
-          <a
-            href="mailto:hello@theecommonks.com"
+          </button>
+          <button
+            onClick={() => navigate("/contactus#contact-form")}
             className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-500 text-white font-bold py-3 px-4 sm:px-8 rounded-xl shadow-lg text-center text-lg transition-all duration-300"
           >
             Book A Call with Arun
-          </a>
+          </button>
         </div>
         <motion.p className="text-md sm:mt-0 mt-[-40px] sm:text-2xl text-center text-green-700  font-semibold" variants={fadeInUp}>
           Let's make your journey the next success story.

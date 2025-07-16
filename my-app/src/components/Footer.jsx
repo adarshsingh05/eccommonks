@@ -100,6 +100,13 @@ export default function Footer() {
               >
                 Thank You
               </Link>
+              <Link 
+                to="/application" 
+                onClick={() => handleLinkClick('/application')}
+                className="text-green-700 hover:text-green-400 transition-all duration-500 text-base sm:text-lg font-medium block cursor-pointer focus:outline-none focus:ring-0 hover:underline"
+              >
+                Apply Now
+              </Link>
             </div>
           </div>
 

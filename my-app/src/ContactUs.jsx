@@ -32,8 +32,8 @@ function ContactUs() {
   }, [navigate]);
 
   useEffect(() => {
-    if (location.hash === '#contact-form') {
-      const el = document.getElementById('contact-form');
+    if (location.hash) {
+      const el = document.getElementById(location.hash.replace('#', ''));
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   }, [location]);
@@ -243,24 +243,14 @@ function ContactUs() {
               
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                <button
-                  className="bg-gradient-to-r from-green-500 to-green-600 text-white font-bold px-6 py-4 rounded-xl hover:scale-105 transition-all duration-300 text-lg"
-                  onClick={() => navigate('/application')}
-                >
-                  🎯 Apply Now
-                </button>
+              
                 <button
                   className="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-6 py-4 rounded-xl hover:scale-105 transition-all duration-300 text-lg"
                   onClick={() => navigate('/contactus#contact-form')}
                 >
                   📞 Schedule Your Call
                 </button>
-                <a
-                  href="mailto:hello@theecommonks.com?subject=Monk Grant Application"
-                  className="bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-6 py-4 rounded-xl hover:scale-105 transition-all duration-300 text-lg inline-block"
-                >
-                  📬 Apply for the Monk Grant
-                </a>
+           
               </div>
             </div>
           </section>
