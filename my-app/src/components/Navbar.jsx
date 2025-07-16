@@ -166,11 +166,10 @@ export default function Navbar({ setIsLoading }) {
               { label: "Results", href: "/results", isLink: true },
               { label: "How It Works", href: "/how-it-works", isLink: true },
               { label: "FAQs", href: "/faqs", isLink: true },
-              { label: "Thank You", href: "/thankyou", isLink: true },
               { label: "Refund Policy", href: "/refund", isLink: true },
               { label: "Terms & Conditions", href: "/tandc", isLink: true },
               { label: "Privacy Policy", href: "/privacy", isLink: true },
-              { label: "Apply Now", href: "/application", isLink: true, customClass: "text-green-700 hover:text-green-500" },
+              { label: "Monk Grant", href: "/application", isLink: true, customClass: "text-green-700 hover:text-green-500" },
             ].map((item) => (
               item.isLink ? (
                 <Link

@@ -594,7 +594,7 @@ function ServicesPage() {
                 <button 
                   onClick={handleContactNavigation}
                   className="group bg-gradient-to-r from-green-400 to-green-500 text-white font-black px-4  py-4 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:shadow-green-400/40 transition-all duration-500 transform hover:rotate-1 flex items-center">
-                  Choose your Track with The Ecom Monks
+                  Choose your Track
                 </button>
 
                 <div className="flex items-center justify-center text-lg md:text-2xl font-bold text-green-600 my-1 md:my-0">
@@ -603,7 +603,7 @@ function ServicesPage() {
 
                 <button 
                   onClick={handleContactNavigation}
-                  className="group bg-white border-2 border-green-400 text-green-600 font-black px-8  py-3 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:bg-green-50 transition-all duration-500 flex items-center">
+                  className="group bg-white border-2 border-green-400 text-green-600 font-black px-8  py-3 md:py-6 rounded-2xl text-lg md:text-2xl hover:scale-110 hover:shadow-2xl hover:bg-green-50 transition-all duration-500 flex items-center text-center">
                   Book a Strategy Call
                 </button>
               </div>

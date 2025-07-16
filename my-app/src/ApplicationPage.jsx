@@ -8,18 +8,24 @@ import { useNavigate } from "react-router-dom";
 const ApplicationPage = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    function handleZohoFormMessage(event) {
-      // Only handle messages from Zoho forms
-      if (typeof event.data === "string" && event.data.indexOf("zf_submit_success") !== -1) {
-        setTimeout(() => {
-          navigate("/thankyou");
-        }, 4000);
-      }
-    }
-    window.addEventListener("message", handleZohoFormMessage);
-    return () => window.removeEventListener("message", handleZohoFormMessage);
-  }, [navigate]);
+  // useEffect(() => {
+  //   function handleZohoFormMessage(event) {
+  //     console.log("ZOHO FORM MESSAGE (full):", event);
+
+  //     // Only redirect if event.data.target === "metamask-inpage" AND event.data.data exists (is an object)
+  //     if (
+  //       event.data &&
+  //       event.data.target === "metamask-inpage" &&
+  //       typeof event.data.data === "object"
+  //     ) {
+  //       setTimeout(() => {
+  //         // window.location.href = "/thankyou";
+  //       }, 500);
+  //     }
+  //   }
+  //   window.addEventListener("message", handleZohoFormMessage);
+  //   return () => window.removeEventListener("message", handleZohoFormMessage);
+  // }, []);
 
   return (
     <div className="bg-white min-h-[2000px] flex flex-col text-[#222]">
@@ -73,7 +79,7 @@ const ApplicationPage = () => {
                 This is a pro-bono service from our end—so please bear with us!
               </p>
             </div>
-            <div className="flex justify-center mt-8">
+            <div style={{ position: "relative" }} className="flex justify-center mt-8">
               <iframe
                 title="The Monk Grant Application"
                 src="https://forms.zohopublic.in/theecommonks/form/TheMonkGrantApplication/formperma/opP1fL-QafP7dRJwBWL04hk0r6KyjrJD-Ja3-_Op2Gg?zf_rszfm=1"
@@ -84,6 +90,20 @@ const ApplicationPage = () => {
                   transition: "all 0.5s ease"
                 }}
                 allowFullScreen
+              />
+              {/* Overlay div for demo redirect */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: 0,
+                  right: 0,
+                  bottom: "40px", // adjust as needed for your form
+                  height: "60px", // adjust as needed for your form
+                  cursor: "pointer",
+                  zIndex: 10,
+                  background: "rgba(255,255,255,0)", // fully transparent
+                }}
+                onClick={() => setTimeout(() => window.location.href = "/thankyou", 4000)}
               />
             </div>
           </div>

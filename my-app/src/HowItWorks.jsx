@@ -232,7 +232,7 @@ function HowItWorks() {
         </motion.h2>
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
           <button
-            onClick={() => navigate("/application")}
+            onClick={() => navigate("/contactus#contact-form")}
             className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-400 hover:from-green-700 hover:to-green-500 text-white font-bold py-3 px-2 sm:px-8 rounded-xl shadow-lg text-center text-lg transition-all duration-300"
           >
              Apply Now – Get Your Free Audit
