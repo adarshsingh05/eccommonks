@@ -146,7 +146,16 @@ export default function Navbar({ setIsLoading }) {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="fixed inset-0 z-50 lg:hidden bg-white/90 backdrop-blur-2xl border-t border-green-400/30 overflow-y-auto" style={{ WebkitBackdropFilter: 'blur(24px)', backdropFilter: 'blur(24px)' }}>
-            <div className="px-8 py-10 space-y-6 min-h-screen flex flex-col">
+            {/* Close Button - absolutely positioned */}
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              aria-label="Close menu"
+              className="absolute top-4 right-4 text-green-700 text-3xl font-bold focus:outline-none focus:ring-2 focus:ring-green-400 bg-white/80 rounded-full p-2 shadow hover:bg-green-100 transition z-50"
+              type="button"
+            >
+              ×
+            </button>
+            <div className="px-8 pt-16 pb-6 space-y-6 min-h-screen flex flex-col justify-start">
               {[
                 { label: "Home", href: "/", isLink: true },
                 { label: "Our Services", href: "/services", isLink: true },
