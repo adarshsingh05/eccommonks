@@ -83,11 +83,11 @@ function LandingPage() {
           <h1 className="sr-only">We're Not Just an Agency. We're Your Ecommerce Growth Partner.</h1>
           {/* Hero Section with Parallax */}
           <ParallaxSection speed={0.3} direction="up" className="w-full">
-            <section className="py-4 sm:py-16 md:py-32 flex flex-col items-center justify-center text-center relative bg-gradient-to-b from-green-50/60 to-white">
+            <section className="py-4 sm:py-16  md:py-32 flex flex-col items-center justify-center text-center relative bg-gradient-to-b from-green-50/60 to-white">
               <div className="max-w-5xl w-full mx-auto px-4 md:px-8 flex flex-col items-center">
                 {/* Main Headline */}
-                <div className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-3 sm:mb-6 md:mb-8Scale Commerce the Conscious Way">
-                  <span className="text-[#222]">THE </span>
+                <div className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-3 sm:mb-6 md:mb-8 mt-16 sm:mt-0">
+                  <span className="text-[#222] ">THE </span>
                   <span className="text-green-500">ECOM</span>
                   <span className="text-green-400"> MONKS</span>
                 </div>

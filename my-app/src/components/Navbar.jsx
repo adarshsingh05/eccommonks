@@ -142,60 +142,59 @@ export default function Navbar({ setIsLoading }) {
             ))}
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="fixed inset-0 z-50 lg:hidden bg-white/90 backdrop-blur-2xl border-t border-green-400/30 overflow-y-auto" style={{ WebkitBackdropFilter: 'blur(24px)', backdropFilter: 'blur(24px)' }}>
-            {/* Close Button - absolutely positioned */}
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              aria-label="Close menu"
-              className="absolute top-4 right-4 text-green-700 text-3xl font-bold focus:outline-none focus:ring-2 focus:ring-green-400 bg-white/80 rounded-full p-2 shadow hover:bg-green-100 transition z-50"
-              type="button"
-            >
-              ×
-            </button>
-            <div className="px-8 pt-16 pb-6 space-y-6 min-h-screen flex flex-col justify-start">
-              {[
-                { label: "Home", href: "/", isLink: true },
-                { label: "Our Services", href: "/services", isLink: true },
-                { label: "Our Frameworks", href: "/ourframeworks", isLink: true },
-                { label: "Why Us", href: "/whyus", isLink: true, customClass: "text-green-700 hover:text-green-500" },
-                { label: "Contact Us", href: "/contactus", isLink: true },
-                { label: "About Us", href: "/aboutus", isLink: true },
-                { label: "Results", href: "/results", isLink: true },
-                { label: "How It Works", href: "/how-it-works", isLink: true },
-                { label: "FAQs", href: "/faqs", isLink: true },
-                { label: "Thank You", href: "/thankyou", isLink: true },
-                { label: "Refund Policy", href: "/refund", isLink: true },
-                { label: "Terms & Conditions", href: "/tandc", isLink: true },
-                { label: "Privacy Policy", href: "/privacy", isLink: true },
-                { label: "Apply Now", href: "/application", isLink: true, customClass: "text-green-700 hover:text-green-500" },
-              ].map((item) => (
-                item.isLink ? (
-                  <Link
-                    key={item.label}
-                    to={item.href}
-                    className={`block text-green-900 font-bold text-xl sm:text-2xl transition-colors duration-500 py-2 ${item.customClass || "hover:text-green-500"} focus:outline-none focus:ring-0 focus:border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:border-none outline-none ring-0 border-none cursor-pointer`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className={`block text-green-900 font-bold text-xl sm:text-2xl transition-colors duration-500 py-2 ${item.customClass || "hover:text-green-500"} focus:outline-none focus:ring-0 focus:border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:border-none outline-none ring-0 border-none cursor-pointer`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                )
-              ))}
-            </div>
-          </div>
-        )}
       </div>
+      {/* Mobile Menu Overlay - Fixed positioning with full viewport coverage */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 top-0 left-0 right-0 bottom-0 z-50 lg:hidden bg-white/90 backdrop-blur-2xl border-t border-green-400/30 overflow-y-auto min-h-screen w-full" style={{ WebkitBackdropFilter: 'blur(24px)', backdropFilter: 'blur(24px)' }}>
+          {/* Close Button - absolutely positioned */}
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-label="Close menu"
+            className="absolute top-4 right-4 text-green-700 text-3xl font-bold focus:outline-none focus:ring-2 focus:ring-green-400 bg-white/80 rounded-full p-2 shadow hover:bg-green-100 transition z-50"
+            type="button"
+          >
+            ×
+          </button>
+          <div className="px-8 pt-16 pb-6 space-y-6 min-h-screen flex flex-col justify-start">
+            {[
+              { label: "Home", href: "/", isLink: true },
+              { label: "Our Services", href: "/services", isLink: true },
+              { label: "Our Frameworks", href: "/ourframeworks", isLink: true },
+              { label: "Why Us", href: "/whyus", isLink: true, customClass: "text-green-700 hover:text-green-500" },
+              { label: "Contact Us", href: "/contactus", isLink: true },
+              { label: "About Us", href: "/aboutus", isLink: true },
+              { label: "Results", href: "/results", isLink: true },
+              { label: "How It Works", href: "/how-it-works", isLink: true },
+              { label: "FAQs", href: "/faqs", isLink: true },
+              { label: "Thank You", href: "/thankyou", isLink: true },
+              { label: "Refund Policy", href: "/refund", isLink: true },
+              { label: "Terms & Conditions", href: "/tandc", isLink: true },
+              { label: "Privacy Policy", href: "/privacy", isLink: true },
+              { label: "Apply Now", href: "/application", isLink: true, customClass: "text-green-700 hover:text-green-500" },
+            ].map((item) => (
+              item.isLink ? (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className={`block text-green-900 font-bold text-xl sm:text-2xl transition-colors duration-500 py-2 ${item.customClass || "hover:text-green-500"} focus:outline-none focus:ring-0 focus:border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:border-none outline-none ring-0 border-none cursor-pointer`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className={`block text-green-900 font-bold text-xl sm:text-2xl transition-colors duration-500 py-2 ${item.customClass || "hover:text-green-500"} focus:outline-none focus:ring-0 focus:border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:border-none outline-none ring-0 border-none cursor-pointer`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              )
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
