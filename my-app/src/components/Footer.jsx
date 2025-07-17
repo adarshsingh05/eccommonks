@@ -30,14 +30,14 @@ export default function Footer() {
             <span className="absolute left-0 right-0 bottom-1 h-4 bg-yellow-100 z-0" style={{ width: '100%', borderRadius: '4px' }}></span>
           </div>
           <div className="text-xl italic text-black mb-6 mt-2">Built by Monks who’ve scaled real brands — now here to scale yours.</div>
-          <div className="flex flex-row items-center justify-center space-x-4 sm:space-x-8 mt-2 w-full max-w-2xl">
-            <img src="/Indian School of Business Logo.png" alt="ISB" className="h-8 sm:h-10 object-contain mb-2" />
-            <img src="/Gyan Dairy logo.png" alt="Gyan Dairy" className="h-10 sm:h-14 object-contain mb-2" />
-            <img src="/Happy Bunny.jpg" alt="Happy Bunny" className="h-10 sm:h-14 object-contain mb-2" />
-            <img src="/edreams-odigeo.png" alt="edreams-odigeo" className="h-10 sm:h-20 w-20 object-contain bg-white rounded-full px-2 mb-2" />
-            <img src="/Rare Rabit.png" alt="Rare Rabit" className="h-8 sm:h-10 object-contain bg-black rounded px-2 mb-2" />
-            <img src="/Thyrocare.png" alt="Thyrocare" className="h-10 sm:h-14 object-contain bg-white rounded-full px-2 mb-2" />
-            <img src="/Nhea Logo.png" alt="Nhea Logo" className="h-14 sm:h-18 sm:w-[140px] sm:ml-[-40px] object-contain bg-white rounded-full px-2 mb-2" />
+          <div className="flex flex-row items-center justify-center space-x-16 mt-2 w-full max-w-6xl px-12">
+            <img src="/Indian School of Business Logo.png" alt="ISB" className="h-28 w-[150px] object-contain mb-2" />
+            <img src="/Gyan Dairy logo.png" alt="Gyan Dairy" className="h-32 w-[170px] object-contain mb-2" />
+            <img src="/Happy Bunny.jpg" alt="Happy Bunny" className="h-32 w-[170px] object-contain mb-2" />
+            <img src="/edreams-odigeo.png" alt="edreams-odigeo" className="h-32 w-[180px] object-contain bg-white rounded-full px-2 mb-2" />
+            <img src="/Rare Rabit.png" alt="Rare Rabit" className="h-28 w-[150px] object-contain bg-black rounded px-2 mb-2" />
+            <img src="/Thyrocare.png" alt="Thyrocare" className="h-32 w-[170px] object-contain bg-white rounded-full px-2 mb-2" />
+            <img src="/Nhea Logo.png" alt="Nhea Logo" className="h-36 w-[200px] ml-[-10px] object-contain bg-white rounded-full px-2 mb-2" />
           </div>
         </div>
 
@@ -49,16 +49,16 @@ export default function Footer() {
           </div>
           <div className="text-sm xs:text-base sm:text-lg italic text-black mb-4 mt-1 text-center">Built by Monks who’ve scaled real brands — now here to scale yours.</div>
           <div className="flex flex-col items-center w-full max-w-xs mx-auto gap-2">
-            <div className="flex flex-row items-center justify-center gap-3 w-full">
-              <img src="/Indian School of Business Logo.png" alt="ISB" className="h-9 object-contain" />
-              <img src="/Gyan Dairy logo.png" alt="Gyan Dairy" className="h-10 object-contain" />
-              <img src="/Happy Bunny.jpg" alt="Happy Bunny" className="h-10 object-contain" />
-              <img src="/edreams-odigeo.png" alt="edreams-odigeo" className="h-10 w-12 object-contain bg-white rounded-full px-1" />
+            <div className="flex flex-row items-center justify-center gap-4 w-full">
+              <img src="/Indian School of Business Logo.png" alt="ISB" className="h-16 w-[70px] object-contain" />
+              <img src="/Gyan Dairy logo.png" alt="Gyan Dairy" className="h-20 w-[80px] object-contain" />
+              <img src="/Happy Bunny.jpg" alt="Happy Bunny" className="h-20 w-[80px] object-contain" />
+              <img src="/edreams-odigeo.png" alt="edreams-odigeo" className="h-20 w-[90px] object-contain bg-white rounded-full px-1" />
             </div>
-            <div className="flex flex-row items-center justify-center gap-3 w-full mt-1">
-              <img src="/Rare Rabit.png" alt="Rare Rabit" className="h-9 object-contain bg-black rounded px-1" />
-              <img src="/Thyrocare.png" alt="Thyrocare" className="h-10 object-contain bg-white rounded-full px-1" />
-              <img src="/Nhea Logo.png" alt="Nhea Logo" className="h-16 w-[100px] ml-[-10px] object-contain bg-white rounded-full px-1" />
+            <div className="flex flex-row items-center justify-center gap-4 w-full mt-1">
+              <img src="/Rare Rabit.png" alt="Rare Rabit" className="h-16 w-[70px] object-contain bg-black rounded px-1" />
+              <img src="/Thyrocare.png" alt="Thyrocare" className="h-20 w-[80px] object-contain bg-white rounded-full px-1" />
+              <img src="/Nhea Logo.png" alt="Nhea Logo" className="h-24 w-[100px] ml-[-6px] object-contain bg-white rounded-full px-1" />
             </div>
           </div>
         </div>
