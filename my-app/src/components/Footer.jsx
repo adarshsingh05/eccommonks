@@ -11,6 +11,12 @@ export default function Footer() {
   return (
     <footer className="bg-white mt-5 sm:mt-32 text-green-900 relative z-50" style={{ fontFamily: 'Inter, Montserrat, Segoe UI, Arial, sans-serif' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-10 sm:py-24">
+        {/* Brand Row for Mobile - Text then Logo (move to very top, only show once) */}
+        <div className="flex md:hidden items-center mb-6 mt-2">
+        <img src="/logo.png" alt="THE ECOM MONKS Logo" className="w-12 h-12" />
+          <span className="text-xl xs:text-2xl font-extrabold text-green-700 tracking-tight whitespace-nowrap mr-3">THE ECOM MONKS</span>
+          
+        </div>
         {/* Brand Row - Top Left */}
         <div className="hidden md:flex items-center mb-10 sm:mb-[5px] mt-2 sm:mt-[-230px] sm:ml-[-130px]">
           <img src="/logo.png" alt="THE ECOM MONKS Logo" className="w-24 h-24 mr-4" />
@@ -24,12 +30,36 @@ export default function Footer() {
             <span className="absolute left-0 right-0 bottom-1 h-4 bg-yellow-100 z-0" style={{ width: '100%', borderRadius: '4px' }}></span>
           </div>
           <div className="text-xl italic text-black mb-6 mt-2">Built by Monks who’ve scaled real brands — now here to scale yours.</div>
-          <div className="flex flex-row items-center justify-center space-x-8 mt-2">
-            <img src="/Gyan Dairy logo.png" alt="ISB" className="h-14 object-contain" />
-            <img src="/Indian School of Business Logo.png" alt="OYO" className="h-10 object-contain" />
-            <img src="/Rare Rabit.png" alt="Urban Company" className="h-10 object-contain bg-black rounded px-2" />
-            <img src="/Thyrocare.png" alt="NSUT" className="h-14 object-contain bg-white rounded-full px-2" />
-            <img src="/Nhea Beauty.png" alt="CarDekho" className="h-10 object-contain bg-[#FF6F3C] rounded px-2" />
+          <div className="flex flex-row items-center justify-center space-x-4 sm:space-x-8 mt-2 w-full max-w-2xl">
+            <img src="/Indian School of Business Logo.png" alt="ISB" className="h-8 sm:h-10 object-contain mb-2" />
+            <img src="/Gyan Dairy logo.png" alt="Gyan Dairy" className="h-10 sm:h-14 object-contain mb-2" />
+            <img src="/Happy Bunny.jpg" alt="Happy Bunny" className="h-10 sm:h-14 object-contain mb-2" />
+            <img src="/edreams-odigeo.png" alt="edreams-odigeo" className="h-10 sm:h-20 w-20 object-contain bg-white rounded-full px-2 mb-2" />
+            <img src="/Rare Rabit.png" alt="Rare Rabit" className="h-8 sm:h-10 object-contain bg-black rounded px-2 mb-2" />
+            <img src="/Thyrocare.png" alt="Thyrocare" className="h-10 sm:h-14 object-contain bg-white rounded-full px-2 mb-2" />
+            <img src="/Nhea Logo.png" alt="Nhea Logo" className="h-14 sm:h-18 sm:w-[140px] sm:ml-[-40px] object-contain bg-white rounded-full px-2 mb-2" />
+          </div>
+        </div>
+
+        {/* Team Credentials Section for Mobile */}
+        <div className="flex md:hidden flex-col items-center justify-center w-full mb-8 mt-2 px-2">
+          <div className="relative mb-2 w-full flex flex-col items-center">
+            <span className="text-lg xs:text-xl sm:text-2xl font-extrabold text-black relative z-10 text-center">Your Monks' Credentials</span>
+            <span className="absolute left-1/2 -translate-x-1/2 bottom-1 h-2 bg-yellow-100 z-0 w-3/4 rounded" style={{ minWidth: '120px' }}></span>
+          </div>
+          <div className="text-sm xs:text-base sm:text-lg italic text-black mb-4 mt-1 text-center">Built by Monks who’ve scaled real brands — now here to scale yours.</div>
+          <div className="flex flex-col items-center w-full max-w-xs mx-auto gap-2">
+            <div className="flex flex-row items-center justify-center gap-3 w-full">
+              <img src="/Indian School of Business Logo.png" alt="ISB" className="h-9 object-contain" />
+              <img src="/Gyan Dairy logo.png" alt="Gyan Dairy" className="h-10 object-contain" />
+              <img src="/Happy Bunny.jpg" alt="Happy Bunny" className="h-10 object-contain" />
+              <img src="/edreams-odigeo.png" alt="edreams-odigeo" className="h-10 w-12 object-contain bg-white rounded-full px-1" />
+            </div>
+            <div className="flex flex-row items-center justify-center gap-3 w-full mt-1">
+              <img src="/Rare Rabit.png" alt="Rare Rabit" className="h-9 object-contain bg-black rounded px-1" />
+              <img src="/Thyrocare.png" alt="Thyrocare" className="h-10 object-contain bg-white rounded-full px-1" />
+              <img src="/Nhea Logo.png" alt="Nhea Logo" className="h-16 w-[100px] ml-[-10px] object-contain bg-white rounded-full px-1" />
+            </div>
           </div>
         </div>
         {/* Desktop Layout */}
@@ -85,16 +115,6 @@ export default function Footer() {
 
         {/* Mobile Layout (unchanged) */}
         <div className="md:hidden grid grid-cols-1 md:grid-cols-4 gap-10 sm:gap-20">
-          {/* Brand */}
-          <div className="flex flex-col items-start justify-start h-full mb-1 md:mb-0 col-span-1 sm:mr-8">
-            <div className="flex items-center mb-4 sm:mb-8">
-              <img src="/logo.png" alt="THE ECOM MONKS Logo" className="w-12 h-12 sm:w-20 sm:h-20 mr-3" />
-              <span className="text-3xl sm:text-3xl font-extrabold text-green-700 tracking-tight">THE ECOM MONKS</span>
-            </div>
-            <a href="mailto:hello@theecommonks.com" className="text-green-700 hover:text-green-400 transition-colors duration-500 text-base sm:text-lg font-medium cursor-pointer mt-2 flex items-center break-all whitespace-nowrap">
-              <Mail className="w-5 h-5 mr-2" />hello@theecommonks.com
-            </a>
-          </div>
           {/* Quick Links */}
           <div className="flex flex-col items-start w-full col-span-1">
             <h3 className="text-xl sm:text-2xl font-extrabold text-green-900 mb-4">Quick Links</h3>
